@@ -1,3 +1,7 @@
+import { Amplify } from 'aws-amplify';
+import amplifyconfig from '@/src/amplifyconfiguration.json';
+Amplify.configure(amplifyconfig);
+
 import { Image, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';

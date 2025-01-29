@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-citysync-dev-6e216-authRole",
+      "UnauthRoleArn": "arn:aws:iam::211125314061:role/amplify-citysync-dev-6e216-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::211125314061:role/amplify-citysync-dev-6e216-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-citysync-dev-6e216-deployment",
+      "UnauthRoleName": "amplify-citysync-dev-6e216-unauthRole",
+      "StackName": "amplify-citysync-dev-6e216",
+      "StackId": "arn:aws:cloudformation:us-east-1:211125314061:stack/amplify-citysync-dev-6e216/47abfb30-dde4-11ef-8799-0affc89b6327",
+      "AmplifyAppId": "d3p9r5bsi59b3b"
+    }
+  }
+}
