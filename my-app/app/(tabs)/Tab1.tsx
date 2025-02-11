@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 
-export default function Explore() {
+export default function Tab1() {
   const paddingTop = Platform.OS === 'android' ? StatusBar.currentHeight : 0; 
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, { paddingTop }]}> 
-        <Text style={styles.whiteText}>EXPLORE</Text>
+        <Text style={styles.whiteText}>TAB 1</Text>
       </View>
     </SafeAreaView>
   );
