@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^13.5.0",
     "aws-amplify": "^6.13.2",
     "citysync": "file:",
+    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.30.0",
