@@ -1,0 +1,5 @@
+requests
+urllib3==1.26.16  
+boto3
+pandas
+beautifulsoup4

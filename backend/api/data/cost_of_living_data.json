@@ -1,0 +1,2552 @@
+{
+    "Abilene, TX": {
+        "city": "Abilene",
+        "state": "TX",
+        "cost_of_living_index": 89.1
+    },
+    "Adrian, MI": {
+        "city": "Adrian",
+        "state": "MI",
+        "cost_of_living_index": 90.5
+    },
+    "Akron, OH": {
+        "city": "Akron",
+        "state": "OH",
+        "cost_of_living_index": 89.4
+    },
+    "Alamogordo, NM": {
+        "city": "Alamogordo",
+        "state": "NM",
+        "cost_of_living_index": 85.8
+    },
+    "Albany, GA": {
+        "city": "Albany",
+        "state": "GA",
+        "cost_of_living_index": 87.3
+    },
+    "Albany, OR": {
+        "city": "Albany",
+        "state": "OR",
+        "cost_of_living_index": 105.4
+    },
+    "Albany, NY": {
+        "city": "Albany",
+        "state": "NY",
+        "cost_of_living_index": 100.1
+    },
+    "Albertville, AL": {
+        "city": "Albertville",
+        "state": "AL",
+        "cost_of_living_index": 90.9
+    },
+    "Albuquerque, NM": {
+        "city": "Albuquerque",
+        "state": "NM",
+        "cost_of_living_index": 92.9
+    },
+    "Alexandria, LA": {
+        "city": "Alexandria",
+        "state": "LA",
+        "cost_of_living_index": 86.2
+    },
+    "Allentown, PA": {
+        "city": "Allentown",
+        "state": "PA",
+        "cost_of_living_index": 98.9
+    },
+    "Altoona, PA": {
+        "city": "Altoona",
+        "state": "PA",
+        "cost_of_living_index": 90.8
+    },
+    "Amarillo, TX": {
+        "city": "Amarillo",
+        "state": "TX",
+        "cost_of_living_index": 88.2
+    },
+    "Ames, IA": {
+        "city": "Ames",
+        "state": "IA",
+        "cost_of_living_index": 91.5
+    },
+    "Anchorage, AK": {
+        "city": "Anchorage",
+        "state": "AK",
+        "cost_of_living_index": 110.7
+    },
+    "Ann Arbor, MI": {
+        "city": "Ann Arbor",
+        "state": "MI",
+        "cost_of_living_index": 99.3
+    },
+    "Anniston, AL": {
+        "city": "Anniston",
+        "state": "AL",
+        "cost_of_living_index": 85.7
+    },
+    "Appleton, WI": {
+        "city": "Appleton",
+        "state": "WI",
+        "cost_of_living_index": 90.7
+    },
+    "Asheville, NC": {
+        "city": "Asheville",
+        "state": "NC",
+        "cost_of_living_index": 103.3
+    },
+    "Ashtabula, OH": {
+        "city": "Ashtabula",
+        "state": "OH",
+        "cost_of_living_index": 87.4
+    },
+    "Athens, OH": {
+        "city": "Athens",
+        "state": "OH",
+        "cost_of_living_index": 88.5
+    },
+    "Athens, TX": {
+        "city": "Athens",
+        "state": "TX",
+        "cost_of_living_index": 92.9
+    },
+    "Athens, GA": {
+        "city": "Athens",
+        "state": "GA",
+        "cost_of_living_index": 95.0
+    },
+    "Atlanta, GA": {
+        "city": "Atlanta",
+        "state": "GA",
+        "cost_of_living_index": 100.3
+    },
+    "Atlantic City, NJ": {
+        "city": "Atlantic City",
+        "state": "NJ",
+        "cost_of_living_index": 102.0
+    },
+    "Auburn, NY": {
+        "city": "Auburn",
+        "state": "NY",
+        "cost_of_living_index": 93.7
+    },
+    "Auburn, AL": {
+        "city": "Auburn",
+        "state": "AL",
+        "cost_of_living_index": 91.9
+    },
+    "Augusta, GA": {
+        "city": "Augusta",
+        "state": "GA",
+        "cost_of_living_index": 91.6
+    },
+    "Augusta, ME": {
+        "city": "Augusta",
+        "state": "ME",
+        "cost_of_living_index": 100.0
+    },
+    "Austin, TX": {
+        "city": "Austin",
+        "state": "TX",
+        "cost_of_living_index": 106.6
+    },
+    "Bakersfield, CA": {
+        "city": "Bakersfield",
+        "state": "CA",
+        "cost_of_living_index": 102.9
+    },
+    "Baltimore, MD": {
+        "city": "Baltimore",
+        "state": "MD",
+        "cost_of_living_index": 107.0
+    },
+    "Bangor, ME": {
+        "city": "Bangor",
+        "state": "ME",
+        "cost_of_living_index": 98.0
+    },
+    "Barnstable Town, MA": {
+        "city": "Barnstable Town",
+        "state": "MA",
+        "cost_of_living_index": 122.4
+    },
+    "Baton Rouge, LA": {
+        "city": "Baton Rouge",
+        "state": "LA",
+        "cost_of_living_index": 91.1
+    },
+    "Battle Creek, MI": {
+        "city": "Battle Creek",
+        "state": "MI",
+        "cost_of_living_index": 85.9
+    },
+    "Bay City, MI": {
+        "city": "Bay City",
+        "state": "MI",
+        "cost_of_living_index": 85.4
+    },
+    "Beaumont, TX": {
+        "city": "Beaumont",
+        "state": "TX",
+        "cost_of_living_index": 88.6
+    },
+    "Beaver Dam, WI": {
+        "city": "Beaver Dam",
+        "state": "WI",
+        "cost_of_living_index": 92.9
+    },
+    "Beckley, WV": {
+        "city": "Beckley",
+        "state": "WV",
+        "cost_of_living_index": 80.0
+    },
+    "Bellingham, WA": {
+        "city": "Bellingham",
+        "state": "WA",
+        "cost_of_living_index": 111.6
+    },
+    "Bend, OR": {
+        "city": "Bend",
+        "state": "OR",
+        "cost_of_living_index": 115.9
+    },
+    "Billings, MT": {
+        "city": "Billings",
+        "state": "MT",
+        "cost_of_living_index": 95.7
+    },
+    "Binghamton, NY": {
+        "city": "Binghamton",
+        "state": "NY",
+        "cost_of_living_index": 93.3
+    },
+    "Birmingham, AL": {
+        "city": "Birmingham",
+        "state": "AL",
+        "cost_of_living_index": 90.7
+    },
+    "Bismarck, ND": {
+        "city": "Bismarck",
+        "state": "ND",
+        "cost_of_living_index": 93.1
+    },
+    "Blacksburg, VA": {
+        "city": "Blacksburg",
+        "state": "VA",
+        "cost_of_living_index": 94.5
+    },
+    "Bloomington, IN": {
+        "city": "Bloomington",
+        "state": "IN",
+        "cost_of_living_index": 92.4
+    },
+    "Bloomsburg, PA": {
+        "city": "Bloomsburg",
+        "state": "PA",
+        "cost_of_living_index": 93.2
+    },
+    "Bluefield, WV": {
+        "city": "Bluefield",
+        "state": "WV",
+        "cost_of_living_index": 81.2
+    },
+    "Boise City, ID": {
+        "city": "Boise City",
+        "state": "ID",
+        "cost_of_living_index": 100.3
+    },
+    "Boston, MA": {
+        "city": "Boston",
+        "state": "MA",
+        "cost_of_living_index": 132.6
+    },
+    "Boulder, CO": {
+        "city": "Boulder",
+        "state": "CO",
+        "cost_of_living_index": 118.7
+    },
+    "Bowling Green, KY": {
+        "city": "Bowling Green",
+        "state": "KY",
+        "cost_of_living_index": 87.0
+    },
+    "Bozeman, MT": {
+        "city": "Bozeman",
+        "state": "MT",
+        "cost_of_living_index": 125.3
+    },
+    "Brainerd, MN": {
+        "city": "Brainerd",
+        "state": "MN",
+        "cost_of_living_index": 97.9
+    },
+    "Branson, MO": {
+        "city": "Branson",
+        "state": "MO",
+        "cost_of_living_index": 89.5
+    },
+    "Bremerton, WA": {
+        "city": "Bremerton",
+        "state": "WA",
+        "cost_of_living_index": 115.0
+    },
+    "Brownsville, TX": {
+        "city": "Brownsville",
+        "state": "TX",
+        "cost_of_living_index": 87.8
+    },
+    "Brunswick, GA": {
+        "city": "Brunswick",
+        "state": "GA",
+        "cost_of_living_index": 94.4
+    },
+    "Buffalo, NY": {
+        "city": "Buffalo",
+        "state": "NY",
+        "cost_of_living_index": 97.3
+    },
+    "Burlington, NC": {
+        "city": "Burlington",
+        "state": "NC",
+        "cost_of_living_index": 91.8
+    },
+    "Burlington, VT": {
+        "city": "Burlington",
+        "state": "VT",
+        "cost_of_living_index": 112.8
+    },
+    "Canton, OH": {
+        "city": "Canton",
+        "state": "OH",
+        "cost_of_living_index": 88.2
+    },
+    "Cape Girardeau, MO": {
+        "city": "Cape Girardeau",
+        "state": "MO",
+        "cost_of_living_index": 88.1
+    },
+    "Carbondale, IL": {
+        "city": "Carbondale",
+        "state": "IL",
+        "cost_of_living_index": 83.5
+    },
+    "Carson City, NV": {
+        "city": "Carson City",
+        "state": "NV",
+        "cost_of_living_index": 103.0
+    },
+    "Casper, WY": {
+        "city": "Casper",
+        "state": "WY",
+        "cost_of_living_index": 94.2
+    },
+    "Cedar Rapids, IA": {
+        "city": "Cedar Rapids",
+        "state": "IA",
+        "cost_of_living_index": 88.1
+    },
+    "Centralia, WA": {
+        "city": "Centralia",
+        "state": "WA",
+        "cost_of_living_index": 103.3
+    },
+    "Chambersburg, PA": {
+        "city": "Chambersburg",
+        "state": "PA",
+        "cost_of_living_index": 95.7
+    },
+    "Champaign, IL": {
+        "city": "Champaign",
+        "state": "IL",
+        "cost_of_living_index": 89.0
+    },
+    "Charleston, WV": {
+        "city": "Charleston",
+        "state": "WV",
+        "cost_of_living_index": 83.9
+    },
+    "Charleston, SC": {
+        "city": "Charleston",
+        "state": "SC",
+        "cost_of_living_index": 101.7
+    },
+    "Charlotte, NC": {
+        "city": "Charlotte",
+        "state": "NC",
+        "cost_of_living_index": 97.9
+    },
+    "Charlottesville, VA": {
+        "city": "Charlottesville",
+        "state": "VA",
+        "cost_of_living_index": 102.1
+    },
+    "Chattanooga, TN": {
+        "city": "Chattanooga",
+        "state": "TN",
+        "cost_of_living_index": 91.2
+    },
+    "Cheyenne, WY": {
+        "city": "Cheyenne",
+        "state": "WY",
+        "cost_of_living_index": 96.9
+    },
+    "Chicago, IL": {
+        "city": "Chicago",
+        "state": "IL",
+        "cost_of_living_index": 100.1
+    },
+    "Chico, CA": {
+        "city": "Chico",
+        "state": "CA",
+        "cost_of_living_index": 110.5
+    },
+    "Chillicothe, OH": {
+        "city": "Chillicothe",
+        "state": "OH",
+        "cost_of_living_index": 89.8
+    },
+    "Cincinnati, OH": {
+        "city": "Cincinnati",
+        "state": "OH",
+        "cost_of_living_index": 92.4
+    },
+    "Claremont, NH": {
+        "city": "Claremont",
+        "state": "NH",
+        "cost_of_living_index": 102.3
+    },
+    "Clarksburg, WV": {
+        "city": "Clarksburg",
+        "state": "WV",
+        "cost_of_living_index": 83.4
+    },
+    "Clarksville, TN": {
+        "city": "Clarksville",
+        "state": "TN",
+        "cost_of_living_index": 88.7
+    },
+    "Clearlake, CA": {
+        "city": "Clearlake",
+        "state": "CA",
+        "cost_of_living_index": 108.8
+    },
+    "Cleveland, TN": {
+        "city": "Cleveland",
+        "state": "TN",
+        "cost_of_living_index": 89.5
+    },
+    "Cleveland, OH": {
+        "city": "Cleveland",
+        "state": "OH",
+        "cost_of_living_index": 90.0
+    },
+    "Coeur d'Alene, ID": {
+        "city": "Coeur d'Alene",
+        "state": "ID",
+        "cost_of_living_index": 103.3
+    },
+    "College Station, TX": {
+        "city": "College Station",
+        "state": "TX",
+        "cost_of_living_index": 92.3
+    },
+    "Colorado Springs, CO": {
+        "city": "Colorado Springs",
+        "state": "CO",
+        "cost_of_living_index": 102.2
+    },
+    "Columbia, MO": {
+        "city": "Columbia",
+        "state": "MO",
+        "cost_of_living_index": 89.8
+    },
+    "Columbia, SC": {
+        "city": "Columbia",
+        "state": "SC",
+        "cost_of_living_index": 91.9
+    },
+    "Columbus, GA": {
+        "city": "Columbus",
+        "state": "GA",
+        "cost_of_living_index": 88.5
+    },
+    "Columbus, IN": {
+        "city": "Columbus",
+        "state": "IN",
+        "cost_of_living_index": 89.1
+    },
+    "Columbus, OH": {
+        "city": "Columbus",
+        "state": "OH",
+        "cost_of_living_index": 93.9
+    },
+    "Concord, NH": {
+        "city": "Concord",
+        "state": "NH",
+        "cost_of_living_index": 108.3
+    },
+    "Cookeville, TN": {
+        "city": "Cookeville",
+        "state": "TN",
+        "cost_of_living_index": 90.9
+    },
+    "Coos Bay, OR": {
+        "city": "Coos Bay",
+        "state": "OR",
+        "cost_of_living_index": 102.0
+    },
+    "Corning, NY": {
+        "city": "Corning",
+        "state": "NY",
+        "cost_of_living_index": 90.9
+    },
+    "Corpus Christi, TX": {
+        "city": "Corpus Christi",
+        "state": "TX",
+        "cost_of_living_index": 93.3
+    },
+    "Corvallis, OR": {
+        "city": "Corvallis",
+        "state": "OR",
+        "cost_of_living_index": 110.6
+    },
+    "Cullman, AL": {
+        "city": "Cullman",
+        "state": "AL",
+        "cost_of_living_index": 90.5
+    },
+    "Cumberland, MD": {
+        "city": "Cumberland",
+        "state": "MD",
+        "cost_of_living_index": 90.9
+    },
+    "Dalton, GA": {
+        "city": "Dalton",
+        "state": "GA",
+        "cost_of_living_index": 89.1
+    },
+    "Danville, IL": {
+        "city": "Danville",
+        "state": "IL",
+        "cost_of_living_index": 83.9
+    },
+    "Danville, VA": {
+        "city": "Danville",
+        "state": "VA",
+        "cost_of_living_index": 87.1
+    },
+    "Dayton, OH": {
+        "city": "Dayton",
+        "state": "OH",
+        "cost_of_living_index": 88.4
+    },
+    "Decatur, AL": {
+        "city": "Decatur",
+        "state": "AL",
+        "cost_of_living_index": 88.6
+    },
+    "Decatur, IL": {
+        "city": "Decatur",
+        "state": "IL",
+        "cost_of_living_index": 84.9
+    },
+    "Denver, CO": {
+        "city": "Denver",
+        "state": "CO",
+        "cost_of_living_index": 112.1
+    },
+    "Des Moines, IA": {
+        "city": "Des Moines",
+        "state": "IA",
+        "cost_of_living_index": 91.7
+    },
+    "Detroit, MI": {
+        "city": "Detroit",
+        "state": "MI",
+        "cost_of_living_index": 93.2
+    },
+    "Dothan, AL": {
+        "city": "Dothan",
+        "state": "AL",
+        "cost_of_living_index": 86.3
+    },
+    "Dover, DE": {
+        "city": "Dover",
+        "state": "DE",
+        "cost_of_living_index": 101.3
+    },
+    "DuBois, PA": {
+        "city": "DuBois",
+        "state": "PA",
+        "cost_of_living_index": 88.2
+    },
+    "Dubuque, IA": {
+        "city": "Dubuque",
+        "state": "IA",
+        "cost_of_living_index": 89.6
+    },
+    "Duluth, MN": {
+        "city": "Duluth",
+        "state": "MN",
+        "cost_of_living_index": 93.2
+    },
+    "Dunn, NC": {
+        "city": "Dunn",
+        "state": "NC",
+        "cost_of_living_index": 91.4
+    },
+    "Durham, NC": {
+        "city": "Durham",
+        "state": "NC",
+        "cost_of_living_index": 99.8
+    },
+    "East Stroudsburg, PA": {
+        "city": "East Stroudsburg",
+        "state": "PA",
+        "cost_of_living_index": 96.1
+    },
+    "Eau Claire, WI": {
+        "city": "Eau Claire",
+        "state": "WI",
+        "cost_of_living_index": 91.8
+    },
+    "El Centro, CA": {
+        "city": "El Centro",
+        "state": "CA",
+        "cost_of_living_index": 102.3
+    },
+    "El Paso, TX": {
+        "city": "El Paso",
+        "state": "TX",
+        "cost_of_living_index": 88.6
+    },
+    "Elizabeth City, NC": {
+        "city": "Elizabeth City",
+        "state": "NC",
+        "cost_of_living_index": 91.1
+    },
+    "Elizabethtown, KY": {
+        "city": "Elizabethtown",
+        "state": "KY",
+        "cost_of_living_index": 88.1
+    },
+    "Elkhart, IN": {
+        "city": "Elkhart",
+        "state": "IN",
+        "cost_of_living_index": 88.5
+    },
+    "Elmira, NY": {
+        "city": "Elmira",
+        "state": "NY",
+        "cost_of_living_index": 92.5
+    },
+    "Enid, OK": {
+        "city": "Enid",
+        "state": "OK",
+        "cost_of_living_index": 82.9
+    },
+    "Erie, PA": {
+        "city": "Erie",
+        "state": "PA",
+        "cost_of_living_index": 91.8
+    },
+    "Eugene, OR": {
+        "city": "Eugene",
+        "state": "OR",
+        "cost_of_living_index": 108.4
+    },
+    "Eureka, CA": {
+        "city": "Eureka",
+        "state": "CA",
+        "cost_of_living_index": 116.5
+    },
+    "Evansville, IN": {
+        "city": "Evansville",
+        "state": "IN",
+        "cost_of_living_index": 87.2
+    },
+    "Fairbanks, AK": {
+        "city": "Fairbanks",
+        "state": "AK",
+        "cost_of_living_index": 107.9
+    },
+    "Fargo, ND": {
+        "city": "Fargo",
+        "state": "ND",
+        "cost_of_living_index": 91.4
+    },
+    "Faribault, MN": {
+        "city": "Faribault",
+        "state": "MN",
+        "cost_of_living_index": 102.3
+    },
+    "Farmington, MO": {
+        "city": "Farmington",
+        "state": "MO",
+        "cost_of_living_index": 85.4
+    },
+    "Farmington, NM": {
+        "city": "Farmington",
+        "state": "NM",
+        "cost_of_living_index": 88.4
+    },
+    "Fayetteville, NC": {
+        "city": "Fayetteville",
+        "state": "NC",
+        "cost_of_living_index": 89.5
+    },
+    "Fayetteville, AR": {
+        "city": "Fayetteville",
+        "state": "AR",
+        "cost_of_living_index": 90.4
+    },
+    "Findlay, OH": {
+        "city": "Findlay",
+        "state": "OH",
+        "cost_of_living_index": 91.1
+    },
+    "Flagstaff, AZ": {
+        "city": "Flagstaff",
+        "state": "AZ",
+        "cost_of_living_index": 108.5
+    },
+    "Flint, MI": {
+        "city": "Flint",
+        "state": "MI",
+        "cost_of_living_index": 85.7
+    },
+    "Florence, SC": {
+        "city": "Florence",
+        "state": "SC",
+        "cost_of_living_index": 87.7
+    },
+    "Florence, AL": {
+        "city": "Florence",
+        "state": "AL",
+        "cost_of_living_index": 86.8
+    },
+    "Fond du Lac, WI": {
+        "city": "Fond du Lac",
+        "state": "WI",
+        "cost_of_living_index": 88.0
+    },
+    "Forest City, NC": {
+        "city": "Forest City",
+        "state": "NC",
+        "cost_of_living_index": 89.4
+    },
+    "Fort Collins, CO": {
+        "city": "Fort Collins",
+        "state": "CO",
+        "cost_of_living_index": 109.2
+    },
+    "Fort Smith, AR": {
+        "city": "Fort Smith",
+        "state": "AR",
+        "cost_of_living_index": 84.2
+    },
+    "Fort Wayne, IN": {
+        "city": "Fort Wayne",
+        "state": "IN",
+        "cost_of_living_index": 86.8
+    },
+    "Frankfort, KY": {
+        "city": "Frankfort",
+        "state": "KY",
+        "cost_of_living_index": 88.1
+    },
+    "Fresno, CA": {
+        "city": "Fresno",
+        "state": "CA",
+        "cost_of_living_index": 105.9
+    },
+    "Gadsden, AL": {
+        "city": "Gadsden",
+        "state": "AL",
+        "cost_of_living_index": 86.0
+    },
+    "Gainesville, FL": {
+        "city": "Gainesville",
+        "state": "FL",
+        "cost_of_living_index": 97.3
+    },
+    "Gainesville, GA": {
+        "city": "Gainesville",
+        "state": "GA",
+        "cost_of_living_index": 97.0
+    },
+    "Gallup, NM": {
+        "city": "Gallup",
+        "state": "NM",
+        "cost_of_living_index": 90.0
+    },
+    "Gettysburg, PA": {
+        "city": "Gettysburg",
+        "state": "PA",
+        "cost_of_living_index": 98.2
+    },
+    "Glens Falls, NY": {
+        "city": "Glens Falls",
+        "state": "NY",
+        "cost_of_living_index": 98.6
+    },
+    "Goldsboro, NC": {
+        "city": "Goldsboro",
+        "state": "NC",
+        "cost_of_living_index": 88.5
+    },
+    "Grand Forks, ND": {
+        "city": "Grand Forks",
+        "state": "ND",
+        "cost_of_living_index": 90.7
+    },
+    "Grand Island, NE": {
+        "city": "Grand Island",
+        "state": "NE",
+        "cost_of_living_index": 88.8
+    },
+    "Grand Junction, CO": {
+        "city": "Grand Junction",
+        "state": "CO",
+        "cost_of_living_index": 98.1
+    },
+    "Grand Rapids, MI": {
+        "city": "Grand Rapids",
+        "state": "MI",
+        "cost_of_living_index": 93.7
+    },
+    "Grants Pass, OR": {
+        "city": "Grants Pass",
+        "state": "OR",
+        "cost_of_living_index": 106.6
+    },
+    "Great Falls, MT": {
+        "city": "Great Falls",
+        "state": "MT",
+        "cost_of_living_index": 91.1
+    },
+    "Greeley, CO": {
+        "city": "Greeley",
+        "state": "CO",
+        "cost_of_living_index": 106.1
+    },
+    "Green Bay, WI": {
+        "city": "Green Bay",
+        "state": "WI",
+        "cost_of_living_index": 91.4
+    },
+    "Greeneville, TN": {
+        "city": "Greeneville",
+        "state": "TN",
+        "cost_of_living_index": 86.5
+    },
+    "Greensboro, NC": {
+        "city": "Greensboro",
+        "state": "NC",
+        "cost_of_living_index": 91.0
+    },
+    "Greenville, NC": {
+        "city": "Greenville",
+        "state": "NC",
+        "cost_of_living_index": 89.8
+    },
+    "Greenville, SC": {
+        "city": "Greenville",
+        "state": "SC",
+        "cost_of_living_index": 95.0
+    },
+    "Greenwood, SC": {
+        "city": "Greenwood",
+        "state": "SC",
+        "cost_of_living_index": 88.7
+    },
+    "Gulfport, MS": {
+        "city": "Gulfport",
+        "state": "MS",
+        "cost_of_living_index": 86.8
+    },
+    "Hammond, LA": {
+        "city": "Hammond",
+        "state": "LA",
+        "cost_of_living_index": 89.0
+    },
+    "Hanford, CA": {
+        "city": "Hanford",
+        "state": "CA",
+        "cost_of_living_index": 105.4
+    },
+    "Harrisburg, PA": {
+        "city": "Harrisburg",
+        "state": "PA",
+        "cost_of_living_index": 95.8
+    },
+    "Harrisonburg, VA": {
+        "city": "Harrisonburg",
+        "state": "VA",
+        "cost_of_living_index": 95.5
+    },
+    "Hartford, CT": {
+        "city": "Hartford",
+        "state": "CT",
+        "cost_of_living_index": 104.8
+    },
+    "Hattiesburg, MS": {
+        "city": "Hattiesburg",
+        "state": "MS",
+        "cost_of_living_index": 86.1
+    },
+    "Helena, MT": {
+        "city": "Helena",
+        "state": "MT",
+        "cost_of_living_index": 104.2
+    },
+    "Hickory, NC": {
+        "city": "Hickory",
+        "state": "NC",
+        "cost_of_living_index": 89.8
+    },
+    "Hilo, HI": {
+        "city": "Hilo",
+        "state": "HI",
+        "cost_of_living_index": 136.9
+    },
+    "Hilton Head Island, SC": {
+        "city": "Hilton Head Island",
+        "state": "SC",
+        "cost_of_living_index": 109.4
+    },
+    "Hinesville, GA": {
+        "city": "Hinesville",
+        "state": "GA",
+        "cost_of_living_index": 90.8
+    },
+    "Hobbs, NM": {
+        "city": "Hobbs",
+        "state": "NM",
+        "cost_of_living_index": 87.7
+    },
+    "Homosassa Springs, FL": {
+        "city": "Homosassa Springs",
+        "state": "FL",
+        "cost_of_living_index": 95.5
+    },
+    "Hot Springs, AR": {
+        "city": "Hot Springs",
+        "state": "AR",
+        "cost_of_living_index": 87.3
+    },
+    "Houma, LA": {
+        "city": "Houma",
+        "state": "LA",
+        "cost_of_living_index": 89.9
+    },
+    "Houston, TX": {
+        "city": "Houston",
+        "state": "TX",
+        "cost_of_living_index": 95.8
+    },
+    "Huntington, WV": {
+        "city": "Huntington",
+        "state": "WV",
+        "cost_of_living_index": 84.3
+    },
+    "Huntsville, AL": {
+        "city": "Huntsville",
+        "state": "AL",
+        "cost_of_living_index": 91.3
+    },
+    "Huntsville, TX": {
+        "city": "Huntsville",
+        "state": "TX",
+        "cost_of_living_index": 91.2
+    },
+    "Hutchinson, KS": {
+        "city": "Hutchinson",
+        "state": "KS",
+        "cost_of_living_index": 84.0
+    },
+    "Idaho Falls, ID": {
+        "city": "Idaho Falls",
+        "state": "ID",
+        "cost_of_living_index": 91.7
+    },
+    "Indiana, PA": {
+        "city": "Indiana",
+        "state": "PA",
+        "cost_of_living_index": 90.8
+    },
+    "Indianapolis, IN": {
+        "city": "Indianapolis",
+        "state": "IN",
+        "cost_of_living_index": 90.2
+    },
+    "Iowa City, IA": {
+        "city": "Iowa City",
+        "state": "IA",
+        "cost_of_living_index": 93.5
+    },
+    "Ithaca, NY": {
+        "city": "Ithaca",
+        "state": "NY",
+        "cost_of_living_index": 101.7
+    },
+    "Jackson, MI": {
+        "city": "Jackson",
+        "state": "MI",
+        "cost_of_living_index": 87.4
+    },
+    "Jackson, MS": {
+        "city": "Jackson",
+        "state": "MS",
+        "cost_of_living_index": 87.8
+    },
+    "Jackson, TN": {
+        "city": "Jackson",
+        "state": "TN",
+        "cost_of_living_index": 85.2
+    },
+    "Jacksonville, FL": {
+        "city": "Jacksonville",
+        "state": "FL",
+        "cost_of_living_index": 99.0
+    },
+    "Jacksonville, NC": {
+        "city": "Jacksonville",
+        "state": "NC",
+        "cost_of_living_index": 91.7
+    },
+    "Jamestown, NY": {
+        "city": "Jamestown",
+        "state": "NY",
+        "cost_of_living_index": 91.3
+    },
+    "Janesville, WI": {
+        "city": "Janesville",
+        "state": "WI",
+        "cost_of_living_index": 89.8
+    },
+    "Jefferson City, MO": {
+        "city": "Jefferson City",
+        "state": "MO",
+        "cost_of_living_index": 86.3
+    },
+    "Johnson City, TN": {
+        "city": "Johnson City",
+        "state": "TN",
+        "cost_of_living_index": 88.1
+    },
+    "Johnstown, PA": {
+        "city": "Johnstown",
+        "state": "PA",
+        "cost_of_living_index": 87.6
+    },
+    "Jonesboro, AR": {
+        "city": "Jonesboro",
+        "state": "AR",
+        "cost_of_living_index": 85.2
+    },
+    "Joplin, MO": {
+        "city": "Joplin",
+        "state": "MO",
+        "cost_of_living_index": 85.2
+    },
+    "Kahului, HI": {
+        "city": "Kahului",
+        "state": "HI",
+        "cost_of_living_index": 158.5
+    },
+    "Kalamazoo, MI": {
+        "city": "Kalamazoo",
+        "state": "MI",
+        "cost_of_living_index": 89.3
+    },
+    "Kalispell, MT": {
+        "city": "Kalispell",
+        "state": "MT",
+        "cost_of_living_index": 112.7
+    },
+    "Kankakee, IL": {
+        "city": "Kankakee",
+        "state": "IL",
+        "cost_of_living_index": 91.0
+    },
+    "Kansas City, MO": {
+        "city": "Kansas City",
+        "state": "MO",
+        "cost_of_living_index": 91.6
+    },
+    "Kapaa, HI": {
+        "city": "Kapaa",
+        "state": "HI",
+        "cost_of_living_index": 164.9
+    },
+    "Keene, NH": {
+        "city": "Keene",
+        "state": "NH",
+        "cost_of_living_index": 102.1
+    },
+    "Kennewick, WA": {
+        "city": "Kennewick",
+        "state": "WA",
+        "cost_of_living_index": 99.7
+    },
+    "Key West, FL": {
+        "city": "Key West",
+        "state": "FL",
+        "cost_of_living_index": 140.0
+    },
+    "Killeen, TX": {
+        "city": "Killeen",
+        "state": "TX",
+        "cost_of_living_index": 88.6
+    },
+    "Kingsport, TN": {
+        "city": "Kingsport",
+        "state": "TN",
+        "cost_of_living_index": 86.0
+    },
+    "Kingston, NY": {
+        "city": "Kingston",
+        "state": "NY",
+        "cost_of_living_index": 106.1
+    },
+    "Klamath Falls, OR": {
+        "city": "Klamath Falls",
+        "state": "OR",
+        "cost_of_living_index": 97.1
+    },
+    "Knoxville, TN": {
+        "city": "Knoxville",
+        "state": "TN",
+        "cost_of_living_index": 91.6
+    },
+    "Kokomo, IN": {
+        "city": "Kokomo",
+        "state": "IN",
+        "cost_of_living_index": 84.9
+    },
+    "La Crosse, WI": {
+        "city": "La Crosse",
+        "state": "WI",
+        "cost_of_living_index": 91.8
+    },
+    "Lafayette, LA": {
+        "city": "Lafayette",
+        "state": "LA",
+        "cost_of_living_index": 89.6
+    },
+    "LaGrange, GA": {
+        "city": "LaGrange",
+        "state": "GA",
+        "cost_of_living_index": 86.0
+    },
+    "Lake Charles, LA": {
+        "city": "Lake Charles",
+        "state": "LA",
+        "cost_of_living_index": 89.4
+    },
+    "Lake City, FL": {
+        "city": "Lake City",
+        "state": "FL",
+        "cost_of_living_index": 93.6
+    },
+    "Lake Havasu City, AZ": {
+        "city": "Lake Havasu City",
+        "state": "AZ",
+        "cost_of_living_index": 98.4
+    },
+    "Lakeland, FL": {
+        "city": "Lakeland",
+        "state": "FL",
+        "cost_of_living_index": 96.4
+    },
+    "Lancaster, PA": {
+        "city": "Lancaster",
+        "state": "PA",
+        "cost_of_living_index": 99.5
+    },
+    "Lansing, MI": {
+        "city": "Lansing",
+        "state": "MI",
+        "cost_of_living_index": 88.7
+    },
+    "Laredo, TX": {
+        "city": "Laredo",
+        "state": "TX",
+        "cost_of_living_index": 90.1
+    },
+    "Las Cruces, NM": {
+        "city": "Las Cruces",
+        "state": "NM",
+        "cost_of_living_index": 88.8
+    },
+    "Las Vegas, NV": {
+        "city": "Las Vegas",
+        "state": "NV",
+        "cost_of_living_index": 100.7
+    },
+    "Laurel, MS": {
+        "city": "Laurel",
+        "state": "MS",
+        "cost_of_living_index": 85.9
+    },
+    "Lawrence, KS": {
+        "city": "Lawrence",
+        "state": "KS",
+        "cost_of_living_index": 91.6
+    },
+    "Lawton, OK": {
+        "city": "Lawton",
+        "state": "OK",
+        "cost_of_living_index": 82.8
+    },
+    "Lebanon, PA": {
+        "city": "Lebanon",
+        "state": "PA",
+        "cost_of_living_index": 95.4
+    },
+    "Lewiston, ID": {
+        "city": "Lewiston",
+        "state": "ID",
+        "cost_of_living_index": 92.5
+    },
+    "Lewiston, ME": {
+        "city": "Lewiston",
+        "state": "ME",
+        "cost_of_living_index": 99.7
+    },
+    "Lexington, KY": {
+        "city": "Lexington",
+        "state": "KY",
+        "cost_of_living_index": 91.1
+    },
+    "Lima, OH": {
+        "city": "Lima",
+        "state": "OH",
+        "cost_of_living_index": 87.2
+    },
+    "Lincoln, NE": {
+        "city": "Lincoln",
+        "state": "NE",
+        "cost_of_living_index": 94.7
+    },
+    "Little Rock, AR": {
+        "city": "Little Rock",
+        "state": "AR",
+        "cost_of_living_index": 88.0
+    },
+    "London, KY": {
+        "city": "London",
+        "state": "KY",
+        "cost_of_living_index": 84.6
+    },
+    "Longview, TX": {
+        "city": "Longview",
+        "state": "TX",
+        "cost_of_living_index": 88.5
+    },
+    "Longview, WA": {
+        "city": "Longview",
+        "state": "WA",
+        "cost_of_living_index": 101.6
+    },
+    "Lubbock, TX": {
+        "city": "Lubbock",
+        "state": "TX",
+        "cost_of_living_index": 88.8
+    },
+    "Lufkin, TX": {
+        "city": "Lufkin",
+        "state": "TX",
+        "cost_of_living_index": 88.2
+    },
+    "Lumberton, NC": {
+        "city": "Lumberton",
+        "state": "NC",
+        "cost_of_living_index": 83.4
+    },
+    "Lynchburg, VA": {
+        "city": "Lynchburg",
+        "state": "VA",
+        "cost_of_living_index": 93.6
+    },
+    "Macon, GA": {
+        "city": "Macon",
+        "state": "GA",
+        "cost_of_living_index": 87.2
+    },
+    "Madera, CA": {
+        "city": "Madera",
+        "state": "CA",
+        "cost_of_living_index": 108.9
+    },
+    "Madison, WI": {
+        "city": "Madison",
+        "state": "WI",
+        "cost_of_living_index": 99.5
+    },
+    "Manchester, NH": {
+        "city": "Manchester",
+        "state": "NH",
+        "cost_of_living_index": 109.6
+    },
+    "Manhattan, KS": {
+        "city": "Manhattan",
+        "state": "KS",
+        "cost_of_living_index": 89.6
+    },
+    "Manitowoc, WI": {
+        "city": "Manitowoc",
+        "state": "WI",
+        "cost_of_living_index": 87.8
+    },
+    "Mankato, MN": {
+        "city": "Mankato",
+        "state": "MN",
+        "cost_of_living_index": 95.3
+    },
+    "Mansfield, OH": {
+        "city": "Mansfield",
+        "state": "OH",
+        "cost_of_living_index": 86.2
+    },
+    "Marinette, WI": {
+        "city": "Marinette",
+        "state": "WI",
+        "cost_of_living_index": 86.6
+    },
+    "Marion, IN": {
+        "city": "Marion",
+        "state": "IN",
+        "cost_of_living_index": 81.8
+    },
+    "Marion, OH": {
+        "city": "Marion",
+        "state": "OH",
+        "cost_of_living_index": 85.7
+    },
+    "Marquette, MI": {
+        "city": "Marquette",
+        "state": "MI",
+        "cost_of_living_index": 91.3
+    },
+    "Marshall, TX": {
+        "city": "Marshall",
+        "state": "TX",
+        "cost_of_living_index": 89.9
+    },
+    "Martinsville, VA": {
+        "city": "Martinsville",
+        "state": "VA",
+        "cost_of_living_index": 85.0
+    },
+    "McAllen, TX": {
+        "city": "McAllen",
+        "state": "TX",
+        "cost_of_living_index": 86.0
+    },
+    "Meadville, PA": {
+        "city": "Meadville",
+        "state": "PA",
+        "cost_of_living_index": 88.5
+    },
+    "Medford, OR": {
+        "city": "Medford",
+        "state": "OR",
+        "cost_of_living_index": 107.5
+    },
+    "Memphis, TN": {
+        "city": "Memphis",
+        "state": "TN",
+        "cost_of_living_index": 88.2
+    },
+    "Merced, CA": {
+        "city": "Merced",
+        "state": "CA",
+        "cost_of_living_index": 108.2
+    },
+    "Meridian, MS": {
+        "city": "Meridian",
+        "state": "MS",
+        "cost_of_living_index": 82.0
+    },
+    "Michigan City, IN": {
+        "city": "Michigan City",
+        "state": "IN",
+        "cost_of_living_index": 87.8
+    },
+    "Midland, MI": {
+        "city": "Midland",
+        "state": "MI",
+        "cost_of_living_index": 87.0
+    },
+    "Midland, TX": {
+        "city": "Midland",
+        "state": "TX",
+        "cost_of_living_index": 97.8
+    },
+    "Milwaukee, WI": {
+        "city": "Milwaukee",
+        "state": "WI",
+        "cost_of_living_index": 93.8
+    },
+    "Minot, ND": {
+        "city": "Minot",
+        "state": "ND",
+        "cost_of_living_index": 90.7
+    },
+    "Missoula, MT": {
+        "city": "Missoula",
+        "state": "MT",
+        "cost_of_living_index": 103.4
+    },
+    "Mobile, AL": {
+        "city": "Mobile",
+        "state": "AL",
+        "cost_of_living_index": 88.3
+    },
+    "Modesto, CA": {
+        "city": "Modesto",
+        "state": "CA",
+        "cost_of_living_index": 112.3
+    },
+    "Monroe, LA": {
+        "city": "Monroe",
+        "state": "LA",
+        "cost_of_living_index": 86.5
+    },
+    "Monroe, MI": {
+        "city": "Monroe",
+        "state": "MI",
+        "cost_of_living_index": 90.5
+    },
+    "Montgomery, AL": {
+        "city": "Montgomery",
+        "state": "AL",
+        "cost_of_living_index": 88.5
+    },
+    "Morehead City, NC": {
+        "city": "Morehead City",
+        "state": "NC",
+        "cost_of_living_index": 102.2
+    },
+    "Morgantown, WV": {
+        "city": "Morgantown",
+        "state": "WV",
+        "cost_of_living_index": 88.5
+    },
+    "Morristown, TN": {
+        "city": "Morristown",
+        "state": "TN",
+        "cost_of_living_index": 87.3
+    },
+    "Moses Lake, WA": {
+        "city": "Moses Lake",
+        "state": "WA",
+        "cost_of_living_index": 95.7
+    },
+    "Mount Airy, NC": {
+        "city": "Mount Airy",
+        "state": "NC",
+        "cost_of_living_index": 89.0
+    },
+    "Mount Pleasant, MI": {
+        "city": "Mount Pleasant",
+        "state": "MI",
+        "cost_of_living_index": 86.8
+    },
+    "Mount Vernon, WA": {
+        "city": "Mount Vernon",
+        "state": "WA",
+        "cost_of_living_index": 110.1
+    },
+    "Muncie, IN": {
+        "city": "Muncie",
+        "state": "IN",
+        "cost_of_living_index": 83.7
+    },
+    "Muskegon, MI": {
+        "city": "Muskegon",
+        "state": "MI",
+        "cost_of_living_index": 87.7
+    },
+    "Muskogee, OK": {
+        "city": "Muskogee",
+        "state": "OK",
+        "cost_of_living_index": 81.3
+    },
+    "Myrtle Beach, SC": {
+        "city": "Myrtle Beach",
+        "state": "SC",
+        "cost_of_living_index": 94.7
+    },
+    "Nacogdoches, TX": {
+        "city": "Nacogdoches",
+        "state": "TX",
+        "cost_of_living_index": 89.6
+    },
+    "Napa, CA": {
+        "city": "Napa",
+        "state": "CA",
+        "cost_of_living_index": 149.6
+    },
+    "Naples, FL": {
+        "city": "Naples",
+        "state": "FL",
+        "cost_of_living_index": 109.4
+    },
+    "Nashville, TN": {
+        "city": "Nashville",
+        "state": "TN",
+        "cost_of_living_index": 100.1
+    },
+    "New Bern, NC": {
+        "city": "New Bern",
+        "state": "NC",
+        "cost_of_living_index": 90.2
+    },
+    "New Castle, PA": {
+        "city": "New Castle",
+        "state": "PA",
+        "cost_of_living_index": 88.1
+    },
+    "New Haven, CT": {
+        "city": "New Haven",
+        "state": "CT",
+        "cost_of_living_index": 107.7
+    },
+    "New Orleans, LA": {
+        "city": "New Orleans",
+        "state": "LA",
+        "cost_of_living_index": 92.4
+    },
+    "New Philadelphia, OH": {
+        "city": "New Philadelphia",
+        "state": "OH",
+        "cost_of_living_index": 88.9
+    },
+    "New York, NY": {
+        "city": "New York",
+        "state": "NY",
+        "cost_of_living_index": 128.0
+    },
+    "Niles, MI": {
+        "city": "Niles",
+        "state": "MI",
+        "cost_of_living_index": 89.7
+    },
+    "North Wilkesboro, NC": {
+        "city": "North Wilkesboro",
+        "state": "NC",
+        "cost_of_living_index": 90.5
+    },
+    "Oak Harbor, WA": {
+        "city": "Oak Harbor",
+        "state": "WA",
+        "cost_of_living_index": 125.2
+    },
+    "Ocala, FL": {
+        "city": "Ocala",
+        "state": "FL",
+        "cost_of_living_index": 94.5
+    },
+    "Ocean City, NJ": {
+        "city": "Ocean City",
+        "state": "NJ",
+        "cost_of_living_index": 109.5
+    },
+    "Odessa, TX": {
+        "city": "Odessa",
+        "state": "TX",
+        "cost_of_living_index": 92.7
+    },
+    "Ogden, UT": {
+        "city": "Ogden",
+        "state": "UT",
+        "cost_of_living_index": 99.8
+    },
+    "Ogdensburg, NY": {
+        "city": "Ogdensburg",
+        "state": "NY",
+        "cost_of_living_index": 88.3
+    },
+    "Oklahoma City, OK": {
+        "city": "Oklahoma City",
+        "state": "OK",
+        "cost_of_living_index": 87.3
+    },
+    "Olean, NY": {
+        "city": "Olean",
+        "state": "NY",
+        "cost_of_living_index": 89.0
+    },
+    "Olympia, WA": {
+        "city": "Olympia",
+        "state": "WA",
+        "cost_of_living_index": 110.9
+    },
+    "Omaha, NE": {
+        "city": "Omaha",
+        "state": "NE",
+        "cost_of_living_index": 92.9
+    },
+    "Opelousas, LA": {
+        "city": "Opelousas",
+        "state": "LA",
+        "cost_of_living_index": 86.1
+    },
+    "Orangeburg, SC": {
+        "city": "Orangeburg",
+        "state": "SC",
+        "cost_of_living_index": 85.3
+    },
+    "Orlando, FL": {
+        "city": "Orlando",
+        "state": "FL",
+        "cost_of_living_index": 101.4
+    },
+    "Oshkosh, WI": {
+        "city": "Oshkosh",
+        "state": "WI",
+        "cost_of_living_index": 89.0
+    },
+    "Ottawa, IL": {
+        "city": "Ottawa",
+        "state": "IL",
+        "cost_of_living_index": 86.6
+    },
+    "Owensboro, KY": {
+        "city": "Owensboro",
+        "state": "KY",
+        "cost_of_living_index": 86.6
+    },
+    "Owosso, MI": {
+        "city": "Owosso",
+        "state": "MI",
+        "cost_of_living_index": 84.8
+    },
+    "Paducah, KY": {
+        "city": "Paducah",
+        "state": "KY",
+        "cost_of_living_index": 85.7
+    },
+    "Palatka, FL": {
+        "city": "Palatka",
+        "state": "FL",
+        "cost_of_living_index": 93.2
+    },
+    "Panama City, FL": {
+        "city": "Panama City",
+        "state": "FL",
+        "cost_of_living_index": 101.9
+    },
+    "Parkersburg, WV": {
+        "city": "Parkersburg",
+        "state": "WV",
+        "cost_of_living_index": 84.7
+    },
+    "Pensacola, FL": {
+        "city": "Pensacola",
+        "state": "FL",
+        "cost_of_living_index": 97.9
+    },
+    "Peoria, IL": {
+        "city": "Peoria",
+        "state": "IL",
+        "cost_of_living_index": 86.7
+    },
+    "Philadelphia, PA": {
+        "city": "Philadelphia",
+        "state": "PA",
+        "cost_of_living_index": 103.4
+    },
+    "Phoenix, AZ": {
+        "city": "Phoenix",
+        "state": "AZ",
+        "cost_of_living_index": 104.3
+    },
+    "Pine Bluff, AR": {
+        "city": "Pine Bluff",
+        "state": "AR",
+        "cost_of_living_index": 82.3
+    },
+    "Pittsburgh, PA": {
+        "city": "Pittsburgh",
+        "state": "PA",
+        "cost_of_living_index": 93.1
+    },
+    "Pittsfield, MA": {
+        "city": "Pittsfield",
+        "state": "MA",
+        "cost_of_living_index": 106.4
+    },
+    "Plattsburgh, NY": {
+        "city": "Plattsburgh",
+        "state": "NY",
+        "cost_of_living_index": 93.7
+    },
+    "Pocatello, ID": {
+        "city": "Pocatello",
+        "state": "ID",
+        "cost_of_living_index": 90.8
+    },
+    "Port Angeles, WA": {
+        "city": "Port Angeles",
+        "state": "WA",
+        "cost_of_living_index": 109.1
+    },
+    "Port St. Lucie, FL": {
+        "city": "Port St. Lucie",
+        "state": "FL",
+        "cost_of_living_index": 101.1
+    },
+    "Portland, ME": {
+        "city": "Portland",
+        "state": "ME",
+        "cost_of_living_index": 113.0
+    },
+    "Portland, OR": {
+        "city": "Portland",
+        "state": "OR",
+        "cost_of_living_index": 116.5
+    },
+    "Portsmouth, OH": {
+        "city": "Portsmouth",
+        "state": "OH",
+        "cost_of_living_index": 84.7
+    },
+    "Pottsville, PA": {
+        "city": "Pottsville",
+        "state": "PA",
+        "cost_of_living_index": 87.0
+    },
+    "Prescott, AZ": {
+        "city": "Prescott",
+        "state": "AZ",
+        "cost_of_living_index": 104.6
+    },
+    "Providence, RI": {
+        "city": "Providence",
+        "state": "RI",
+        "cost_of_living_index": 111.5
+    },
+    "Provo, UT": {
+        "city": "Provo",
+        "state": "UT",
+        "cost_of_living_index": 100.9
+    },
+    "Pueblo, CO": {
+        "city": "Pueblo",
+        "state": "CO",
+        "cost_of_living_index": 92.2
+    },
+    "Punta Gorda, FL": {
+        "city": "Punta Gorda",
+        "state": "FL",
+        "cost_of_living_index": 100.3
+    },
+    "Quincy, IL": {
+        "city": "Quincy",
+        "state": "IL",
+        "cost_of_living_index": 87.3
+    },
+    "Racine, WI": {
+        "city": "Racine",
+        "state": "WI",
+        "cost_of_living_index": 90.9
+    },
+    "Raleigh, NC": {
+        "city": "Raleigh",
+        "state": "NC",
+        "cost_of_living_index": 99.7
+    },
+    "Rapid City, SD": {
+        "city": "Rapid City",
+        "state": "SD",
+        "cost_of_living_index": 94.2
+    },
+    "Reading, PA": {
+        "city": "Reading",
+        "state": "PA",
+        "cost_of_living_index": 96.0
+    },
+    "Redding, CA": {
+        "city": "Redding",
+        "state": "CA",
+        "cost_of_living_index": 108.7
+    },
+    "Reno, NV": {
+        "city": "Reno",
+        "state": "NV",
+        "cost_of_living_index": 107.4
+    },
+    "Richmond, IN": {
+        "city": "Richmond",
+        "state": "IN",
+        "cost_of_living_index": 84.2
+    },
+    "Richmond, VA": {
+        "city": "Richmond",
+        "state": "VA",
+        "cost_of_living_index": 99.2
+    },
+    "Richmond, KY": {
+        "city": "Richmond",
+        "state": "KY",
+        "cost_of_living_index": 90.8
+    },
+    "Riverside, CA": {
+        "city": "Riverside",
+        "state": "CA",
+        "cost_of_living_index": 116.1
+    },
+    "Roanoke Rapids, NC": {
+        "city": "Roanoke Rapids",
+        "state": "NC",
+        "cost_of_living_index": 83.1
+    },
+    "Roanoke, VA": {
+        "city": "Roanoke",
+        "state": "VA",
+        "cost_of_living_index": 94.1
+    },
+    "Rochester, MN": {
+        "city": "Rochester",
+        "state": "MN",
+        "cost_of_living_index": 97.3
+    },
+    "Rochester, NY": {
+        "city": "Rochester",
+        "state": "NY",
+        "cost_of_living_index": 96.6
+    },
+    "Rockford, IL": {
+        "city": "Rockford",
+        "state": "IL",
+        "cost_of_living_index": 87.2
+    },
+    "Rocky Mount, NC": {
+        "city": "Rocky Mount",
+        "state": "NC",
+        "cost_of_living_index": 88.3
+    },
+    "Rome, GA": {
+        "city": "Rome",
+        "state": "GA",
+        "cost_of_living_index": 89.6
+    },
+    "Roseburg, OR": {
+        "city": "Roseburg",
+        "state": "OR",
+        "cost_of_living_index": 100.8
+    },
+    "Roswell, NM": {
+        "city": "Roswell",
+        "state": "NM",
+        "cost_of_living_index": 86.3
+    },
+    "Russellville, AR": {
+        "city": "Russellville",
+        "state": "AR",
+        "cost_of_living_index": 85.5
+    },
+    "Sacramento, CA": {
+        "city": "Sacramento",
+        "state": "CA",
+        "cost_of_living_index": 120.3
+    },
+    "Saginaw, MI": {
+        "city": "Saginaw",
+        "state": "MI",
+        "cost_of_living_index": 84.0
+    },
+    "Salem, OR": {
+        "city": "Salem",
+        "state": "OR",
+        "cost_of_living_index": 105.8
+    },
+    "Salinas, CA": {
+        "city": "Salinas",
+        "state": "CA",
+        "cost_of_living_index": 138.3
+    },
+    "Salisbury, MD": {
+        "city": "Salisbury",
+        "state": "MD",
+        "cost_of_living_index": 103.2
+    },
+    "Salt Lake City, UT": {
+        "city": "Salt Lake City",
+        "state": "UT",
+        "cost_of_living_index": 105.9
+    },
+    "San Angelo, TX": {
+        "city": "San Angelo",
+        "state": "TX",
+        "cost_of_living_index": 90.7
+    },
+    "San Antonio, TX": {
+        "city": "San Antonio",
+        "state": "TX",
+        "cost_of_living_index": 92.7
+    },
+    "San Diego, CA": {
+        "city": "San Diego",
+        "state": "CA",
+        "cost_of_living_index": 136.2
+    },
+    "San Francisco, CA": {
+        "city": "San Francisco",
+        "state": "CA",
+        "cost_of_living_index": 178.6
+    },
+    "San Jose, CA": {
+        "city": "San Jose",
+        "state": "CA",
+        "cost_of_living_index": 173.5
+    },
+    "San Luis Obispo, CA": {
+        "city": "San Luis Obispo",
+        "state": "CA",
+        "cost_of_living_index": 136.1
+    },
+    "Sandusky, OH": {
+        "city": "Sandusky",
+        "state": "OH",
+        "cost_of_living_index": 90.8
+    },
+    "Santa Cruz, CA": {
+        "city": "Santa Cruz",
+        "state": "CA",
+        "cost_of_living_index": 163.9
+    },
+    "Santa Fe, NM": {
+        "city": "Santa Fe",
+        "state": "NM",
+        "cost_of_living_index": 105.1
+    },
+    "Santa Rosa, CA": {
+        "city": "Santa Rosa",
+        "state": "CA",
+        "cost_of_living_index": 141.7
+    },
+    "Savannah, GA": {
+        "city": "Savannah",
+        "state": "GA",
+        "cost_of_living_index": 97.3
+    },
+    "Scranton, PA": {
+        "city": "Scranton",
+        "state": "PA",
+        "cost_of_living_index": 91.3
+    },
+    "Searcy, AR": {
+        "city": "Searcy",
+        "state": "AR",
+        "cost_of_living_index": 85.4
+    },
+    "Seattle, WA": {
+        "city": "Seattle",
+        "state": "WA",
+        "cost_of_living_index": 124.6
+    },
+    "Sebring, FL": {
+        "city": "Sebring",
+        "state": "FL",
+        "cost_of_living_index": 93.1
+    },
+    "Seneca, SC": {
+        "city": "Seneca",
+        "state": "SC",
+        "cost_of_living_index": 94.0
+    },
+    "Sevierville, TN": {
+        "city": "Sevierville",
+        "state": "TN",
+        "cost_of_living_index": 103.5
+    },
+    "Shawnee, OK": {
+        "city": "Shawnee",
+        "state": "OK",
+        "cost_of_living_index": 82.4
+    },
+    "Sheboygan, WI": {
+        "city": "Sheboygan",
+        "state": "WI",
+        "cost_of_living_index": 89.7
+    },
+    "Shelby, NC": {
+        "city": "Shelby",
+        "state": "NC",
+        "cost_of_living_index": 88.1
+    },
+    "Shelton, WA": {
+        "city": "Shelton",
+        "state": "WA",
+        "cost_of_living_index": 109.6
+    },
+    "Sherman, TX": {
+        "city": "Sherman",
+        "state": "TX",
+        "cost_of_living_index": 91.3
+    },
+    "Show Low, AZ": {
+        "city": "Show Low",
+        "state": "AZ",
+        "cost_of_living_index": 101.9
+    },
+    "Shreveport, LA": {
+        "city": "Shreveport",
+        "state": "LA",
+        "cost_of_living_index": 85.8
+    },
+    "Sierra Vista, AZ": {
+        "city": "Sierra Vista",
+        "state": "AZ",
+        "cost_of_living_index": 93.2
+    },
+    "Sioux City, IA": {
+        "city": "Sioux City",
+        "state": "IA",
+        "cost_of_living_index": 87.1
+    },
+    "Sioux Falls, SD": {
+        "city": "Sioux Falls",
+        "state": "SD",
+        "cost_of_living_index": 92.8
+    },
+    "Somerset, PA": {
+        "city": "Somerset",
+        "state": "PA",
+        "cost_of_living_index": 89.3
+    },
+    "South Bend, IN": {
+        "city": "South Bend",
+        "state": "IN",
+        "cost_of_living_index": 87.2
+    },
+    "Spartanburg, SC": {
+        "city": "Spartanburg",
+        "state": "SC",
+        "cost_of_living_index": 91.0
+    },
+    "Spokane, WA": {
+        "city": "Spokane",
+        "state": "WA",
+        "cost_of_living_index": 100.4
+    },
+    "Springfield, IL": {
+        "city": "Springfield",
+        "state": "IL",
+        "cost_of_living_index": 87.5
+    },
+    "Springfield, MA": {
+        "city": "Springfield",
+        "state": "MA",
+        "cost_of_living_index": 106.5
+    },
+    "Springfield, MO": {
+        "city": "Springfield",
+        "state": "MO",
+        "cost_of_living_index": 86.7
+    },
+    "Springfield, OH": {
+        "city": "Springfield",
+        "state": "OH",
+        "cost_of_living_index": 87.5
+    },
+    "St. Cloud, MN": {
+        "city": "St. Cloud",
+        "state": "MN",
+        "cost_of_living_index": 95.4
+    },
+    "St. George, UT": {
+        "city": "St. George",
+        "state": "UT",
+        "cost_of_living_index": 98.0
+    },
+    "St. Joseph, MO": {
+        "city": "St. Joseph",
+        "state": "MO",
+        "cost_of_living_index": 85.5
+    },
+    "St. Louis, MO": {
+        "city": "St. Louis",
+        "state": "MO",
+        "cost_of_living_index": 89.6
+    },
+    "State College, PA": {
+        "city": "State College",
+        "state": "PA",
+        "cost_of_living_index": 99.8
+    },
+    "Statesboro, GA": {
+        "city": "Statesboro",
+        "state": "GA",
+        "cost_of_living_index": 91.1
+    },
+    "Staunton, VA": {
+        "city": "Staunton",
+        "state": "VA",
+        "cost_of_living_index": 94.5
+    },
+    "Stevens Point, WI": {
+        "city": "Stevens Point",
+        "state": "WI",
+        "cost_of_living_index": 91.5
+    },
+    "Stillwater, OK": {
+        "city": "Stillwater",
+        "state": "OK",
+        "cost_of_living_index": 86.3
+    },
+    "Stockton, CA": {
+        "city": "Stockton",
+        "state": "CA",
+        "cost_of_living_index": 113.6
+    },
+    "Sumter, SC": {
+        "city": "Sumter",
+        "state": "SC",
+        "cost_of_living_index": 88.1
+    },
+    "Sunbury, PA": {
+        "city": "Sunbury",
+        "state": "PA",
+        "cost_of_living_index": 88.6
+    },
+    "Syracuse, NY": {
+        "city": "Syracuse",
+        "state": "NY",
+        "cost_of_living_index": 95.1
+    },
+    "Talladega, AL": {
+        "city": "Talladega",
+        "state": "AL",
+        "cost_of_living_index": 87.4
+    },
+    "Tallahassee, FL": {
+        "city": "Tallahassee",
+        "state": "FL",
+        "cost_of_living_index": 96.4
+    },
+    "Tampa, FL": {
+        "city": "Tampa",
+        "state": "FL",
+        "cost_of_living_index": 101.4
+    },
+    "Terre Haute, IN": {
+        "city": "Terre Haute",
+        "state": "IN",
+        "cost_of_living_index": 84.7
+    },
+    "Texarkana, TX": {
+        "city": "Texarkana",
+        "state": "TX",
+        "cost_of_living_index": 86.3
+    },
+    "The Villages, FL": {
+        "city": "The Villages",
+        "state": "FL",
+        "cost_of_living_index": 100.7
+    },
+    "Toledo, OH": {
+        "city": "Toledo",
+        "state": "OH",
+        "cost_of_living_index": 87.5
+    },
+    "Topeka, KS": {
+        "city": "Topeka",
+        "state": "KS",
+        "cost_of_living_index": 85.6
+    },
+    "Torrington, CT": {
+        "city": "Torrington",
+        "state": "CT",
+        "cost_of_living_index": 105.2
+    },
+    "Traverse City, MI": {
+        "city": "Traverse City",
+        "state": "MI",
+        "cost_of_living_index": 99.6
+    },
+    "Trenton, NJ": {
+        "city": "Trenton",
+        "state": "NJ",
+        "cost_of_living_index": 104.3
+    },
+    "Truckee, CA": {
+        "city": "Truckee",
+        "state": "CA",
+        "cost_of_living_index": 132.8
+    },
+    "Tucson, AZ": {
+        "city": "Tucson",
+        "state": "AZ",
+        "cost_of_living_index": 97.7
+    },
+    "Tullahoma, TN": {
+        "city": "Tullahoma",
+        "state": "TN",
+        "cost_of_living_index": 88.7
+    },
+    "Tulsa, OK": {
+        "city": "Tulsa",
+        "state": "OK",
+        "cost_of_living_index": 86.7
+    },
+    "Tupelo, MS": {
+        "city": "Tupelo",
+        "state": "MS",
+        "cost_of_living_index": 87.2
+    },
+    "Tuscaloosa, AL": {
+        "city": "Tuscaloosa",
+        "state": "AL",
+        "cost_of_living_index": 91.0
+    },
+    "Twin Falls, ID": {
+        "city": "Twin Falls",
+        "state": "ID",
+        "cost_of_living_index": 91.2
+    },
+    "Tyler, TX": {
+        "city": "Tyler",
+        "state": "TX",
+        "cost_of_living_index": 92.8
+    },
+    "Ukiah, CA": {
+        "city": "Ukiah",
+        "state": "CA",
+        "cost_of_living_index": 128.0
+    },
+    "Utica, NY": {
+        "city": "Utica",
+        "state": "NY",
+        "cost_of_living_index": 94.1
+    },
+    "Valdosta, GA": {
+        "city": "Valdosta",
+        "state": "GA",
+        "cost_of_living_index": 89.2
+    },
+    "Vallejo, CA": {
+        "city": "Vallejo",
+        "state": "CA",
+        "cost_of_living_index": 125.2
+    },
+    "Vineland, NJ": {
+        "city": "Vineland",
+        "state": "NJ",
+        "cost_of_living_index": 97.8
+    },
+    "Virginia Beach, VA": {
+        "city": "Virginia Beach",
+        "state": "VA",
+        "cost_of_living_index": 99.0
+    },
+    "Visalia, CA": {
+        "city": "Visalia",
+        "state": "CA",
+        "cost_of_living_index": 103.6
+    },
+    "Waco, TX": {
+        "city": "Waco",
+        "state": "TX",
+        "cost_of_living_index": 89.5
+    },
+    "Walla Walla, WA": {
+        "city": "Walla Walla",
+        "state": "WA",
+        "cost_of_living_index": 100.9
+    },
+    "Warner Robins, GA": {
+        "city": "Warner Robins",
+        "state": "GA",
+        "cost_of_living_index": 90.5
+    },
+    "Warsaw, IN": {
+        "city": "Warsaw",
+        "state": "IN",
+        "cost_of_living_index": 92.3
+    },
+    "Washington, DC": {
+        "city": "Washington",
+        "state": "DC",
+        "cost_of_living_index": 120.1
+    },
+    "Waterloo, IA": {
+        "city": "Waterloo",
+        "state": "IA",
+        "cost_of_living_index": 87.6
+    },
+    "Watertown, WI": {
+        "city": "Watertown",
+        "state": "WI",
+        "cost_of_living_index": 97.1
+    },
+    "Watertown, NY": {
+        "city": "Watertown",
+        "state": "NY",
+        "cost_of_living_index": 96.4
+    },
+    "Wausau, WI": {
+        "city": "Wausau",
+        "state": "WI",
+        "cost_of_living_index": 88.9
+    },
+    "Wenatchee, WA": {
+        "city": "Wenatchee",
+        "state": "WA",
+        "cost_of_living_index": 106.6
+    },
+    "Whitewater, WI": {
+        "city": "Whitewater",
+        "state": "WI",
+        "cost_of_living_index": 97.7
+    },
+    "Wichita Falls, TX": {
+        "city": "Wichita Falls",
+        "state": "TX",
+        "cost_of_living_index": 85.7
+    },
+    "Wichita, KS": {
+        "city": "Wichita",
+        "state": "KS",
+        "cost_of_living_index": 86.8
+    },
+    "Williamsport, PA": {
+        "city": "Williamsport",
+        "state": "PA",
+        "cost_of_living_index": 93.4
+    },
+    "Wilmington, NC": {
+        "city": "Wilmington",
+        "state": "NC",
+        "cost_of_living_index": 99.0
+    },
+    "Wilson, NC": {
+        "city": "Wilson",
+        "state": "NC",
+        "cost_of_living_index": 86.3
+    },
+    "Winchester, VA": {
+        "city": "Winchester",
+        "state": "VA",
+        "cost_of_living_index": 97.2
+    },
+    "Winston-Salem, NC": {
+        "city": "Winston-Salem",
+        "state": "NC",
+        "cost_of_living_index": 91.2
+    },
+    "Wooster, OH": {
+        "city": "Wooster",
+        "state": "OH",
+        "cost_of_living_index": 95.5
+    },
+    "Worcester, MA": {
+        "city": "Worcester",
+        "state": "MA",
+        "cost_of_living_index": 113.2
+    },
+    "Yakima, WA": {
+        "city": "Yakima",
+        "state": "WA",
+        "cost_of_living_index": 97.5
+    },
+    "York, PA": {
+        "city": "York",
+        "state": "PA",
+        "cost_of_living_index": 95.8
+    },
+    "Youngstown, OH": {
+        "city": "Youngstown",
+        "state": "OH",
+        "cost_of_living_index": 86.4
+    },
+    "Yuba City, CA": {
+        "city": "Yuba City",
+        "state": "CA",
+        "cost_of_living_index": 108.7
+    },
+    "Yuma, AZ": {
+        "city": "Yuma",
+        "state": "AZ",
+        "cost_of_living_index": 94.5
+    },
+    "Zanesville, OH": {
+        "city": "Zanesville",
+        "state": "OH",
+        "cost_of_living_index": 87.6
+    },
+    "Bloomington, IL": {
+        "city": "Bloomington",
+        "state": "IL",
+        "cost_of_living_index": 89.0
+    },
+    "California, MD": {
+        "city": "California",
+        "state": "MD",
+        "cost_of_living_index": 104.8
+    },
+    "Crestview, FL": {
+        "city": "Crestview",
+        "state": "FL",
+        "cost_of_living_index": 104.7
+    },
+    "Glenwood Springs, CO": {
+        "city": "Glenwood Springs",
+        "state": "CO",
+        "cost_of_living_index": 127.8
+    },
+    "Greenfield Town, MA": {
+        "city": "Greenfield Town",
+        "state": "MA",
+        "cost_of_living_index": 106.2
+    },
+    "Hermiston, OR": {
+        "city": "Hermiston",
+        "state": "OR",
+        "cost_of_living_index": 97.9
+    },
+    "Holland, MI": {
+        "city": "Holland",
+        "state": "MI",
+        "cost_of_living_index": 96.2
+    },
+    "Jefferson, GA": {
+        "city": "Jefferson",
+        "state": "GA",
+        "cost_of_living_index": 97.4
+    },
+    "Lafayette, IN": {
+        "city": "Lafayette",
+        "state": "IN",
+        "cost_of_living_index": 88.7
+    },
+    "Los Angeles, CA": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "cost_of_living_index": 140.6
+    },
+    "Sarasota, FL": {
+        "city": "Sarasota",
+        "state": "FL",
+        "cost_of_living_index": 104.4
+    },
+    "Salem, OH": {
+        "city": "Salem",
+        "state": "OH",
+        "cost_of_living_index": 86.6
+    },
+    "Santa Maria, CA": {
+        "city": "Santa Maria",
+        "state": "CA",
+        "cost_of_living_index": 143.0
+    },
+    "Honolulu, HI": {
+        "city": "Honolulu",
+        "state": "HI",
+        "cost_of_living_index": 158.0
+    },
+    "Wisconsin Rapids, WI": {
+        "city": "Wisconsin Rapids",
+        "state": "WI",
+        "cost_of_living_index": 86.9
+    },
+    "Stamford, CT": {
+        "city": "Stamford",
+        "state": "CT",
+        "cost_of_living_index": 119.2
+    },
+    "Fort Myers, FL": {
+        "city": "Fort Myers",
+        "state": "FL",
+        "cost_of_living_index": 101.5
+    },
+    "Dallas, TX": {
+        "city": "Dallas",
+        "state": "TX",
+        "cost_of_living_index": 98.5
+    },
+    "Davenport, IA": {
+        "city": "Davenport",
+        "state": "IA",
+        "cost_of_living_index": 87.2
+    },
+    "Daytona Beach, FL": {
+        "city": "Daytona Beach",
+        "state": "FL",
+        "cost_of_living_index": 99.6
+    },
+    "Hagerstown, MD": {
+        "city": "Hagerstown",
+        "state": "MD",
+        "cost_of_living_index": 99.7
+    },
+    "Logan, UT": {
+        "city": "Logan",
+        "state": "UT",
+        "cost_of_living_index": 95.2
+    },
+    "Louisville, KY": {
+        "city": "Louisville",
+        "state": "KY",
+        "cost_of_living_index": 91.6
+    },
+    "Miami, FL": {
+        "city": "Miami",
+        "state": "FL",
+        "cost_of_living_index": 110.1
+    },
+    "Minneapolis, MN": {
+        "city": "Minneapolis",
+        "state": "MN",
+        "cost_of_living_index": 105.4
+    },
+    "Ventura, CA": {
+        "city": "Ventura",
+        "state": "CA",
+        "cost_of_living_index": 132.2
+    },
+    "Melbourne, FL": {
+        "city": "Melbourne",
+        "state": "FL",
+        "cost_of_living_index": 99.3
+    },
+    "Vero Beach, FL": {
+        "city": "Vero Beach",
+        "state": "FL",
+        "cost_of_living_index": 98.9
+    },
+    "Weirton, WV": {
+        "city": "Weirton",
+        "state": "WV",
+        "cost_of_living_index": 82.6
+    },
+    "Wheeling, WV": {
+        "city": "Wheeling",
+        "state": "WV",
+        "cost_of_living_index": 84.1
+    },
+    "New London, CT": {
+        "city": "New London",
+        "state": "CT",
+        "cost_of_living_index": 105.9
+    },
+    "Daphne, AL": {
+        "city": "Daphne",
+        "state": "AL",
+        "cost_of_living_index": 96.6
+    },
+    "Victoria, TX": {
+        "city": "Victoria",
+        "state": "TX",
+        "cost_of_living_index": 89.5
+    },
+    "Aberdeen, WA": {
+        "city": "Aberdeen",
+        "state": "WA",
+        "cost_of_living_index": 97.6
+    }
+}
