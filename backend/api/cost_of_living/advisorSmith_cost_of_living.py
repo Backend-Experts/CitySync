@@ -5,55 +5,65 @@ import os
 
 # === CONFIGURATION ===
 CSV_URL = "https://advisorsmith.com/wp-content/uploads/2021/02/advisorsmith_cost_of_living_index.csv"
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get script's directory
-CSV_FILE_PATH = os.path.join(BASE_DIR, "advisorsmith_cost_of_living_index.csv")  # Local CSV file path
-DATA_DIR = os.path.join(BASE_DIR, "../data")  # Data directory
-JSON_FILE_PATH = os.path.join(DATA_DIR, "cost_of_living_data.json")  # Output JSON file
+COST_OF_LIVING_DIR = os.path.join(BASE_DIR)  # Cost of living folder where CSV is stored
+DATA_DIR = os.path.join(BASE_DIR, "../data")  # Base data folder
+COST_OF_LIVING_DATA_DIR = os.path.join(DATA_DIR, "cost_of_living_data")  # Folder for processed JSON
 
-# Ensure the data directory exists
-os.makedirs(DATA_DIR, exist_ok=True)
+CSV_FILE_PATH = os.path.join(COST_OF_LIVING_DIR, "advisorsmith_cost_of_living_index.csv")  # CSV file path
+JSON_FILE_PATH = os.path.join(COST_OF_LIVING_DATA_DIR, "cost_of_living_data.json")  # JSON file path
 
-# === 1. Download the latest CSV ===
-try:
-    response = requests.get(CSV_URL, stream=True)
-    response.raise_for_status()  # Raise an error if the request fails
+# Ensure necessary directories exist
+os.makedirs(COST_OF_LIVING_DATA_DIR, exist_ok=True)
 
-    # Save CSV file locally
-    with open(CSV_FILE_PATH, "wb") as csv_file:
-        for chunk in response.iter_content(chunk_size=1024):
-            csv_file.write(chunk)
+# === 1️⃣ Download the Cost of Living Data ===
+def download_cost_of_living_data():
+    try:
+        response = requests.get(CSV_URL, stream=True)
+        response.raise_for_status()  # Raise an error if request fails
 
-    print(f"Latest CSV downloaded to {CSV_FILE_PATH}")
+        with open(CSV_FILE_PATH, "wb") as file:
+            for chunk in response.iter_content(chunk_size=1024):
+                file.write(chunk)
 
-except requests.exceptions.RequestException as e:
-    print(f"Error downloading CSV: {e}")
-    exit(1)
+        print(f"✅ Cost of Living data downloaded successfully to {CSV_FILE_PATH}")
 
-# === 2. Process CSV and Convert to JSON ===
-cost_of_living_data = {}
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error downloading Cost of Living data: {e}")
+        exit(1)
 
-try:
-    with open(CSV_FILE_PATH, mode="r", encoding="utf-8") as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        for row in csv_reader:
-            city = row["City"].strip()
-            state = row["State"].strip()
-            index = float(row["Cost of Living Index"])  # Convert index to float
+# === 2️⃣ Process CSV and Convert to JSON ===
+def process_cost_of_living_data():
+    cost_of_living_data = {}
 
-            location_key = f"{city}, {state}"
-            cost_of_living_data[location_key] = {
-                "city": city,
-                "state": state,
-                "cost_of_living_index": index
-            }
+    try:
+        with open(CSV_FILE_PATH, mode="r", encoding="utf-8") as csv_file:
+            csv_reader = csv.DictReader(csv_file)
+            for row in csv_reader:
+                city = row["City"].strip()
+                state = row["State"].strip()
+                index = float(row["Cost of Living Index"])  # Convert index to float
 
-    # Save the processed data to JSON
-    with open(JSON_FILE_PATH, mode="w", encoding="utf-8") as json_file:
-        json.dump(cost_of_living_data, json_file, indent=4)
+                location_key = f"{city}, {state}"
+                cost_of_living_data[location_key] = {
+                    "city": city,
+                    "state": state,
+                    "cost_of_living_index": index
+                }
 
-    print(f"Processed data saved to {JSON_FILE_PATH}")
+        # Save as JSON in the cost_of_living_data folder
+        with open(JSON_FILE_PATH, "w", encoding="utf-8") as json_file:
+            json.dump(cost_of_living_data, json_file, indent=4)
 
-except FileNotFoundError:
-    print(f"Error: CSV file {CSV_FILE_PATH} was not found.")
-except Exception as e:
-    print(f"An error occurred: {e}")
+        print(f"✅ Processed Cost of Living data saved to {JSON_FILE_PATH}")
+
+    except FileNotFoundError:
+        print(f"❌ Error: CSV file {CSV_FILE_PATH} was not found.")
+    except Exception as e:
+        print(f"❌ An error occurred while processing Cost of Living data: {e}")
+
+# === RUN SCRIPT ===
+if __name__ == "__main__":
+    download_cost_of_living_data()
+    process_cost_of_living_data()
