@@ -1,0 +1,117 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin: 0 15px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: #e3f2fd;
+    padding: 100px 20px;
+    margin-top: 50px;
+  }
+  
+  .hero h2 {
+    color: #007bff;
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .hero button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .feature-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Testimonials */
+  .testimonials {
+    background: #d9f9d9;
+  }
+  
+  .testimonials blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  
+  /* Call to Action */
+  .cta {
+    background: #007bff;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .cta button {
+    background: white;
+    color: #007bff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+  }
