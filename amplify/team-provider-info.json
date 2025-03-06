@@ -16,5 +16,32 @@
         "citysync76d82666": {}
       }
     }
+  },
+  "ampdata": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-citysync-ampdata-71289-authRole",
+      "UnauthRoleArn": "arn:aws:iam::211125314061:role/amplify-citysync-ampdata-71289-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::211125314061:role/amplify-citysync-ampdata-71289-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-citysync-ampdata-71289-deployment",
+      "UnauthRoleName": "amplify-citysync-ampdata-71289-unauthRole",
+      "StackName": "amplify-citysync-ampdata-71289",
+      "StackId": "arn:aws:cloudformation:us-east-1:211125314061:stack/amplify-citysync-ampdata-71289/39947a60-f8d1-11ef-9bac-0e1b66962829",
+      "AmplifyAppId": "d1zgwzpr84mk0r"
+    },
+    "categories": {
+      "auth": {
+        "citysync76d82666": {}
+      },
+      "function": {
+        "DocumentDBFunction": {
+          "deploymentBucketName": "amplify-citysync-ampdata-71289-deployment",
+          "s3Key": "amplify-builds/DocumentDBFunction-2b45746a36364d374374-build.zip"
+        }
+      },
+      "api": {
+        "DocDBFrontEndAPI": {}
+      }
+    }
   }
 }

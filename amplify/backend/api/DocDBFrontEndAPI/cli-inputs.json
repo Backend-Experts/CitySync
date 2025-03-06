@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/amplify/backend": {
+      "name": "/amplify/backend",
+      "lambdaFunction": "DocumentDBFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
