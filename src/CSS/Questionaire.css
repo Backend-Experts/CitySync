@@ -1,0 +1,111 @@
+/* Questionnaire Container */
+.questionnaire-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .questionnaire-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Question Styling */
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .question p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Input Fields */
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Range Input */
+  input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  input[type="range"] + span {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  /* Results Section */
+  .results-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .results-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .results-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Download Button */
+  .download-button {
+    background-color: #28a745;
+    margin-top: 20px;
+  }
+  
+  .download-button:hover {
+    background-color: #218838;
+  }
