@@ -5,6 +5,7 @@ import Login from "./Login";
 import HomePage from "./HomePage";
 import Blank from "./Blank";
 import Questionaire from "./Questionaire";
+import CityInfo from "./CityInfo";
 
 const App = () => {
   return (
@@ -20,6 +21,9 @@ const App = () => {
           <li>
             <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/questionaire">Questionaire</NavLink>
           </li>
+          <li>
+            <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/cityinfo">City Info</NavLink>
+          </li>
         </ul>
       </div>
       <div className="page-content">
@@ -27,6 +31,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/questionaire" element={<Questionaire />} />
+          <Route path="/cityinfo" element={<CityInfo />} />
         </Routes>
       </div>
     </Router>
