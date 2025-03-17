@@ -12,8 +12,10 @@
     "citysync": "file:",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.10.0",
+    "oidc-client-ts": "^3.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-oidc-context": "^3.2.0",
     "react-router-dom": "^6.30.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
