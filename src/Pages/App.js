@@ -36,8 +36,14 @@ function App() {
   }
 
   return (
-    <div>
-      <button onClick={() => auth.signinRedirect()}>Sign in</button>
+    <div className="sign-in-page">
+      <div className="sign-in-container">
+        <h1>Welcome to CitySync</h1>
+        <p>Your personalized city matching app</p>
+        <button className="sign-in-button" onClick={() => auth.signinRedirect()}>
+          Sign In to Get Started
+        </button>
+      </div>
     </div>
   );
 }
