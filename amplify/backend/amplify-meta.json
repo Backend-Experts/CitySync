@@ -12,45 +12,53 @@
       "AmplifyAppId": "d1zgwzpr84mk0r"
     }
   },
+  "api": {
+    "DocDBFrontEndAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "DocumentDBFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "citysync76d82666": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
         ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-citysync-dev-89274-deployment/amplify-cfn-templates/auth/citysync76d82666-cloudformation-template.json",
-        "logicalId": "authcitysync76d82666"
-      },
-      "lastPushTimeStamp": "2025-02-27T17:19:49.085Z",
-      "output": {
-        "UserPoolId": "us-east-1_0RHMvIgQE",
-        "AppClientIDWeb": "34t8sc2o9srev60okimsr37qfr",
-        "AppClientID": "3o6mojurc8a5tr1nmlu5jhjrag",
-        "IdentityPoolId": "us-east-1:33cc860c-4490-4b35-af1f-5f52b7263820",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:211125314061:userpool/us-east-1_0RHMvIgQE",
-        "IdentityPoolName": "citysync76d82666_identitypool_76d82666__dev",
-        "UserPoolName": "citysync76d82666_userpool_76d82666"
-      },
-      "lastPushDirHash": "bJ9BBEBD/lZ3seQ9OopLM8h+evQ="
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "DocumentDBFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   }
 }

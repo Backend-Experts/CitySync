@@ -47,23 +47,5 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
-  },
-  "parameters": {
-    "AMPLIFY_function_DocumentDBFunction_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "DocumentDBFunction"
-        }
-      ]
-    },
-    "AMPLIFY_function_DocumentDBFunction_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "DocumentDBFunction"
-        }
-      ]
-    }
   }
 }
