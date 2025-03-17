@@ -1,9 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
-import './index.css';
-import App from './Pages/App';
-//import reportWebVitals from './reportWebVitals';
+// index.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./Pages/App";
 import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
@@ -11,21 +9,10 @@ const cognitoAuthConfig = {
   client_id: "6uaaq3d4tb4oduptof01ju1vgg",
   redirect_uri: "https://main.d2020pxyuhilwo.amplifyapp.com/",
   response_type: "code",
-  scope: "phone openid email",
+  scope: "email openid phone",
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <AuthProvider {...cognitoAuthConfig}>
-    <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
-  </React.StrictMode>
-);
-
-/*const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // wrap the application with AuthProvider
 root.render(
@@ -35,5 +22,3 @@ root.render(
     </AuthProvider>
   </React.StrictMode>
 );
-
-reportWebVitals();*/
