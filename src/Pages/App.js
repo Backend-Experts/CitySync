@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "../CSS/App.css"; // Using standard CSS for styling
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import Login from "./Login";
@@ -47,6 +47,26 @@ function App() {
     <div>
       <button onClick={() => auth.signinRedirect()}>Sign in</button>
     </div>
+  );
+}
+
+
+export default App;*/
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import Navbar from './Navbar';
+import '../CSS/App.css';
+
+function App() {
+  return (
+      <div className="App">
+        <Navbar />
+        <main>
+          <HomePage />
+        </main>
+      </div>
   );
 }
 
