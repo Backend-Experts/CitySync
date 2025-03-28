@@ -42,10 +42,6 @@ function App() {
   );
 }
 
-<<<<<<< Updated upstream
-export default App;
-=======
-
 export default App;
 /*
 
@@ -66,5 +62,6 @@ function App() {
   );
 }
 
-export default App;*/
->>>>>>> Stashed changes
+<<<<<<< HEAD
+export default App;
+*/

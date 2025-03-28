@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "react-oidc-context";
+import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from 'react-oidc-context';
 
 const Navbar = ({ signOutRedirect }) => {
   const navigate = useNavigate();
@@ -8,9 +8,7 @@ const Navbar = ({ signOutRedirect }) => {
 
   const handleSignOut = async () => {
     try {
-      // Remove the user's session
       await auth.removeUser();
-      // Redirect to the landing page
       navigate("/");
     } catch (error) {
       console.error("Error during sign-out:", error);
