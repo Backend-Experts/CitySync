@@ -54,8 +54,6 @@
 .page-content {
   padding-top: 60px;
 }
-<<<<<<< Updated upstream
-=======
 
 /* App.css */
 .sign-in-page {
@@ -70,6 +68,7 @@
 }
 
 .sign-in-container {
+  text-align: center;
   background: #fff;
   border-radius: 10px;
   padding: 2rem;
