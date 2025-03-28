@@ -42,4 +42,29 @@ function App() {
   );
 }
 
+<<<<<<< Updated upstream
 export default App;
+=======
+
+export default App;
+/*
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import Navbar from './Navbar';
+import '../CSS/App.css';
+
+function App() {
+  return (
+      <div className="App">
+        <Navbar />
+        <main>
+          <HomePage />
+        </main>
+      </div>
+  );
+}
+
+export default App;*/
+>>>>>>> Stashed changes
