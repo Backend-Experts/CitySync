@@ -1,7 +1,6 @@
 /*import React from "react";
 import "../CSS/App.css"; // Using standard CSS for styling
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import Login from "./Login";
 import HomePage from "./HomePage";
 import Questionaire from "./Questionaire";
 import CityInfo from "./CityInfo";
@@ -11,13 +10,6 @@ import Navbar from "./Navbar"; // Import the Navbar component
 
 function App() {
   const auth = useAuth();
-
-  const signOutRedirect = () => {
-    const clientId = "6uaaq3d4tb4oduptof01ju1vgg";
-    const logoutUri = "<logout uri>";
-    const cognitoDomain = "https://<user pool domain>";
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
-  };
 
   if (auth.isLoading) {
     return <div>Loading...</div>;
@@ -30,7 +22,7 @@ function App() {
   if (auth.isAuthenticated) {
     return (
       <Router>
-        <Navbar signOutRedirect={signOutRedirect} />
+        <Navbar />
         <div className="page-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
