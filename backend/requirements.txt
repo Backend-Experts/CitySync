@@ -1,5 +1,14 @@
+# Final backend/requirements.txt
+
 requests
-urllib3==1.26.16  
+urllib3==1.26.16
 boto3
 pandas
 beautifulsoup4
+
+# NumPy pinned for compatibility with scikit-surprise & faiss-cpu
+numpy==1.24.4
+
+# Matching algorithm libraries
+scikit-surprise==1.1.4
+faiss-cpu==1.10.0
