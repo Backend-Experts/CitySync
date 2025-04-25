@@ -1,0 +1,1080 @@
+[
+  {
+    "name": "New York",
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "minZoom": 3,
+    "state": "New York"
+  },
+  {
+    "name": "Brooklyn",
+    "lat": 40.6526006,
+    "lng": -73.9497211,
+    "minZoom": 3,
+    "state": "New York"
+  },
+  {
+    "name": "Queens",
+    "lat": 40.7135078,
+    "lng": -73.8283132,
+    "minZoom": 3,
+    "state": "New York"
+  },
+  {
+    "name": "Los Angeles",
+    "lat": 34.0536909,
+    "lng": -118.242766,
+    "minZoom": 3,
+    "state": "California"
+  },
+  {
+    "name": "San Francisco",
+    "lat": 37.7792588,
+    "lng": -122.4193286,
+    "minZoom": 3,
+    "state": "California"
+  },
+  {
+    "name": "San Diego",
+    "lat": 32.7174202,
+    "lng": -117.162772,
+    "minZoom": 3,
+    "state": "California"
+  },
+  {
+    "name": "Chicago",
+    "lat": 41.8755616,
+    "lng": -87.6244212,
+    "minZoom": 3,
+    "state": "Illinois"
+  },
+  {
+    "name": "Rockford",
+    "lat": 42.2713945,
+    "lng": -89.093966,
+    "minZoom": 3,
+    "state": "Illinois"
+  },
+  {
+    "name": "Peoria",
+    "lat": 40.6938609,
+    "lng": -89.5891008,
+    "minZoom": 3,
+    "state": "Illinois"
+  },
+  {
+    "name": "Miami",
+    "lat": 25.7741728,
+    "lng": -80.19362,
+    "minZoom": 3,
+    "state": "Florida"
+  },
+  {
+    "name": "Tampa",
+    "lat": 27.9477595,
+    "lng": -82.458444,
+    "minZoom": 3,
+    "state": "Florida"
+  },
+  {
+    "name": "Orlando",
+    "lat": 28.5421109,
+    "lng": -81.3790304,
+    "minZoom": 3,
+    "state": "Florida"
+  },
+  {
+    "name": "Houston",
+    "lat": 29.7589382,
+    "lng": -95.3676974,
+    "minZoom": 3,
+    "state": "Texas"
+  },
+  {
+    "name": "Dallas",
+    "lat": 32.7762719,
+    "lng": -96.7968559,
+    "minZoom": 3,
+    "state": "Texas"
+  },
+  {
+    "name": "San Antonio",
+    "lat": 29.4246002,
+    "lng": -98.4951405,
+    "minZoom": 3,
+    "state": "Texas"
+  },
+  {
+    "name": "Philadelphia",
+    "lat": 39.9527237,
+    "lng": -75.1635262,
+    "minZoom": 3,
+    "state": "Pennsylvania"
+  },
+  {
+    "name": "Pittsburgh",
+    "lat": 40.4416941,
+    "lng": -79.9900861,
+    "minZoom": 3,
+    "state": "Pennsylvania"
+  },
+  {
+    "name": "Allentown",
+    "lat": 40.6022059,
+    "lng": -75.4712794,
+    "minZoom": 3,
+    "state": "Pennsylvania"
+  },
+  {
+    "name": "Atlanta",
+    "lat": 33.7489924,
+    "lng": -84.3902644,
+    "minZoom": 3,
+    "state": "Georgia"
+  },
+  {
+    "name": "Augusta",
+    "lat": 33.4709714,
+    "lng": -81.9748429,
+    "minZoom": 3,
+    "state": "Georgia"
+  },
+  {
+    "name": "Savannah",
+    "lat": 32.0790074,
+    "lng": -81.0921335,
+    "minZoom": 3,
+    "state": "Georgia"
+  },
+  {
+    "name": "Washington",
+    "lat": 38.8950368,
+    "lng": -77.0365427,
+    "minZoom": 3,
+    "state": "District of Columbia"
+  },
+  {
+    "name": "Boston",
+    "lat": 42.3554334,
+    "lng": -71.060511,
+    "minZoom": 3,
+    "state": "Massachusetts"
+  },
+  {
+    "name": "Worcester",
+    "lat": 42.2625621,
+    "lng": -71.8018877,
+    "minZoom": 3,
+    "state": "Massachusetts"
+  },
+  {
+    "name": "Springfield",
+    "lat": 42.1018764,
+    "lng": -72.5886727,
+    "minZoom": 3,
+    "state": "Massachusetts"
+  },
+  {
+    "name": "Phoenix",
+    "lat": 33.4484367,
+    "lng": -112.074141,
+    "minZoom": 3,
+    "state": "Arizona"
+  },
+  {
+    "name": "Tucson",
+    "lat": 32.2228765,
+    "lng": -110.974847,
+    "minZoom": 3,
+    "state": "Arizona"
+  },
+  {
+    "name": "Mesa",
+    "lat": 33.4151005,
+    "lng": -111.831455,
+    "minZoom": 3,
+    "state": "Arizona"
+  },
+  {
+    "name": "Detroit",
+    "lat": 42.3315509,
+    "lng": -83.0466403,
+    "minZoom": 3,
+    "state": "Michigan"
+  },
+  {
+    "name": "Grand Rapids",
+    "lat": 42.9632425,
+    "lng": -85.6678639,
+    "minZoom": 3,
+    "state": "Michigan"
+  },
+  {
+    "name": "Lansing",
+    "lat": 42.7338254,
+    "lng": -84.5546295,
+    "minZoom": 3,
+    "state": "Michigan"
+  },
+  {
+    "name": "Seattle",
+    "lat": 47.6038321,
+    "lng": -122.330062,
+    "minZoom": 3,
+    "state": "Washington"
+  },
+  {
+    "name": "Spokane",
+    "lat": 47.6571934,
+    "lng": -117.42351,
+    "minZoom": 3,
+    "state": "Washington"
+  },
+  {
+    "name": "Kennewick",
+    "lat": 46.2087066,
+    "lng": -119.119919,
+    "minZoom": 3,
+    "state": "Washington"
+  },
+  {
+    "name": "Minneapolis",
+    "lat": 44.9772995,
+    "lng": -93.2654692,
+    "minZoom": 3,
+    "state": "Minnesota"
+  },
+  {
+    "name": "St. Paul",
+    "lat": 44.9497487,
+    "lng": -93.0931028,
+    "minZoom": 3,
+    "state": "Minnesota"
+  },
+  {
+    "name": "Rochester",
+    "lat": 44.0234387,
+    "lng": -92.4630182,
+    "minZoom": 3,
+    "state": "Minnesota"
+  },
+  {
+    "name": "Denver",
+    "lat": 39.7392364,
+    "lng": -104.984862,
+    "minZoom": 3,
+    "state": "Colorado"
+  },
+  {
+    "name": "Colorado Springs",
+    "lat": 38.8339578,
+    "lng": -104.825348,
+    "minZoom": 3,
+    "state": "Colorado"
+  },
+  {
+    "name": "Aurora",
+    "lat": 39.7405111,
+    "lng": -104.830994,
+    "minZoom": 3,
+    "state": "Colorado"
+  },
+  {
+    "name": "Las Vegas",
+    "lat": 36.1672719,
+    "lng": -115.1483538,
+    "minZoom": 3,
+    "state": "Nevada"
+  },
+  {
+    "name": "Reno",
+    "lat": 39.5261206,
+    "lng": -119.8126581,
+    "minZoom": 3,
+    "state": "Nevada"
+  },
+  {
+    "name": "Henderson",
+    "lat": 36.0319843,
+    "lng": -114.9822486,
+    "minZoom": 3,
+    "state": "Nevada"
+  },
+  {
+    "name": "Baltimore",
+    "lat": 39.2908816,
+    "lng": -76.610759,
+    "minZoom": 3,
+    "state": "Maryland"
+  },
+  {
+    "name": "Hagerstown",
+    "lat": 39.6430455,
+    "lng": -77.7191081,
+    "minZoom": 3,
+    "state": "Maryland"
+  },
+  {
+    "name": "Frederick",
+    "lat": 39.415779,
+    "lng": -77.4127562,
+    "minZoom": 3,
+    "state": "Maryland"
+  },
+  {
+    "name": "St. Louis",
+    "lat": 38.6280278,
+    "lng": -90.1910154,
+    "minZoom": 3,
+    "state": "Missouri"
+  },
+  {
+    "name": "Kansas City",
+    "lat": 39.100105,
+    "lng": -94.5781416,
+    "minZoom": 3,
+    "state": "Missouri"
+  },
+  {
+    "name": "Springfield",
+    "lat": 37.2081729,
+    "lng": -93.2922715,
+    "minZoom": 3,
+    "state": "Missouri"
+  },
+  {
+    "name": "Portland",
+    "lat": 45.5202471,
+    "lng": -122.674194,
+    "minZoom": 3,
+    "state": "Oregon"
+  },
+  {
+    "name": "Eugene",
+    "lat": 44.0505054,
+    "lng": -123.0950506,
+    "minZoom": 3,
+    "state": "Oregon"
+  },
+  {
+    "name": "Salem",
+    "lat": 44.9391565,
+    "lng": -123.033121,
+    "minZoom": 3,
+    "state": "Oregon"
+  },
+  {
+    "name": "San Juan",
+    "lat": 18.384239,
+    "lng": -66.05344,
+    "minZoom": 3,
+    "state": "Puerto Rico"
+  },
+  {
+    "name": "Aguadilla",
+    "lat": 18.4496551,
+    "lng": -67.1184764,
+    "minZoom": 3,
+    "state": "Puerto Rico"
+  },
+  {
+    "name": "Bayam\u00c3\u00b3n",
+    "lat": null,
+    "lng": null,
+    "minZoom": 3,
+    "state": "Puerto Rico"
+  },
+  {
+    "name": "Indianapolis",
+    "lat": 39.7683331,
+    "lng": -86.1583502,
+    "minZoom": 3,
+    "state": "Indiana"
+  },
+  {
+    "name": "Fort Wayne",
+    "lat": 41.0799898,
+    "lng": -85.1386015,
+    "minZoom": 3,
+    "state": "Indiana"
+  },
+  {
+    "name": "South Bend",
+    "lat": 41.6833813,
+    "lng": -86.2500066,
+    "minZoom": 3,
+    "state": "Indiana"
+  },
+  {
+    "name": "Cincinnati",
+    "lat": 39.1014537,
+    "lng": -84.5124602,
+    "minZoom": 3,
+    "state": "Ohio"
+  },
+  {
+    "name": "Cleveland",
+    "lat": 41.4996574,
+    "lng": -81.6936772,
+    "minZoom": 3,
+    "state": "Ohio"
+  },
+  {
+    "name": "Columbus",
+    "lat": 39.9622601,
+    "lng": -83.0007065,
+    "minZoom": 3,
+    "state": "Ohio"
+  },
+  {
+    "name": "Charlotte",
+    "lat": 35.2272086,
+    "lng": -80.8430827,
+    "minZoom": 3,
+    "state": "North Carolina"
+  },
+  {
+    "name": "Raleigh",
+    "lat": 35.7803977,
+    "lng": -78.6390989,
+    "minZoom": 3,
+    "state": "North Carolina"
+  },
+  {
+    "name": "Winston-Salem",
+    "lat": 36.0998131,
+    "lng": -80.2440518,
+    "minZoom": 3,
+    "state": "North Carolina"
+  },
+  {
+    "name": "Virginia Beach",
+    "lat": 36.8496579,
+    "lng": -75.9760751,
+    "minZoom": 3,
+    "state": "Virginia"
+  },
+  {
+    "name": "Richmond",
+    "lat": 37.5385087,
+    "lng": -77.43428,
+    "minZoom": 3,
+    "state": "Virginia"
+  },
+  {
+    "name": "Chesapeake",
+    "lat": 36.7168315,
+    "lng": -76.2494453,
+    "minZoom": 3,
+    "state": "Virginia"
+  },
+  {
+    "name": "Milwaukee",
+    "lat": 43.0386475,
+    "lng": -87.9090751,
+    "minZoom": 3,
+    "state": "Wisconsin"
+  },
+  {
+    "name": "Madison",
+    "lat": 43.074761,
+    "lng": -89.3837613,
+    "minZoom": 3,
+    "state": "Wisconsin"
+  },
+  {
+    "name": "Appleton",
+    "lat": 44.2613967,
+    "lng": -88.4069744,
+    "minZoom": 3,
+    "state": "Wisconsin"
+  },
+  {
+    "name": "Providence",
+    "lat": 41.8239891,
+    "lng": -71.4128343,
+    "minZoom": 3,
+    "state": "Rhode Island"
+  },
+  {
+    "name": "Warwick",
+    "lat": 41.6992717,
+    "lng": -71.4586114,
+    "minZoom": 3,
+    "state": "Rhode Island"
+  },
+  {
+    "name": "Cranston",
+    "lat": 41.779588,
+    "lng": -71.4366813,
+    "minZoom": 3,
+    "state": "Rhode Island"
+  },
+  {
+    "name": "Nashville",
+    "lat": 36.1622767,
+    "lng": -86.7742984,
+    "minZoom": 3,
+    "state": "Tennessee"
+  },
+  {
+    "name": "Memphis",
+    "lat": 35.1460249,
+    "lng": -90.0517638,
+    "minZoom": 3,
+    "state": "Tennessee"
+  },
+  {
+    "name": "Knoxville",
+    "lat": 35.9603948,
+    "lng": -83.9210261,
+    "minZoom": 3,
+    "state": "Tennessee"
+  },
+  {
+    "name": "Salt Lake City",
+    "lat": 40.7596198,
+    "lng": -111.886797,
+    "minZoom": 3,
+    "state": "Utah"
+  },
+  {
+    "name": "Provo",
+    "lat": 40.2337289,
+    "lng": -111.6587085,
+    "minZoom": 3,
+    "state": "Utah"
+  },
+  {
+    "name": "Ogden",
+    "lat": 41.2230048,
+    "lng": -111.9738429,
+    "minZoom": 3,
+    "state": "Utah"
+  },
+  {
+    "name": "Oklahoma City",
+    "lat": 35.4729886,
+    "lng": -97.5170536,
+    "minZoom": 3,
+    "state": "Oklahoma"
+  },
+  {
+    "name": "Tulsa",
+    "lat": 36.1563122,
+    "lng": -95.9927516,
+    "minZoom": 3,
+    "state": "Oklahoma"
+  },
+  {
+    "name": "Norman",
+    "lat": 35.2225717,
+    "lng": -97.4394816,
+    "minZoom": 3,
+    "state": "Oklahoma"
+  },
+  {
+    "name": "Hartford",
+    "lat": 41.764582,
+    "lng": -72.6908547,
+    "minZoom": 3,
+    "state": "Connecticut"
+  },
+  {
+    "name": "Bridgeport",
+    "lat": 41.1792695,
+    "lng": -73.1887863,
+    "minZoom": 3,
+    "state": "Connecticut"
+  },
+  {
+    "name": "New Haven",
+    "lat": 41.3082138,
+    "lng": -72.9250518,
+    "minZoom": 3,
+    "state": "Connecticut"
+  },
+  {
+    "name": "Louisville",
+    "lat": 38.2542376,
+    "lng": -85.759407,
+    "minZoom": 3,
+    "state": "Kentucky"
+  },
+  {
+    "name": "Lexington",
+    "lat": 38.0464066,
+    "lng": -84.4970393,
+    "minZoom": 3,
+    "state": "Kentucky"
+  },
+  {
+    "name": "Bowling Green",
+    "lat": 36.9903199,
+    "lng": -86.4436018,
+    "minZoom": 3,
+    "state": "Kentucky"
+  },
+  {
+    "name": "New Orleans",
+    "lat": 29.9759983,
+    "lng": -90.0782127,
+    "minZoom": 3,
+    "state": "Louisiana"
+  },
+  {
+    "name": "Baton Rouge",
+    "lat": 30.4494155,
+    "lng": -91.1869659,
+    "minZoom": 3,
+    "state": "Louisiana"
+  },
+  {
+    "name": "Shreveport",
+    "lat": 32.5135356,
+    "lng": -93.7477839,
+    "minZoom": 3,
+    "state": "Louisiana"
+  },
+  {
+    "name": "Omaha",
+    "lat": 41.2587459,
+    "lng": -95.9383758,
+    "minZoom": 3,
+    "state": "Nebraska"
+  },
+  {
+    "name": "Lincoln",
+    "lat": 40.8088861,
+    "lng": -96.7077751,
+    "minZoom": 3,
+    "state": "Nebraska"
+  },
+  {
+    "name": "Bellevue",
+    "lat": 41.1365122,
+    "lng": -95.8937398,
+    "minZoom": 3,
+    "state": "Nebraska"
+  },
+  {
+    "name": "Birmingham",
+    "lat": 33.5206824,
+    "lng": -86.8024326,
+    "minZoom": 3,
+    "state": "Alabama"
+  },
+  {
+    "name": "Huntsville",
+    "lat": 34.729847,
+    "lng": -86.5859011,
+    "minZoom": 3,
+    "state": "Alabama"
+  },
+  {
+    "name": "Mobile",
+    "lat": 30.6913462,
+    "lng": -88.0437509,
+    "minZoom": 3,
+    "state": "Alabama"
+  },
+  {
+    "name": "Albuquerque",
+    "lat": 35.0841034,
+    "lng": -106.650985,
+    "minZoom": 3,
+    "state": "New Mexico"
+  },
+  {
+    "name": "Las Cruces",
+    "lat": 32.3140354,
+    "lng": -106.779807,
+    "minZoom": 3,
+    "state": "New Mexico"
+  },
+  {
+    "name": "Rio Rancho",
+    "lat": 35.2702448,
+    "lng": -106.6329806,
+    "minZoom": 3,
+    "state": "New Mexico"
+  },
+  {
+    "name": "Charleston",
+    "lat": 32.7884363,
+    "lng": -79.9399309,
+    "minZoom": 3,
+    "state": "South Carolina"
+  },
+  {
+    "name": "Columbia",
+    "lat": 34.000754,
+    "lng": -81.0352313,
+    "minZoom": 3,
+    "state": "South Carolina"
+  },
+  {
+    "name": "Greenville",
+    "lat": 34.851354,
+    "lng": -82.3984882,
+    "minZoom": 3,
+    "state": "South Carolina"
+  },
+  {
+    "name": "Des Moines",
+    "lat": 41.5868654,
+    "lng": -93.6249494,
+    "minZoom": 3,
+    "state": "Iowa"
+  },
+  {
+    "name": "Davenport",
+    "lat": 41.5235808,
+    "lng": -90.5770967,
+    "minZoom": 3,
+    "state": "Iowa"
+  },
+  {
+    "name": "Cedar Rapids",
+    "lat": 41.9758872,
+    "lng": -91.6704053,
+    "minZoom": 3,
+    "state": "Iowa"
+  },
+  {
+    "name": "Wichita",
+    "lat": 37.6922361,
+    "lng": -97.3375448,
+    "minZoom": 3,
+    "state": "Kansas"
+  },
+  {
+    "name": "Overland Park",
+    "lat": 38.9742502,
+    "lng": -94.6851702,
+    "minZoom": 3,
+    "state": "Kansas"
+  },
+  {
+    "name": "Kansas City",
+    "lat": 39.1134562,
+    "lng": -94.626497,
+    "minZoom": 3,
+    "state": "Kansas"
+  },
+  {
+    "name": "Little Rock",
+    "lat": 34.7465071,
+    "lng": -92.2896267,
+    "minZoom": 3,
+    "state": "Arkansas"
+  },
+  {
+    "name": "Fayetteville",
+    "lat": 36.0625843,
+    "lng": -94.1574328,
+    "minZoom": 3,
+    "state": "Arkansas"
+  },
+  {
+    "name": "Fort Smith",
+    "lat": 35.3880338,
+    "lng": -94.4265011,
+    "minZoom": 3,
+    "state": "Arkansas"
+  },
+  {
+    "name": "Boise",
+    "lat": 43.6166163,
+    "lng": -116.200886,
+    "minZoom": 3,
+    "state": "Idaho"
+  },
+  {
+    "name": "Nampa",
+    "lat": 43.5737361,
+    "lng": -116.559631,
+    "minZoom": 3,
+    "state": "Idaho"
+  },
+  {
+    "name": "Coeur d'Alene",
+    "lat": 47.6742994,
+    "lng": -116.7811531,
+    "minZoom": 3,
+    "state": "Idaho"
+  },
+  {
+    "name": "Trenton",
+    "lat": 40.2203074,
+    "lng": -74.7659,
+    "minZoom": 3,
+    "state": "New Jersey"
+  },
+  {
+    "name": "Newark",
+    "lat": 40.735657,
+    "lng": -74.1723667,
+    "minZoom": 3,
+    "state": "New Jersey"
+  },
+  {
+    "name": "Jersey City",
+    "lat": 40.7215682,
+    "lng": -74.047455,
+    "minZoom": 3,
+    "state": "New Jersey"
+  },
+  {
+    "name": "Honolulu",
+    "lat": 21.304547,
+    "lng": -157.855676,
+    "minZoom": 3,
+    "state": "Hawaii"
+  },
+  {
+    "name": "Kailua",
+    "lat": 19.641941,
+    "lng": -155.996933,
+    "minZoom": 3,
+    "state": "Hawaii"
+  },
+  {
+    "name": "East Honolulu",
+    "lat": 21.2891309,
+    "lng": -157.7173915,
+    "minZoom": 3,
+    "state": "Hawaii"
+  },
+  {
+    "name": "Jackson",
+    "lat": 32.2998686,
+    "lng": -90.1830408,
+    "minZoom": 3,
+    "state": "Mississippi"
+  },
+  {
+    "name": "Gulfport",
+    "lat": 30.3674198,
+    "lng": -89.0928155,
+    "minZoom": 3,
+    "state": "Mississippi"
+  },
+  {
+    "name": "Hattiesburg",
+    "lat": 31.3271189,
+    "lng": -89.2903392,
+    "minZoom": 3,
+    "state": "Mississippi"
+  },
+  {
+    "name": "Anchorage",
+    "lat": 61.2163129,
+    "lng": -149.894852,
+    "minZoom": 3,
+    "state": "Alaska"
+  },
+  {
+    "name": "Fairbanks",
+    "lat": 64.837845,
+    "lng": -147.716675,
+    "minZoom": 3,
+    "state": "Alaska"
+  },
+  {
+    "name": "Juneau",
+    "lat": 58.3019496,
+    "lng": -134.419734,
+    "minZoom": 3,
+    "state": "Alaska"
+  },
+  {
+    "name": "Nashua",
+    "lat": 42.7656251,
+    "lng": -71.4677032,
+    "minZoom": 3,
+    "state": "New Hampshire"
+  },
+  {
+    "name": "Manchester",
+    "lat": 42.9956397,
+    "lng": -71.4547891,
+    "minZoom": 3,
+    "state": "New Hampshire"
+  },
+  {
+    "name": "Portsmouth",
+    "lat": 43.0702223,
+    "lng": -70.7548621,
+    "minZoom": 3,
+    "state": "New Hampshire"
+  },
+  {
+    "name": "Fargo",
+    "lat": 46.877229,
+    "lng": -96.789821,
+    "minZoom": 3,
+    "state": "North Dakota"
+  },
+  {
+    "name": "Bismarck",
+    "lat": 46.808327,
+    "lng": -100.783739,
+    "minZoom": 3,
+    "state": "North Dakota"
+  },
+  {
+    "name": "Grand Forks",
+    "lat": 47.9252104,
+    "lng": -97.0306325,
+    "minZoom": 3,
+    "state": "North Dakota"
+  },
+  {
+    "name": "Portland",
+    "lat": 43.6573605,
+    "lng": -70.2586618,
+    "minZoom": 3,
+    "state": "Maine"
+  },
+  {
+    "name": "Lewiston",
+    "lat": 44.1004515,
+    "lng": -70.2150294,
+    "minZoom": 3,
+    "state": "Maine"
+  },
+  {
+    "name": "Bangor",
+    "lat": 44.8016255,
+    "lng": -68.7713289,
+    "minZoom": 3,
+    "state": "Maine"
+  },
+  {
+    "name": "Sioux Falls",
+    "lat": 43.5476008,
+    "lng": -96.7293629,
+    "minZoom": 3,
+    "state": "South Dakota"
+  },
+  {
+    "name": "Rapid City",
+    "lat": 44.0806041,
+    "lng": -103.228023,
+    "minZoom": 3,
+    "state": "South Dakota"
+  },
+  {
+    "name": "Aberdeen",
+    "lat": 45.4649805,
+    "lng": -98.487813,
+    "minZoom": 3,
+    "state": "South Dakota"
+  },
+  {
+    "name": "Huntington",
+    "lat": 38.4192496,
+    "lng": -82.445154,
+    "minZoom": 3,
+    "state": "West Virginia"
+  },
+  {
+    "name": "Charleston",
+    "lat": 38.3505995,
+    "lng": -81.6332812,
+    "minZoom": 3,
+    "state": "West Virginia"
+  },
+  {
+    "name": "Morgantown",
+    "lat": 39.6296809,
+    "lng": -79.9559437,
+    "minZoom": 3,
+    "state": "West Virginia"
+  },
+  {
+    "name": "Billings",
+    "lat": 45.7874957,
+    "lng": -108.49607,
+    "minZoom": 3,
+    "state": "Montana"
+  },
+  {
+    "name": "Missoula",
+    "lat": 46.8701049,
+    "lng": -113.995267,
+    "minZoom": 3,
+    "state": "Montana"
+  },
+  {
+    "name": "Great Falls",
+    "lat": 47.5048851,
+    "lng": -111.29189,
+    "minZoom": 3,
+    "state": "Montana"
+  },
+  {
+    "name": "Dover",
+    "lat": 39.158168,
+    "lng": -75.5243682,
+    "minZoom": 3,
+    "state": "Delaware"
+  },
+  {
+    "name": "Wilmington",
+    "lat": 39.7459468,
+    "lng": -75.546589,
+    "minZoom": 3,
+    "state": "Delaware"
+  },
+  {
+    "name": "Newark",
+    "lat": 39.6828358,
+    "lng": -75.7515682,
+    "minZoom": 3,
+    "state": "Delaware"
+  },
+  {
+    "name": "Burlington",
+    "lat": 44.4761601,
+    "lng": -73.212906,
+    "minZoom": 3,
+    "state": "Vermont"
+  },
+  {
+    "name": "South Burlington",
+    "lat": 44.4671635,
+    "lng": -73.1715669,
+    "minZoom": 3,
+    "state": "Vermont"
+  },
+  {
+    "name": "Rutland",
+    "lat": 43.6084792,
+    "lng": -72.9724768,
+    "minZoom": 3,
+    "state": "Vermont"
+  },
+  {
+    "name": "Cheyenne",
+    "lat": 41.139981,
+    "lng": -104.820246,
+    "minZoom": 3,
+    "state": "Wyoming"
+  },
+  {
+    "name": "Casper",
+    "lat": 42.8501191,
+    "lng": -106.325138,
+    "minZoom": 3,
+    "state": "Wyoming"
+  },
+  {
+    "name": "Gillette",
+    "lat": 44.290635,
+    "lng": -105.501876,
+    "minZoom": 3,
+    "state": "Wyoming"
+  }
+]
