@@ -4,49 +4,9 @@ import "../CSS/Questionaire.css";
 
 const Questionaire = () => {
     const questions = [
-        // First set of slider-based questions
+        //
         {
           id: 1,
-          text: "How important is Access to Nature to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 2,
-          text: "How important is Public Transport to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 3,
-          text: "How important is Walkability to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 4,
-          text: "How important is Racial Diversity to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 5,
-          text: "How important is Access to Healthcare to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 6,
           text: "How important is Affordable Housing to you?",
           type: "range",
           min: 1,
@@ -54,15 +14,7 @@ const Questionaire = () => {
           step: 1,
         },
         {
-          id: 7,
-          text: "How important is Restaurant Quality to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 8,
+          id: 2,
           text: "How important is Education to you?",
           type: "range",
           min: 1,
@@ -70,7 +22,7 @@ const Questionaire = () => {
           step: 1,
         },
         {
-          id: 9,
+          id: 3,
           text: "How important is Career to you?",
           type: "range",
           min: 1,
@@ -78,31 +30,7 @@ const Questionaire = () => {
           step: 1,
         },
         {
-          id: 10,
-          text: "How important is Night Life to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 11,
-          text: "How important are Sports Events to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 12,
-          text: "How important is Politics to you?",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 13,
+          id: 4,
           text: "How important is Crime Rate to you?",
           type: "range",
           min: 1,
@@ -110,83 +38,42 @@ const Questionaire = () => {
           step: 1,
         },
         {
-          id: 14,
+          id: 5,
           text: "How important is Population Size to you?",
           type: "range",
           min: 1,
           max: 10,
           step: 1,
         },
-        // Second set of mixed-type questions
         {
-          id: 15,
-          text: "What type of nature do you prefer?",
-          type: "select",
-          options: ["Forest", "Mountains", "Beach", "Desert", "Urban Parks"],
-        },
-        {
-          id: 16,
-          text: "What is your favorite sport?",
-          type: "select",
-          options: ["Football", "Basketball", "Tennis", "Swimming", "Running"],
-        },
-        {
-          id: 17,
-          text: "What is your age group?",
-          type: "select",
-          options: ["18-24", "25-34", "35-44", "45-54", "55+"],
-        },
-        {
-          id: 18,
-          text: "What is your race?",
-          type: "select",
-          options: ["White", "Black", "Asian", "Hispanic", "Other"],
-        },
-        {
-          id: 19,
-          text: "What is your political affiliation? (Conservative - Liberal)",
-          type: "range",
-          min: 1,
-          max: 10,
-          step: 1,
-        },
-        {
-          id: 20,
-          text: "What is your career?",
-          type: "text",
-          placeholder: "Enter your career",
-        },
-        {
-          id: 21,
-          text: "What is your salary goal?",
-          type: "select",
-          options: ["$30k-$50k", "$50k-$80k", "$80k-$120k", "$120k+"],
-        },
-        {
-          id: 22,
-          text: "What is your preferred population size?",
-          type: "select",
-          options: ["Small Town", "Medium City", "Large City", "Metropolis"],
-        },
-        {
-          id: 23,
-          text: "What is your hobby?",
-          type: "text",
-          placeholder: "Enter your hobby",
-        },
-        {
-          id: 24,
+          id: 6,
           text: "How important is Weather to you?",
           type: "range",
           min: 1,
           max: 10,
           step: 1,
         },
+        // Second set of mixed-type question
+        
         {
-          id: 25,
+          id: 9,
+          text: "What is your preferred population size?",
+          type: "select",
+          options: ["Small Town", "Medium City", "Large City", "Metropolis"],
+        },
+        {
+          id: 10,
           text: "What is your preferred cost of living?",
           type: "select",
           options: ["Low", "Medium", "High"],
+        },
+        {
+          id: 11,
+          text: "What is your prefered weather?",
+          type: "range",
+          min: 1,
+          max: 10,
+          step: 1,
         },
       ];
     
