@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import L from 'leaflet';
 import { useNavigate } from 'react-router-dom';
-const { MongoClient } = require('mongodb');
 
 const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames, showAllCities }) => {
   const markersRef = useRef([]);
