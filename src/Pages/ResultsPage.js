@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "../CSS/ResultsPage.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom";
 
 const ResultsPage = () => {
+  const navigate = useNavigate();
   // Mock data for matched cities
   const matchedCities = [
     {
-      name: "City A",
+      name: "St. Louis",
+      state: "Missouri",
+      lat: 38.6270,
+      lng: -90.1994,
       topPreferences: ["Access to Nature", "Walkability", "Affordable Housing", "Education"],
       matchPercentage: 85,
     },
     {
-      name: "City B",
+      name: "Boulder",
+      state: "Colorado",
+      lat: 40.0150,
+      lng: -105.2705,
       topPreferences: ["Public Transport", "Racial Diversity", "Restaurant Quality", "Night Life"],
       matchPercentage: 72,
     },
     {
-      name: "City C",
+      name: "New York",
+      state: "New York",
+      lat: 40.7128,
+      lng: -74.0060,
       topPreferences: ["Career Opportunities", "Crime Rate", "Weather", "Cost of Living"],
       matchPercentage: 65,
     },
   ];
+
+  const handleNavigate = useCallback((city) => {
+    navigate('/cityinfo', { state: { city: city } });
+  }, [navigate]); 
 
   return (
     <div className="results-page-container">
@@ -30,7 +45,12 @@ const ResultsPage = () => {
             {/* Column 1: City Name and Button */}
             <div className="city-info">
               <h2>{city.name}</h2>
-              <button className="more-info-button">More Information</button>
+              <button 
+                className="more-info-button"
+                onClick={() => handleNavigate(city)}
+              >
+                More Information
+              </button>
             </div>
 
             {/* Column 2: Top Preferences */}

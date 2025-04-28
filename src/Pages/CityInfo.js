@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LoremIpsum from '../Components/LoremIpsum';
 import { GoogleGenAI } from "@google/genai";
+import '../CSS/CityInfo.css';
 
 function CityInfo() {
   const { state } = useLocation();
@@ -34,7 +35,7 @@ function CityInfo() {
       } catch (err) {
         console.error("Failed to fetch city description:", err);
         setError("Failed to load city description");
-        setAiDescription(""); // Clear any previous description on error
+        setAiDescription("");
       } finally {
         setLoadingDescription(false);
       }
@@ -44,111 +45,115 @@ function CityInfo() {
   }, [city]); 
 
   if (!city) {
-    return <div>City data not found</div>;
+    return <div className="city-not-found">City data not found</div>;
   }
 
   return (
-    <div style={{ padding: '20px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <button onClick={() => navigate(-1)}>Return</button>
-        <h1 style={{ textAlign: 'center', flexGrow: 1, margin: 0 }}>{city.name}, {city.state}</h1>
-        <div style={{width:'100px'}}></div>
+    <div className="city-info-container">
+      {/* Header Section */}
+      <div className="city-header">
+        <button className="return-button" onClick={() => navigate(-1)}>
+          ← Return
+        </button>
+        <h1 className="city-title">{city.name}, {city.state}</h1>
+        <div className="header-spacer"></div>
       </div>
 
-      <div style={{ display: 'flex', marginTop: '20px' }}>
-        <div style={{ flex: 1, paddingRight: '20px' }}>
-          <img
-            src="https://placehold.co/600x400"
-            alt="City"
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </div>
-        <div style={{ flex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <h2>Compatibility</h2>
-          <div className="match-percentage">
-              <h3>Match Percentage</h3>
-              <p>75%</p>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value="75%"
-                disabled // Slider is read-only
-              />
-            </div>
-        </div>
-      </div>
-
-      <div style={{ marginTop: '20px', textAlign: 'center' }}>
-        <h2>About This City</h2>
+      {/* Main Content Section */}
+      <div className="main-content">
+        {/* Left Column - City Info */}
+        <div className="city-description-card">
+          <h2 className="section-title">
+            About This City
+            <span className="title-underline"></span>
+          </h2>
         
-        {/* Loading and content display logic */}
-        {loadingDescription ? (
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            minHeight: '100px',
-            margin: '20px 0'
-          }}>
-            <div className="loader" style={{
-              border: '4px solid #f3f3f3',
-              borderTop: '4px solid #3498db',
-              borderRadius: '50%',
-              width: '40px',
-              height: '40px',
-              animation: 'spin 1s linear infinite'
-            }}></div>
-            <style>{`
-              @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-              }
-            `}</style>
-          </div>
-        ) : error ? (
-          <div style={{ color: '#ff6b6b', margin: '20px 0' }}>
-            {error}
+          {loadingDescription ? (
+            <div className="loader-container">
+              <div className="loader"></div>
+            </div>
+          ) : error ? (
+            <div className="error-message">
+              <h3>⚠️ {error}</h3>
+              <LoremIpsum /> 
+            </div>
+          ) : aiDescription ? (
+            <div className="description-content">
+              <p>{aiDescription}</p>
+            </div>
+          ) : (
             <LoremIpsum /> 
-          </div>
-        ) : aiDescription ? (
-          <div style={{ margin: '20px 0' }}>
-            <p>{aiDescription}</p>
-          </div>
-        ) : (
-          <LoremIpsum /> 
-        )}
+          )}
+        </div>
 
-        <h2>More Information</h2>
-        <LoremIpsum />
+        {/* Right Column - Compatibility */}
+        <div className="compatibility-card">
+          <h2 className="compatibility-title">Compatibility</h2>
+          <div className="match-percentage-container">
+            <h3 className="match-subtitle">Match Percentage</h3>
+            <div className="percentage-value">75%</div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="75"
+              disabled
+              className="percentage-slider"
+            />
+            <div className="match-label">
+              <div className="high-match">High Match</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div style={{ marginTop: '20px', display: 'flex' }}>
-        <div style={{ flex: 1, paddingRight: '20px' }}>
-          <h3>City Features</h3>
-          <ol>
-            <li>Public Transport</li>
-            <li>Liberal</li>
-            <li>Restaurant Quality</li>
-            <li>Career (Software Engineer)</li>
+      {/* More Information Section */}
+      <div className="more-info-card">
+        <h2 className="section-title">
+          More Information
+          <span className="title-underline"></span>
+        </h2>
+        <div className="info-content">
+          <LoremIpsum />
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="features-section">
+        {/* City Features */}
+        <div className="features-card city-features">
+          <h3 className="features-title">City Features</h3>
+          <ol className="features-list">
+            {['Public Transport', 'Liberal', 'Restaurant Quality', 'Career (Software Engineer)'].map((item, index) => (
+              <li key={index} className="feature-item">
+                {item}
+              </li>
+            ))}
           </ol>
         </div>
-        <div style={{ flex: 1, paddingRight: '20px' }}>
-          <h3>Preference Match</h3>
-          <ol>
-            <li>90%</li>
-            <li>85%</li>
-            <li>70%</li>
-            <li>80%</li>
+
+        {/* Preference Match */}
+        <div className="features-card preference-match">
+          <h3 className="features-title">Preference Match</h3>
+          <ol className="preference-list">
+            {[90, 85, 70, 80].map((percent, index) => (
+              <li key={index} className="preference-item">
+                <div className="percentage-bar" style={{ width: `${percent}%` }}></div>
+                <span className="percentage-value">{percent}%</span>
+              </li>
+            ))}
           </ol>
         </div>
-        <div style={{ flex: 1 }}>
-          <h3>You</h3>
-          <ol>
-            <li>Public Transport</li>
-            <li>Liberal</li>
-            <li>Restaurant Quality</li>
-            <li>Career (Software Engineer)</li>
+
+        {/* You */}
+        <div className="features-card your-preferences">
+          <h3 className="features-title">You</h3>
+          <ol className="preferences-list">
+            {['Public Transport', 'Liberal', 'Restaurant Quality', 'Career (Software Engineer)'].map((item, index) => (
+              <li key={index} className="preference-item">
+                {item}
+              </li>
+            ))}
           </ol>
         </div>
       </div>
