@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import L from 'leaflet';
+import { useNavigate } from 'react-router-dom';
 
 const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames, showAllCities }) => {
   const markersRef = useRef([]);
   const cityLabelsRef = useRef([]);
+  const navigate = useNavigate();
 
   const getStateAbbreviation = (fullStateName) => {
     const stateAbbreviations = {
@@ -36,9 +38,13 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
     });
   };
 
+  const handleNavigate = useCallback((city) => {
+    navigate('/cityinfo', { state: { city: city } });
+  }, [navigate]);
+
   const updateMarkers = () => {
     if (!mapRef.current) return;
-    
+
     markersRef.current.forEach(marker => mapRef.current.removeLayer(marker));
     cityLabelsRef.current.forEach(label => mapRef.current.removeLayer(label));
     markersRef.current = [];
@@ -58,29 +64,66 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
         icon: createMarkerIcon(),
         riseOnHover: true
       })
-      .bindPopup(`<b>${city.name}, ${stateAbbr}</b>`)
+      .bindPopup(
+        `<b>${city.name}, ${stateAbbr}</b>
+         <div style="margin-top: 8px;">
+           <button
+             style="
+               background-color: #4CAF50;
+               color: white;
+               border: none;
+               padding: 5px 10px;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 12px;
+               margin: 4px 2px;
+               cursor: pointer;
+               border-radius: 4px;
+             "
+             id="city-info-button-${city.name.replace(/\s+/g, '-')}"
+           >
+             More Info
+           </button>
+         </div>`
+      )
+      .on('popupopen', () => {
+        // Add click handler after popup is opened
+        const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
+        if (button) {
+          button.addEventListener('click', () => handleNavigate(city));
+        }
+      })
+      .on('popupclose', () => {
+        // Clean up event listener when popup closes
+        const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
+        if (button) {
+          button.removeEventListener('click', () => handleNavigate(city));
+        }
+      })
       .addTo(mapRef.current);
-      
+
       markersRef.current.push(marker);
 
-      // Always show city labels when markers are shown
-      const label = L.marker([city.lat, city.lng], {
-        icon: L.divIcon({
-          className: 'city-label',
-          html: `<div>${city.name}</div>`,
-          iconSize: [0, 0], // Critical for precise positioning
-          iconAnchor: [0, 50]
-        }),
-        zIndexOffset: 1000,
-        interactive: false
-      }).addTo(mapRef.current);
-      cityLabelsRef.current.push(label);
+      if (showCityNames) {
+        const label = L.marker([city.lat, city.lng], {
+          icon: L.divIcon({
+            className: 'city-label',
+            html: `<div>${city.name}</div>`,
+            iconSize: [0, 0],
+            iconAnchor: [0, 50]
+          }),
+          zIndexOffset: 1000,
+          interactive: false
+        }).addTo(mapRef.current);
+        cityLabelsRef.current.push(label);
+      }
     });
   };
 
   useEffect(() => {
     updateMarkers();
-  }, [currentZoom, cityData, activeState, showAllCities]); 
+  }, [currentZoom, cityData, activeState, showAllCities, showCityNames, handleNavigate]);
 
   return null;
 };
