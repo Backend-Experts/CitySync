@@ -99,38 +99,38 @@ const Questionaire = () => {
         const { name, value } = e.target;
         setAnswers({ ...answers, [name]: value });
     };
-    const formatAnswers = (answers) => {
-      const formattedAnswers = {};
-      
-      // Map question IDs to their corresponding output fields
-      const questionMapping = {
-        1: 'affordableHousingWeight',
-        2: 'educationWeight',
-        3: 'careerWeight',
-        4: 'crimeWeight',
-        5: 'populationWeight',
-        6: 'weatherWeight',
-        9: 'populationSize',
-        10: 'costOfLiving',
-        11: 'weatherPreference'
-      };
-    
-      Object.keys(answers).forEach(key => {
-        const questionId = parseInt(key.replace('question_', ''));
-        const fieldName = questionMapping[questionId];
-        
-        if (fieldName) {
-          formattedAnswers[fieldName] = answers[key];
-        }
-      });
 
-      // Add the userId to the formatted answers
-      if (userId) {
-        formattedAnswers.userId = userId;
-      }
+    const formatAnswers = (answers, userId) => {
+  // Create an object with userId as the first property
+  const formattedAnswers = {
+    userId: userId || '' // Include userId even if empty for consistent structure
+  };
+  
+  // Map question IDs to their corresponding output fields
+  const questionMapping = {
+    1: 'affordableHousingWeight',
+    2: 'educationWeight',
+    3: 'careerWeight',
+    4: 'crimeWeight',
+    5: 'populationWeight',
+    6: 'weatherWeight',
+    9: 'populationSize',
+    10: 'costOfLiving',
+    11: 'weatherPreference'
+  };
+
+  // Add all other answers after userId
+  Object.keys(answers).forEach(key => {
+    const questionId = parseInt(key.replace('question_', ''));
+    const fieldName = questionMapping[questionId];
     
-      return formattedAnswers;
-    };
+    if (fieldName) {
+      formattedAnswers[fieldName] = answers[key];
+    }
+  });
+
+  return formattedAnswers;
+};
     const saveToLambda = async () => {
         setIsSubmitting(true);
         setSubmitMessage('Submitting your answers...');
