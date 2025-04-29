@@ -75,6 +75,7 @@ const Questionaire = () => {
             step: 1,
         },
     ];
+
     const auth = useAuth();
     const [currentSet, setCurrentSet] = useState(0);
     const [answers, setAnswers] = useState({});
@@ -89,40 +90,43 @@ const Questionaire = () => {
             setUserId(auth.user.profile.sub);
         }
     }, [auth.isAuthenticated, auth.user]);
-
-    // Update your formatAnswers function
-    const formatAnswers = (answers) => {
-        // Create new object with userId first
-        const formattedAnswers = {
-            userId: userId || 'anonymous' // fallback if no user ID
-        };
-        
-        // Map question IDs to their corresponding output fields
-        const questionMapping = {
-            1: 'affordableHousingWeight',
-            2: 'educationWeight',
-            3: 'careerWeight',
-            4: 'crimeWeight',
-            5: 'populationWeight',
-            6: 'weatherWeight',
-            9: 'populationSize',
-            10: 'costOfLiving',
-            11: 'weatherPreference'
-        };
-      
-        // Add all other answers after userId
-        Object.keys(answers).forEach(key => {
-            const questionId = parseInt(key.replace('question_', ''));
-            const fieldName = questionMapping[questionId];
-            
-            if (fieldName) {
-                formattedAnswers[fieldName] = answers[key];
-            }
-        });
-      
-        return formattedAnswers;
+    
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setAnswers({ ...answers, [name]: value });
     };
 
+    const formatAnswers = (answers, userId) => {
+  // Create an object with userId as the first property
+  const formattedAnswers = {
+    userId: userId || '' // Include userId even if empty for consistent structure
+  };
+  
+  // Map question IDs to their corresponding output fields
+  const questionMapping = {
+    1: 'affordableHousingWeight',
+    2: 'educationWeight',
+    3: 'careerWeight',
+    4: 'crimeWeight',
+    5: 'populationWeight',
+    6: 'weatherWeight',
+    9: 'populationSize',
+    10: 'costOfLiving',
+    11: 'weatherPreference'
+  };
+
+  // Add all other answers after userId
+  Object.keys(answers).forEach(key => {
+    const questionId = parseInt(key.replace('question_', ''));
+    const fieldName = questionMapping[questionId];
+    
+    if (fieldName) {
+      formattedAnswers[fieldName] = answers[key];
+    }
+  });
+
+  return formattedAnswers;
+};
     const saveToLambda = async () => {
         setIsSubmitting(true);
         setSubmitMessage('Submitting your answers...');
