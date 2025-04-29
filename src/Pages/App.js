@@ -20,21 +20,31 @@ function App() {
   }
 
   if (auth.isAuthenticated) {
-    
+    return (
+      <Router>
+        <Navbar />
+        <div className="page-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/questionaire" element={<Questionaire />} />
+            <Route path="/cityinfo" element={<CityInfo />} />
+            <Route path="/resultspage" element={<ResultsPage />} />
+          </Routes>
+        </div>
+      </Router>
+    );
   }
 
   return (
-    <Router>
-      <Navbar />
-      <div className="page-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/questionaire" element={<Questionaire />} />
-          <Route path="/cityinfo" element={<CityInfo />} />
-          <Route path="/resultspage" element={<ResultsPage />} />
-        </Routes>
+    <div className="sign-in-page">
+      <div className="sign-in-container">
+        <h1>Welcome to CitySync</h1>
+        <p>Your personalized city matching app</p>
+        <button className="sign-in-button" onClick={() => auth.signinRedirect()}>
+          Sign In to Get Started
+        </button>
       </div>
-    </Router>
+    </div>
   );
 }
 
