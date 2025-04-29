@@ -8,9 +8,9 @@ const Questionaire = () => {
     const questions = [
         {
             id: 1,
-            text: "How important is Affordable Housing to you?",
+            text: "What is your name?",
             type: "range",
-            min: 1,
+            min: 0,
             max: 10,
             step: 1,
         },
@@ -95,23 +95,35 @@ const Questionaire = () => {
         setAnswers({ ...answers, [name]: value });
     };
 
-    const formatAnswers = (answers, userId) => {
-  // Create an object with userId as the first property
-  const formattedAnswers = {
-    userId: cognitoId || '' // Include userId even if empty for consistent structure
+    const formatAnswers = () => {
+      return {
+          user_id: cognitoId || '',
+          ...answers,
+          // Ensure all numeric values are between 0-1
+          ...Object.fromEntries(
+              Object.entries(answers)
+                  .filter(([key]) => key !== "name")
+                  .map(([key, value]) => [key, Math.min(1, Math.max(0, value))])
+          )
+      };
   };
   
   // Map question IDs to their corresponding output fields
   const questionMapping = {
-    1: 'affordableHousingWeight',
-    2: 'educationWeight',
-    3: 'careerWeight',
-    4: 'crimeWeight',
-    5: 'populationWeight',
-    6: 'weatherWeight',
-    9: 'populationSize',
-    10: 'costOfLiving',
-    11: 'weatherPreference'
+    1: 'name',
+    2: 'population',
+    3: 'density',
+    4: 'ranking',
+    5: 'cost_of_living_index',
+    6: 'crime',
+    9: 'annual_avg_temp',
+    10: 'rent_0_bedroom',
+    11: 'rent_1_bedroom',
+    12: 'rent_2_bedroom',
+    13: 'rent_3_bedroom',
+    14: 'rent_4_bedroom',
+    15: 'avg_rent',
+    16: 'Education'
   };
 
   // Add all other answers after userId
