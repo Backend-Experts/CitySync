@@ -1,18 +1,14 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import "../CSS/Questionaire.css";
-import { callSubmitAPI , testAPIConnection} from '../Components/api';
+import { callSubmitAPI } from '../Components/api';
 import { useAuth } from "react-oidc-context";
-
 
 const Questionaire = () => {
     const questions = [
         {
             id: 1,
             text: "What is your name?",
-            type: "range",
-            min: 0,
-            max: 10,
-            step: 1,
+            type: "text",
         },
         {
             id: 2,
@@ -82,13 +78,6 @@ const Questionaire = () => {
     const [showResults, setShowResults] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
-    const [result, setResult] = useState(null);
-    const [userId, setUserId] = useState('');
-
-
-    
-    const cognitoId = auth.user?.profile?.sub; // Cognito ID ("sub" claim)
-            
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -96,56 +85,47 @@ const Questionaire = () => {
     };
 
     const formatAnswers = () => {
-      return {
-          user_id: cognitoId || '',
-          ...answers,
-          // Ensure all numeric values are between 0-1
-          ...Object.fromEntries(
-              Object.entries(answers)
-                  .filter(([key]) => key !== "name")
-                  .map(([key, value]) => [key, Math.min(1, Math.max(0, value))])
-          )
-      };
-  };
-  
-  // Map question IDs to their corresponding output fields
-  const questionMapping = {
-    1: 'name',
-    2: 'population',
-    3: 'density',
-    4: 'ranking',
-    5: 'cost_of_living_index',
-    6: 'crime',
-    9: 'annual_avg_temp',
-    10: 'rent_0_bedroom',
-    11: 'rent_1_bedroom',
-    12: 'rent_2_bedroom',
-    13: 'rent_3_bedroom',
-    14: 'rent_4_bedroom',
-    15: 'avg_rent',
-    16: 'Education'
-  };
+        const cognitoId = auth.user?.profile?.sub;
+        const formattedAnswers = {
+            user_id: cognitoId || '',
+            name: answers['question_1'] || '',
+        };
 
-  // Add all other answers after userId
-  Object.keys(answers).forEach(key => {
-    const questionId = parseInt(key.replace('question_', ''));
-    const fieldName = questionMapping[questionId];
-    
-    if (fieldName) {
-      formattedAnswers[fieldName] = answers[key];
-    }
-  });
+        // Map question IDs to their corresponding output fields
+        const questionMapping = {
+            2: 'education_importance',
+            3: 'career_importance',
+            4: 'crime_importance',
+            5: 'population_importance',
+            6: 'weather_importance',
+            9: 'preferred_population_size',
+            10: 'preferred_cost_of_living',
+            11: 'preferred_weather'
+        };
 
-  return formattedAnswers;
-};
+        // Add all other answers
+        Object.keys(answers).forEach(key => {
+            const questionId = parseInt(key.replace('question_', ''));
+            const fieldName = questionMapping[questionId];
+            
+            if (fieldName) {
+                // Normalize range values to 0-1 scale
+                const value = answers[key];
+                formattedAnswers[fieldName] = questionId >= 2 && questionId <= 6 || questionId === 11 
+                    ? Math.min(1, Math.max(0, (value - 1) / 9)) // Convert 1-10 scale to 0-1
+                    : value;
+            }
+        });
+
+        return formattedAnswers;
+    };
+
     const saveToLambda = async () => {
         setIsSubmitting(true);
         setSubmitMessage('Submitting your answers...');
         
         try {
-
-            const formattedAnswers = formatAnswers(answers);
-            // Submit using your existing callSubmitAPI function
+            const formattedAnswers = formatAnswers();
             const response = await callSubmitAPI(formattedAnswers);
 
             if (response.error) {
@@ -160,23 +140,6 @@ const Questionaire = () => {
         } finally {
             setIsSubmitting(false);
         }
-    };
-
-    const testApi = async (jsondata) => {
-      try {
-        const response = await fetch(
-          'https://v09lb8rp98.execute-api.us-east-1.amazonaws.com/default/questionnaire',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(jsondata),
-          }
-        );
-        const data = await response.json();
-        setResult(data);
-      } catch (err) {
-        setResult({ error: err.message });
-      }
     };
 
     const handleSubmit = () => {
@@ -203,17 +166,18 @@ const Questionaire = () => {
 
     const isCurrentSetComplete = () => {
         const startIndex = currentSet * 5;
-        const endIndex = startIndex + 5;
+        const endIndex = Math.min(startIndex + 5, questions.length);
         const currentQuestions = questions.slice(startIndex, endIndex);
 
         return currentQuestions.every(
-            (question) => answers[`question_${question.id}`] !== undefined
+            (question) => answers[`question_${question.id}`] !== undefined && 
+                         answers[`question_${question.id}`] !== ''
         );
     };
 
     const renderQuestions = () => {
         const startIndex = currentSet * 5;
-        const endIndex = startIndex + 5;
+        const endIndex = Math.min(startIndex + 5, questions.length);
         const currentQuestions = questions.slice(startIndex, endIndex);
 
         return currentQuestions.map((question) => (
@@ -245,6 +209,14 @@ const Questionaire = () => {
                             </option>
                         ))}
                     </select>
+                ) : question.type === "text" ? (
+                    <input
+                        type="text"
+                        name={`question_${question.id}`}
+                        value={answers[`question_${question.id}`] || ""}
+                        onChange={handleInputChange}
+                        placeholder="Enter your name"
+                    />
                 ) : null}
             </div>
         ));
@@ -275,7 +247,7 @@ const Questionaire = () => {
     };
 
     const exportToJson = () => {
-        const jsonData = JSON.stringify(answers, null, 2);
+        const jsonData = JSON.stringify(formatAnswers(), null, 2);
         const blob = new Blob([jsonData], { type: "application/json" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
