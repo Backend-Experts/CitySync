@@ -75,7 +75,7 @@ const Questionaire = () => {
             step: 1,
         },
     ];
-
+    const auth = useAuth();
     const [currentSet, setCurrentSet] = useState(0);
     const [answers, setAnswers] = useState({});
     const [showResults, setShowResults] = useState(false);
