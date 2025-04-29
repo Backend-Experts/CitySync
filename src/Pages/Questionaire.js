@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "../CSS/Questionaire.css";
 import { callSubmitAPI , testAPIConnection} from '../Components/api';
+import { useAuth } from "react-oidc-context";
+
 
 const Questionaire = () => {
     const questions = [
@@ -80,8 +82,19 @@ const Questionaire = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
     const [result, setResult] = useState(null);
+    const [userId, setUserId] = useState('');
 
-
+    useEffect(() => {
+      const fetchUserInfo = async () => {
+          try {
+              const user = await useAuth.currentAuthenticatedUser();
+              setUserId(user.attributes.sub); // Store the Cognito user ID
+          } catch (err) {
+              console.log('No authenticated user');
+          }
+      };
+      fetchUserInfo();
+  }, []);
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setAnswers({ ...answers, [name]: value });
@@ -110,6 +123,11 @@ const Questionaire = () => {
           formattedAnswers[fieldName] = answers[key];
         }
       });
+
+      // Add the userId to the formatted answers
+      if (userId) {
+        formattedAnswers.userId = userId;
+      }
     
       return formattedAnswers;
     };
