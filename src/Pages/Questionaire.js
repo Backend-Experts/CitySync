@@ -79,26 +79,47 @@ const Questionaire = () => {
     const [showResults, setShowResults] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
+    const [result, setResult] = useState(null);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setAnswers({ ...answers, [name]: value });
     };
-
+    const formatAnswers = (answers) => {
+      const formattedAnswers = {};
+      
+      // Map question IDs to their corresponding output fields
+      const questionMapping = {
+        1: 'affordableHousingWeight',
+        2: 'educationWeight',
+        3: 'careerWeight',
+        4: 'crimeWeight',
+        5: 'populationWeight',
+        6: 'weatherWeight',
+        9: 'populationSize',
+        10: 'costOfLiving',
+        11: 'weatherPreference'
+      };
+    
+      Object.keys(answers).forEach(key => {
+        const questionId = parseInt(key.replace('question_', ''));
+        const fieldName = questionMapping[questionId];
+        
+        if (fieldName) {
+          formattedAnswers[fieldName] = answers[key];
+        }
+      });
+    
+      return formattedAnswers;
+    };
     const saveToLambda = async () => {
         setIsSubmitting(true);
         setSubmitMessage('Submitting your answers...');
         
         try {
 
-          //await testAPIConnection();
-            // Format the answers for submission
-            const formattedAnswers = {};
-            Object.keys(answers).forEach(key => {
-                const questionId = key.replace('question_', '');
-                formattedAnswers[questionId] = answers[key];
-            });
-
+            const formattedAnswers = formatAnswers(answers);
             // Submit using your existing callSubmitAPI function
             const response = await callSubmitAPI(formattedAnswers);
 
@@ -114,6 +135,23 @@ const Questionaire = () => {
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    const testApi = async (jsondata) => {
+      try {
+        const response = await fetch(
+          'https://v09lb8rp98.execute-api.us-east-1.amazonaws.com/default/questionnaire',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsondata),
+          }
+        );
+        const data = await response.json();
+        setResult(data);
+      } catch (err) {
+        setResult({ error: err.message });
+      }
     };
 
     const handleSubmit = () => {
