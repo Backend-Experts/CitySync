@@ -84,39 +84,10 @@ const Questionaire = () => {
     const [submitMessage, setSubmitMessage] = useState('');
     const [result, setResult] = useState(null);
     const [userId, setUserId] = useState('');
-    const [cognitoId, setCognitoId] = useState(null);
 
 
-    useEffect(() => {
-        const getIdToken = () => {
-          // Method 1: Check if using Cognito Hosted UI (token in URL fragment)
-          if (window.location.hash.includes('id_token=')) {
-            const idToken = new URLSearchParams(window.location.hash.substring(1)).get('id_token');
-            if (idToken) {
-              const payload = JSON.parse(atob(idToken.split('.')[1]));
-              setCognitoId(payload.sub);
-              return;
-            }
-          }
     
-          // Method 2: Check localStorage for Amplify/Cognito tokens
-          const cognitoStorageKeys = Object.keys(localStorage).filter(key => 
-            key.includes('CognitoIdentityServiceProvider') && 
-            key.includes('idToken')
-          );
-    
-          if (cognitoStorageKeys.length > 0) {
-            const token = localStorage.getItem(cognitoStorageKeys[0]);
-            if (token) {
-              const payload = JSON.parse(atob(token.split('.')[1]));
-              setCognitoId(payload.sub);
-            }
-          }
-        };
-    
-        getIdToken();
-      }, []);
-    
+    const cognitoId = auth.user?.profile?.sub; // Cognito ID ("sub" claim)
             
 
     const handleInputChange = (e) => {
