@@ -11,6 +11,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "aws-amplify": "^6.13.5",
+    "aws-sdk": "^2.1692.0",
     "citysync": "file:",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.10.0",
