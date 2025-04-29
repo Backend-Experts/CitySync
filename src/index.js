@@ -5,11 +5,11 @@ import App from "./Pages/App";
 import { AuthProvider } from "react-oidc-context";
 
 const cognitoAuthConfig = {
-  authority: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_nZkuL9M2E",
-  client_id: "3ngqnactjir2urgdko48aojudi",
-  redirect_uri: "https://stage.d2020pxyuhilwo.amplifyapp.com/",
+  authority: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_WqjuhQLIk",
+  client_id: "6uaaq3d4tb4oduptof01ju1vgg",
+  redirect_uri: "https://main.d2020pxyuhilwo.amplifyapp.com/",
   response_type: "code",
-  scope: "phone openid email",
+  scope: "email openid phone",
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
