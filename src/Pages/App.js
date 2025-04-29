@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import "../CSS/App.css"; // Using standard CSS for styling
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
@@ -36,29 +36,15 @@ function App() {
   }
 
   return (
-    <div>
-      <button onClick={() => auth.signinRedirect()}>Sign in</button>
-    </div>
-  );
-}
-
-
-export default App;*/
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import Navbar from './Navbar';
-import '../CSS/App.css';
-
-function App() {
-  return (
-      <div className="App">
-        <Navbar />
-        <main>
-          <HomePage />
-        </main>
+    <div className="sign-in-page">
+      <div className="sign-in-container">
+        <h1>Welcome to CitySync</h1>
+        <p>Your personalized city matching app</p>
+        <button className="sign-in-button" onClick={() => auth.signinRedirect()}>
+          Sign In to Get Started
+        </button>
       </div>
+    </div>
   );
 }
 
