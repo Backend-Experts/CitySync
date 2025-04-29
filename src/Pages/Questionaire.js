@@ -248,12 +248,6 @@ const Questionaire = () => {
                         {submitMessage}
                     </div>
                 )}
-                <button 
-                    className="download-button" 
-                    onClick={exportToJson}
-                >
-                    Download Answers as JSON
-                </button>
             </div>
         );
     };
