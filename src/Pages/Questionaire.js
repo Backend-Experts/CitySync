@@ -5,76 +5,118 @@ import { useAuth } from "react-oidc-context";
 
 
 const Questionaire = () => {
-    const questions = [
-        {
-            id: 1,
-            text: "What is your name?",
-            type: "range",
-            min: 0,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 2,
-            text: "How important is Education to you?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 3,
-            text: "How important is Career to you?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 4,
-            text: "How important is Crime Rate to you?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 5,
-            text: "How important is Population Size to you?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 6,
-            text: "How important is Weather to you?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-        {
-            id: 9,
-            text: "What is your preferred population size?",
-            type: "select",
-            options: ["Small Town", "Medium City", "Large City", "Metropolis"],
-        },
-        {
-            id: 10,
-            text: "What is your preferred cost of living?",
-            type: "select",
-            options: ["Low", "Medium", "High"],
-        },
-        {
-            id: 11,
-            text: "What is your preferred weather?",
-            type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
-        },
-    ];
+  const questions = [
+    {
+        id: "name",
+        text: "What is your name?",
+        type: "text",
+        placeholder: "Enter your name"
+    },
+    {
+        id: "population",
+        text: "How important is population size? (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "density",
+        text: "How important is population density? (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "ranking",
+        text: "How important is city ranking/quality of life? (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "cost_of_living_index",
+        text: "How important is cost of living? (0 = prefer expensive, 1 = prefer affordable)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "crime",
+        text: "How important is low crime rate? (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "annual_avg_temp",
+        text: "Temperature preference (0 = prefer cold, 1 = prefer warm)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "rent_0_bedroom",
+        text: "Importance of studio/0-bedroom affordability (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "rent_1_bedroom",
+        text: "Importance of 1-bedroom affordability (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "rent_2_bedroom",
+        text: "Importance of 2-bedroom affordability (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "rent_3_bedroom",
+        text: "Importance of 3-bedroom affordability (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "rent_4_bedroom",
+        text: "Importance of 4-bedroom affordability (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "avg_rent",
+        text: "Importance of average rent prices (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    },
+    {
+        id: "Education",
+        text: "How important is education quality? (0 = not important, 1 = very important)",
+        type: "range",
+        min: 0,
+        max: 1,
+        step: 0.1
+    }
+];
 
     const auth = useAuth();
     const [currentSet, setCurrentSet] = useState(0);
