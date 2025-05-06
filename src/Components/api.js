@@ -1,5 +1,7 @@
 // src/services/api.js
 
+import { json } from "react-router-dom";
+
 /**
  * Service for submitting questionnaire data to API Gateway/Lambda backend
  */
@@ -71,3 +73,40 @@ export const logAPIRequest = (method, endpoint, data) => {
   console.log('Data:', data);
   console.groupEnd();
 };
+
+
+
+export const fetchMatchedCities = async (userId) => {
+  const url = `https://2m78ilefj5.execute-api.us-east-1.amazonaws.com/dev?user_id=${encodeURIComponent(userId)}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.status}`);
+    }
+
+    const result = await response.json(); // parses HTTP response → { statusCode, headers, body: "json string" }
+    console.log('Raw API result:', result);
+
+    if (result.body) {
+      const parsedBody = JSON.parse(result.body); // parses stringified JSON
+      console.log('Parsed match result:', parsedBody);
+      return parsedBody;
+    } else {
+      console.warn('No body in API response:', result);
+      return null;
+    }
+
+  } catch (error) {
+    console.error('Error fetching match result:', error);
+    throw error;
+  }
+};
+
+

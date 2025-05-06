@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import "../CSS/ResultsPage.css";
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
+import { fetchMatchedCities } from "../Components/api";
 
 
 const ResultsPage = () => {
   // JSON data included directly in the component
-  const data = {
+  /*const data = {
     "_id": { "$oid": "68110c55643ff801d3eaa011" },
     "user_id": "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b",
     "matched_cities": [
@@ -184,10 +185,12 @@ const ResultsPage = () => {
     ],
     "timestamp": "2025-04-29T17:28:53.053655"
   };
+
+  */
     const navigate = useNavigate();
   
   // Process the data to extract and format cities
-  const matchedCities = data.matched_cities
+  /* const matchedCities = data.matched_cities
     .map(city => ({
       name: `${city.city}, ${city.state}`,
       matchPercentage: parseFloat(city.match_percentage.$numberDouble),
@@ -202,6 +205,7 @@ const ResultsPage = () => {
     .sort((a, b) => b.matchPercentage - a.matchPercentage) // Sort cities by match percentage
     .slice(0, 10); // Take top 10 cities
 
+    */
   // Format category names for display
   const formatCategoryName = (category) => {
     const formatted = category.replace(/_/g, ' ');
@@ -211,19 +215,63 @@ const ResultsPage = () => {
   };
 
   const handleNavigate = useCallback((city) => {
-      navigate('/cityinfo', { state: { city: city } });
-    }, [navigate]);
+    navigate('/cityinfo', { state: { city: city } });
+  }, [navigate]);
+
+  const [matchCities, setMatchedCities] = useState([]);
+  const [error, setError] = useState(null);
+  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
+
+  console.log('Received userId:', userId);
+
+  useEffect(() => {
+    const getMatchData = async () => {
+      try {
+        console.log("Fetching match data for user:", userId);
+        const result = await fetchMatchedCities(userId);
+        console.log("Fetched match result:", result);
+
+        if (result && result.matched_cities) {
+          const formattedCities = result.matched_cities.map(city => ({
+            name: `${city.city}, ${city.state}`,
+            matchPercentage: city.match_percentage ?? 0,
+            topCategories: Object.entries(city.category_match || {})
+              .map(([category, details]) => ({
+                category,
+                similarity: details?.similarity ?? 0
+              }))
+              .sort((a, b) => b.similarity - a.similarity)
+              .slice(0, 4)
+          }));
+
+          console.log('Formatted cities:', formattedCities);
+          setMatchedCities(formattedCities);
+        } else {
+          setMatchedCities([]);
+        }
+      } catch (err) {
+        console.error("Error fetching match results:", err);
+        setError("Failed to load your matched cities.");
+      }
+    };
+
+    if (userId) {
+      getMatchData();
+    }
+  }, [userId]);
 
   return (
     <div className="results-page-container">
       <h1>Your Matched Cities</h1>
+      {matchCities.length === 0 && !error && <p>No matched cities found.</p>}
+      {error && <p className="error-message">{error}</p>}
       <div className="cities-grid">
-        {matchedCities.map((city, index) => (
+        {matchCities.map((city, index) => (
           <div key={index} className="city-card">
             {/* Column 1: City Name and Button */}
             <div className="city-info">
               <h2>{city.name}</h2>
-              <button className="more-info-button" onClick={handleNavigate}>More Information</button>
+              <button className="more-info-button" onClick={() => handleNavigate(city)}>More Information</button>
             </div>
 
             {/* Column 2: Top Matching Categories */}
@@ -232,7 +280,7 @@ const ResultsPage = () => {
               <ul>
                 {city.topCategories.map((category, i) => (
                   <li key={i}>
-                    {formatCategoryName(category.category)}: {category.similarity.toFixed(1)}%
+                    {formatCategoryName(category.category)}: {category.similarity !== undefined ? category.similarity.toFixed(1) : 'N/A'}%
                   </li>
                 ))}
               </ul>
