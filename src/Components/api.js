@@ -77,7 +77,13 @@ export const logAPIRequest = (method, endpoint, data) => {
 
 
 export const fetchMatchedCities = async (userId) => {
+<<<<<<< Updated upstream
   const url = `https://2m78ilefj5.execute-api.us-east-1.amazonaws.com/dev?user_id=${encodeURIComponent(userId)}`;
+=======
+  const jsonBody = JSON.stringify({ user_id: userId });
+  console.log(jsonBody)
+  const url = `https://2m78ilefj5.execute-api.us-east-1.amazonaws.com/dev/?userId=${encodeURIComponent(jsonBody)}`;
+>>>>>>> Stashed changes
 
   try {
     const response = await fetch(url, {
@@ -91,6 +97,7 @@ export const fetchMatchedCities = async (userId) => {
       throw new Error(`Server error: ${response.status}`);
     }
 
+<<<<<<< Updated upstream
     const result = await response.json(); // parses HTTP response → { statusCode, headers, body: "json string" }
     console.log('Raw API result:', result);
 
@@ -103,6 +110,11 @@ export const fetchMatchedCities = async (userId) => {
       return null;
     }
 
+=======
+    const result = await response.json();
+    console.log('Fetched match result:', result);
+    return result;
+>>>>>>> Stashed changes
   } catch (error) {
     console.error('Error fetching match result:', error);
     throw error;

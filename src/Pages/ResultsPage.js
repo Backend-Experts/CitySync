@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import "../CSS/ResultsPage.css";
 import { json, useNavigate } from 'react-router-dom';
@@ -224,14 +225,37 @@ const ResultsPage = () => {
 
   console.log('Received userId:', userId);
 
+=======
+import React, { useEffect, useState } from "react";
+import "../CSS/ResultsPage.css";
+import { fetchMatchedCities } from "../Components/api";
+// import { useAuth } from "react-oidc-context";
+
+const ResultsPage = () => {
+  //const auth = useAuth();
+  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
+  
+
+  const [matchedCities, setMatchedCities] = useState([]);
+  const [error, setError] = useState(null);
+
+  console.log('Received userId:', userId);
+
+  
+>>>>>>> Stashed changes
   useEffect(() => {
     const getMatchData = async () => {
       try {
         console.log("Fetching match data for user:", userId);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         const result = await fetchMatchedCities(userId);
         console.log("Fetched match result:", result);
 
         if (result && result.matched_cities) {
+<<<<<<< Updated upstream
           const formattedCities = result.matched_cities.map(city => ({
             name: `${city.city}, ${city.state}`,
             matchPercentage: city.match_percentage ?? 0,
@@ -245,6 +269,14 @@ const ResultsPage = () => {
           }));
 
           console.log('Formatted cities:', formattedCities);
+=======
+          const formattedCities = result.matched_cities.map((name, index) => ({
+            name,
+            topPreferences: ["Loading...", "Customize this", "via backend later", "🏙️"],
+            matchPercentage: 60 + (index * 10) % 40,
+          }));
+
+>>>>>>> Stashed changes
           setMatchedCities(formattedCities);
         } else {
           setMatchedCities([]);
@@ -263,7 +295,10 @@ const ResultsPage = () => {
   return (
     <div className="results-page-container">
       <h1>Your Matched Cities</h1>
+<<<<<<< Updated upstream
       {matchCities.length === 0 && !error && <p>No matched cities found.</p>}
+=======
+>>>>>>> Stashed changes
       {error && <p className="error-message">{error}</p>}
       <div className="cities-grid">
         {matchCities.map((city, index) => (
