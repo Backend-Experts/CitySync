@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import "../CSS/ResultsPage.css";
 import { json, useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { fetchMatchedCities } from "../Components/api";
 
 const ResultsPage = () => {
   // JSON data included directly in the component
-  /*const data = {
+  const data = {
     "_id": { "$oid": "68110c55643ff801d3eaa011" },
     "user_id": "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b",
     "matched_cities": [
@@ -186,28 +186,9 @@ const ResultsPage = () => {
     ],
     "timestamp": "2025-04-29T17:28:53.053655"
   };
-
-  */
     const navigate = useNavigate();
   
   // Process the data to extract and format cities
-  /* const matchedCities = data.matched_cities
-    .map(city => ({
-      name: `${city.city}, ${city.state}`,
-      matchPercentage: parseFloat(city.match_percentage.$numberDouble),
-      topCategories: Object.entries(city.category_match)
-        .map(([category, details]) => ({
-          category,
-          similarity: parseFloat(details.similarity.$numberDouble)
-        }))
-        .sort((a, b) => b.similarity - a.similarity) // Sort by highest similarity
-        .slice(0, 4) // Take top 4 categories
-    }))
-    .sort((a, b) => b.matchPercentage - a.matchPercentage) // Sort cities by match percentage
-    .slice(0, 10); // Take top 10 cities
-
-    */
-  // Format category names for display
   const formatCategoryName = (category) => {
     const formatted = category.replace(/_/g, ' ');
     return formatted.split(' ')
@@ -225,37 +206,14 @@ const ResultsPage = () => {
 
   console.log('Received userId:', userId);
 
-=======
-import React, { useEffect, useState } from "react";
-import "../CSS/ResultsPage.css";
-import { fetchMatchedCities } from "../Components/api";
-// import { useAuth } from "react-oidc-context";
-
-const ResultsPage = () => {
-  //const auth = useAuth();
-  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
-  
-
-  const [matchedCities, setMatchedCities] = useState([]);
-  const [error, setError] = useState(null);
-
-  console.log('Received userId:', userId);
-
-  
->>>>>>> Stashed changes
   useEffect(() => {
     const getMatchData = async () => {
       try {
         console.log("Fetching match data for user:", userId);
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         const result = await fetchMatchedCities(userId);
         console.log("Fetched match result:", result);
 
         if (result && result.matched_cities) {
-<<<<<<< Updated upstream
           const formattedCities = result.matched_cities.map(city => ({
             name: `${city.city}, ${city.state}`,
             matchPercentage: city.match_percentage ?? 0,
@@ -269,14 +227,6 @@ const ResultsPage = () => {
           }));
 
           console.log('Formatted cities:', formattedCities);
-=======
-          const formattedCities = result.matched_cities.map((name, index) => ({
-            name,
-            topPreferences: ["Loading...", "Customize this", "via backend later", "🏙️"],
-            matchPercentage: 60 + (index * 10) % 40,
-          }));
-
->>>>>>> Stashed changes
           setMatchedCities(formattedCities);
         } else {
           setMatchedCities([]);
@@ -295,10 +245,7 @@ const ResultsPage = () => {
   return (
     <div className="results-page-container">
       <h1>Your Matched Cities</h1>
-<<<<<<< Updated upstream
       {matchCities.length === 0 && !error && <p>No matched cities found.</p>}
-=======
->>>>>>> Stashed changes
       {error && <p className="error-message">{error}</p>}
       <div className="cities-grid">
         {matchCities.map((city, index) => (
