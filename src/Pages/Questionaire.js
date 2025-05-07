@@ -168,11 +168,7 @@ const Questionaire = () => {
     };
 
     const handleSubmit = () => {
-        if (isCurrentSetComplete()) {
-            saveToLambda();
-        } else {
-            setSubmitMessage('Please complete all questions before submitting');
-        }
+        saveToLambda();
     };
 
     const handleNext = () => {
@@ -187,17 +183,6 @@ const Questionaire = () => {
         if (currentSet > 0) {
             setCurrentSet(currentSet - 1);
         }
-    };
-
-    const isCurrentSetComplete = () => {
-        const startIndex = currentSet * 5;
-        const endIndex = Math.min(startIndex + 5, questions.length);
-        const currentQuestions = questions.slice(startIndex, endIndex);
-
-        return currentQuestions.every(
-            (question) => answers[`question_${question.id}`] !== undefined && 
-                         answers[`question_${question.id}`] !== ''
-        );
     };
 
     const renderQuestions = () => {
@@ -252,18 +237,6 @@ const Questionaire = () => {
         );
     };
 
-    const exportToJson = () => {
-        const jsonData = JSON.stringify(formatAnswers(), null, 2);
-        const blob = new Blob([jsonData], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "questionnaire_answers.json";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-    };
 
     return (
         <div className="questionnaire-container">
@@ -277,7 +250,6 @@ const Questionaire = () => {
                         </button>
                         <button
                             onClick={handleNext}
-                            disabled={!isCurrentSetComplete()}
                         >
                             {currentSet === Math.ceil(questions.length / 5) - 1
                                 ? "Submit"
