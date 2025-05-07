@@ -94,16 +94,9 @@ export const fetchMatchedCities = async (userId) => {
 
    const result = await response.json(); // parses HTTP response → { statusCode, headers, body: "json string" }
    console.log('Raw API result:', result);
-
-   if (result.body) {
-     const parsedBody = JSON.parse(result.body); // parses stringified JSON
-     console.log('Parsed match result:', parsedBody);
-     return parsedBody;
-   } else {
-     console.warn('No body in API response:', result);
-     return null;
+   if(result){
+    return result;
    }
-
  } catch (error) {
    console.error('Error fetching match result:', error);
    throw error;
