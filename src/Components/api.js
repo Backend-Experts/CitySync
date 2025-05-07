@@ -18,17 +18,15 @@ const SUBMIT_ENDPOINT = '/submit';
 */
 
 export const callSubmitAPI = async (data) => {
- const url = '${API_BASE_URL}${SUBMIT_ENDPOINT}';
+ const url = 'https://a2v132aquh.execute-api.us-east-1.amazonaws.com/prod/submit';
  console.log('Final data being sent:', JSON.stringify(data, null, 2));
  try {
-   console.log('Submitting data to:', url);
    console.log('Request payload:', data);
 
    const response = await fetch(url, {
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
-       'Accept': 'application/json' // Explicitly ask for JSON response
      },
      body: JSON.stringify({ data }), // Wrap in object for extra safety
    });
