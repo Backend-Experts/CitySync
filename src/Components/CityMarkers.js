@@ -48,7 +48,16 @@ const CityMarkers = ({
   };
 
   const handleNavigate = useCallback((city) => {
-    navigate('/cityinfo', { state: { city: city } });
+    const stateAbbr = getStateAbbreviation(city.state);
+    navigate('/cityinfo', { 
+      state: { 
+        city: {
+          ...city,
+          name: city.name, 
+          state: stateAbbr
+        } 
+      } 
+    });
   }, [navigate]);
 
   const updateMarkers = () => {
@@ -123,7 +132,10 @@ const CityMarkers = ({
       .on('popupopen', () => {
         const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
         if (button) {
-          button.addEventListener('click', () => handleNavigate(city));
+          button.addEventListener('click', () => handleNavigate({
+            ...city,
+            state: stateAbbr
+          }));
         }
       })
       .on('popupclose', () => {

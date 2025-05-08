@@ -1,18 +1,13 @@
-
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import "../CSS/ResultsPage.css";
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchMatchedCities } from "../Components/api";
-import { createKeyValueStorageFromCookieStorageAdapter } from "aws-amplify/adapter-core";
 import { useAuth } from "react-oidc-context";
-
-
 
 const ResultsPage = () => {
   const navigate = useNavigate();
   const auth = useAuth();
   
-  // Process the data to extract and format cities
   const formatCategoryName = (category) => {
     const formatted = category.replace(/_/g, ' ');
     return formatted.split(' ')
@@ -21,24 +16,30 @@ const ResultsPage = () => {
   };
 
   const handleNavigate = useCallback((city) => {
-    navigate('/cityinfo', { state: { city: city } });
+    return () => navigate('/cityinfo', { 
+      state: { 
+        city: {
+          ...city,
+          name: city.city, 
+          state: city.state 
+        } 
+      } 
+    });
   }, [navigate]);
 
   const [matchCities, setMatchedCities] = useState([]);
   const [error, setError] = useState(null);
   const userId = auth.user?.profile?.sub;
-  // const userId = "04b84488-c091-7027-74b3-335aeafecbfa"
-
-  console.log('Received userId:', userId);
+  // "04b84488-c091-7027-74b3-335aeafecbfa"
 
   useEffect(() => {
     const getMatchData = async () => {
       try {
-        console.log("Fetching match data for user:", userId);
         const result = await fetchMatchedCities(userId);
-        if (result && result.matched_cities) {
+        if (result?.matched_cities) {
           const formattedCities = result.matched_cities.map(city => ({
-            name: `${city.city}, ${city.state}`,
+            city: city.city.trim(), // City name only
+            state: city.state.trim(), // State abbreviation only
             matchPercentage: city.match_percentage ?? 0,
             topCategories: Object.entries(city.category_match || {})
               .map(([category, details]) => ({
@@ -49,7 +50,6 @@ const ResultsPage = () => {
               .slice(0, 4)
           }));
 
-          console.log('Formatted cities:', formattedCities);
           setMatchedCities(formattedCities);
         } else {
           setMatchedCities([]);
@@ -68,16 +68,22 @@ const ResultsPage = () => {
   return (
     <div className="results-page-container">
       <h1>Your Matched Cities</h1>
+      {error && <div className="error-message">{error}</div>}
+      
       <div className="cities-grid">
         {matchCities.map((city, index) => (
           <div key={index} className="city-card">
-            {/* Column 1: City Name and Button */}
             <div className="city-info">
-              <h2>{city.name}</h2>
-              <button className="more-info-button" onClick={() => handleNavigate(city)}>More Information</button>
+              {/* Display formatted name here, but pass raw data to navigation */}
+              <h2>{city.city}, {city.state}</h2>
+              <button 
+                className="more-info-button" 
+                onClick={handleNavigate(city)}
+              >
+                More Information
+              </button>
             </div>
 
-            {/* Column 2: Top Matching Categories */}
             <div className="preferences-box">
               <h3>Top Matching Categories</h3>
               <ul>
@@ -89,7 +95,6 @@ const ResultsPage = () => {
               </ul>
             </div>
 
-            {/* Column 3: Percentage Match and Slider */}
             <div className="match-percentage">
               <h3>Match Score</h3>
               <p>{city.matchPercentage.toFixed(1)}%</p>
@@ -98,7 +103,7 @@ const ResultsPage = () => {
                 min="0"
                 max="100"
                 value={city.matchPercentage}
-                disabled // Slider is read-only
+                disabled
               />
             </div>
           </div>
@@ -107,6 +112,5 @@ const ResultsPage = () => {
     </div>
   );
 };
-
 
 export default ResultsPage;
