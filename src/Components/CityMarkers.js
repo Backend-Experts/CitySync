@@ -2,7 +2,15 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import L from 'leaflet';
 import { useNavigate } from 'react-router-dom';
 
-const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames, showAllCities }) => {
+const CityMarkers = ({ 
+  mapRef, 
+  currentZoom, 
+  cityData, 
+  activeState, 
+  showCityNames, 
+  showAllCities, 
+  matchedCities 
+}) => {
   const markersRef = useRef([]);
   const cityLabelsRef = useRef([]);
   const navigate = useNavigate();
@@ -21,7 +29,8 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
       'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC',
       'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT',
       'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV',
-      'Wisconsin': 'WI', 'Wyoming': 'WY', 'District of Columbia': 'DC'
+      'Wisconsin': 'WI', 'Wyoming': 'WY', 'District of Columbia': 'DC',
+      'Virgin Islands': 'VI', 'Puerto Rico': 'PR'
     };
     return stateAbbreviations[fullStateName] || fullStateName;
   };
@@ -50,52 +59,74 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
     markersRef.current = [];
     cityLabelsRef.current = [];
 
-    const citiesToDisplay = cityData
-      .filter(city => city.lat && city.lng && city.state !== 'Puerto Rico')
-      .filter(city => {
-        if (showAllCities) return true;
-        if (activeState) return city.state === activeState;
-        return currentZoom >= city.minZoom;
+    let citiesToDisplay = [];
+    
+    if (matchedCities) {
+      const matchedCityKeys = new Set();
+      matchedCities.matched_cities.forEach(city => {
+        if (city.state !== 'PR') {
+          matchedCityKeys.add(`${city.city}_${city.state}`);
+        }
       });
+
+      citiesToDisplay = cityData
+        .filter(city => city.lat && city.lng)
+        .filter(city => {
+          const stateAbbr = getStateAbbreviation(city.state);
+          return matchedCityKeys.has(`${city.name}_${stateAbbr}`);
+        });
+    } else {
+      citiesToDisplay = cityData
+        .filter(city => city.lat && city.lng && city.state !== 'Puerto Rico')
+        .filter(city => {
+          if (showAllCities) return true;
+          if (activeState) return city.state === activeState;
+          return currentZoom >= city.minZoom;
+        });
+    }
 
     citiesToDisplay.forEach(city => {
       const stateAbbr = getStateAbbreviation(city.state);
+      const matchedCity = matchedCities?.matched_cities?.find(
+        mc => mc.city === city.name && mc.state === stateAbbr
+      );
+
+      const popupContent = `
+        <b>${city.name}, ${stateAbbr}</b>
+        <div style="margin-top: 8px;">
+          <button
+            style="
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              padding: 5px 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 12px;
+              margin: 4px 2px;
+              cursor: pointer;
+              border-radius: 4px;
+            "
+            id="city-info-button-${city.name.replace(/\s+/g, '-')}"
+          >
+            More Info
+          </button>
+        </div>
+      `;
+
       const marker = L.marker([city.lat, city.lng], {
         icon: createMarkerIcon(),
         riseOnHover: true
       })
-      .bindPopup(
-        `<b>${city.name}, ${stateAbbr}</b>
-         <div style="margin-top: 8px;">
-           <button
-             style="
-               background-color: #4CAF50;
-               color: white;
-               border: none;
-               padding: 5px 10px;
-               text-align: center;
-               text-decoration: none;
-               display: inline-block;
-               font-size: 12px;
-               margin: 4px 2px;
-               cursor: pointer;
-               border-radius: 4px;
-             "
-             id="city-info-button-${city.name.replace(/\s+/g, '-')}"
-           >
-             More Info
-           </button>
-         </div>`
-      )
+      .bindPopup(popupContent)
       .on('popupopen', () => {
-        // Add click handler after popup is opened
         const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
         if (button) {
           button.addEventListener('click', () => handleNavigate(city));
         }
       })
       .on('popupclose', () => {
-        // Clean up event listener when popup closes
         const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
         if (button) {
           button.removeEventListener('click', () => handleNavigate(city));
@@ -106,10 +137,14 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
       markersRef.current.push(marker);
 
       if (showCityNames) {
+        const labelText = matchedCity 
+          ? `${city.name}`
+          : city.name;
+
         const label = L.marker([city.lat, city.lng], {
           icon: L.divIcon({
             className: 'city-label',
-            html: `<div>${city.name}</div>`,
+            html: `<div>${labelText}</div>`,
             iconSize: [0, 0],
             iconAnchor: [0, 50]
           }),
@@ -123,7 +158,7 @@ const CityMarkers = ({ mapRef, currentZoom, cityData, activeState, showCityNames
 
   useEffect(() => {
     updateMarkers();
-  }, [currentZoom, cityData, activeState, showAllCities, showCityNames, handleNavigate]);
+  }, [currentZoom, cityData, activeState, showAllCities, showCityNames, handleNavigate, matchedCities]);
 
   return null;
 };

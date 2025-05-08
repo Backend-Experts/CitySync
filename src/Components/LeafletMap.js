@@ -3,6 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import statesData from '../data/us-states.json';
 import cityData from '../data/marker_coords.json';
+import matchedCitiesData from '../data/matched_cities_data.json';
 import CityMarkers from './CityMarkers';
 import SearchBar from './SearchBar';
 import MapControls from './MapControls';
@@ -12,8 +13,9 @@ const LeafletMap = () => {
   const geoJsonLayerRef = useRef(null);
   const [currentZoom, setCurrentZoom] = useState(6);
   const [activeState, setActiveState] = useState(null);
-  const [showCityNames, setShowCityNames] = useState(false);
+  const [showCityNames, setShowCityNames] = useState(true);
   const [showAllCities, setShowAllCities] = useState(false);
+  const [showMatchedCities, setShowMatchedCities] = useState(true);
   const activeLayerRef = useRef(null);
 
   useEffect(() => {
@@ -31,14 +33,6 @@ const LeafletMap = () => {
       updateWhenIdle: false,
       updateWhenZooming: false
     }).setView([39.8283, -98.5795], 6);
-
-    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    //   updateWhenIdle: false, // Load tiles DURING panning
-    //   updateWhenZooming: false, // Load tiles DURING zooming
-    //   maxZoom: 19,
-    //   minZoom: 3,
-    // }).addTo(mapRef.current);
 
     mapRef.current.on('zoomend', () => {
       setCurrentZoom(mapRef.current.getZoom());
@@ -72,11 +66,10 @@ const LeafletMap = () => {
           mouseover: (e) => {
             const bounds = layer.getBounds();
             const center = bounds.getCenter();
-            // console.log(center)
             const popup = L.popup({ 
               className: 'custom-state-popup',
               closeButton: false,
-              interactive: false // This is the key change
+              interactive: false
             })
               .setLatLng(center)
               .setContent(`<div class="state-popup-content">${feature.properties.name}</div>`);
@@ -181,49 +174,40 @@ const LeafletMap = () => {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
       }
 
-        /* Custom popup styles */
-        .custom-state-popup {
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          pointer-events: none !important;
-        }
-        
-        .custom-state-popup .leaflet-popup-content-wrapper {
-          background: rgba(255, 255, 255, 0.3) !important;
-          border-radius: 8px !important;
-          box-shadow: none !important;
-          padding: 0 !important;
-          border: none !important;
-          transform: translate(-0%, 150%);
-          pointer-events: none !important;
-        }
-        
-        .custom-state-popup .leaflet-popup-tip-container {
-          display: none !important;
-          pointer-events: none !important;
-        }
-        
-        .custom-state-popup .leaflet-popup-tip {
-          background: rgba(255, 255, 255, 0.3) !important;
-          box-shadow: none !important;
-          width: 12px;
-          height: 12px;
-          pointer-events: none !important;
-        }
-        
-        .state-popup-content {
-          margin: 8px 12px;
-          color: #000;
-          font-weight: bold;
-          text-align: center;
-          font-size: 14px;
-          pointer-events: none !important;
-        }
+      .custom-state-popup {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        pointer-events: none !important;
+      }
+      
+      .custom-state-popup .leaflet-popup-content-wrapper {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        border: none !important;
+        transform: translate(-0%, 150%);
+        pointer-events: none !important;
+      }
+      
+      .custom-state-popup .leaflet-popup-tip-container {
+        display: none !important;
+        pointer-events: none !important;
+      }
+      
+      .state-popup-content {
+        margin: 8px 12px;
+        color: #000;
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+        pointer-events: none !important;
+      }
 
-        .search-result-item:hover {
+      .search-result-item:hover {
         background-color: #f5f5f5 !important;
-}
+      }
     `;
     document.head.appendChild(style);
     return () => document.head.removeChild(style);
@@ -249,7 +233,9 @@ const LeafletMap = () => {
         setShowCityNames={setShowCityNames}
         activeState={activeState}
         setActiveState={setActiveState} 
-        geoJsonLayerRef={geoJsonLayerRef} 
+        geoJsonLayerRef={geoJsonLayerRef}
+        showMatchedCities={showMatchedCities}
+        setShowMatchedCities={setShowMatchedCities}
       />
       <CityMarkers 
         mapRef={mapRef} 
@@ -258,6 +244,7 @@ const LeafletMap = () => {
         activeState={activeState}
         showCityNames={showCityNames}
         showAllCities={showAllCities}
+        matchedCities={showMatchedCities ? matchedCitiesData : null}
       />
     </div>
   );

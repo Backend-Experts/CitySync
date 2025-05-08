@@ -1,79 +1,120 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import "../CSS/Questionaire.css";
-import { callSubmitAPI , testAPIConnection} from '../Components/api';
+import { callSubmitAPI } from '../Components/api';
 import { useAuth } from "react-oidc-context";
-
 
 const Questionaire = () => {
     const questions = [
         {
-            id: 1,
-            text: "How important is Affordable Housing to you?",
+            id: "name",
+            text: "What is your name?",
+            type: "text",
+            placeholder: "Enter your name"
+        },
+        {
+            id: "population",
+            text: "How important is population size? (0 = not important, 1 = very important)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 2,
-            text: "How important is Education to you?",
+            id: "density",
+            text: "How important is population density? (0 = not important, 1 = very important)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 3,
-            text: "How important is Career to you?",
+            id: "ranking",
+            text: "How important is city ranking/quality of life? (0 = not important, 1 = very important)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 4,
-            text: "How important is Crime Rate to you?",
+            id: "cost_of_living_index",
+            text: "How important is cost of living? (0 = prefer expensive, 1 = prefer affordable)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 5,
-            text: "How important is Population Size to you?",
+            id: "crime",
+            text: "How important is low crime rate? (0 = not important, 1 = very important)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 6,
-            text: "How important is Weather to you?",
+            id: "annual_avg_temp",
+            text: "Temperature preference (0 = prefer cold, 1 = prefer warm)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
         {
-            id: 9,
-            text: "What is your preferred population size?",
-            type: "select",
-            options: ["Small Town", "Medium City", "Large City", "Metropolis"],
-        },
-        {
-            id: 10,
-            text: "What is your preferred cost of living?",
-            type: "select",
-            options: ["Low", "Medium", "High"],
-        },
-        {
-            id: 11,
-            text: "What is your preferred weather?",
+            id: "rent_0_bedroom",
+            text: "Importance of studio/0-bedroom affordability (0 = not important, 1 = very important)",
             type: "range",
-            min: 1,
-            max: 10,
-            step: 1,
+            min: 0,
+            max: 1,
+            step: 0.01
         },
+        {
+            id: "rent_1_bedroom",
+            text: "Importance of 1-bedroom affordability (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
+        {
+            id: "rent_2_bedroom",
+            text: "Importance of 2-bedroom affordability (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
+        {
+            id: "rent_3_bedroom",
+            text: "Importance of 3-bedroom affordability (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
+        {
+            id: "rent_4_bedroom",
+            text: "Importance of 4-bedroom affordability (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
+        {
+            id: "avg_rent",
+            text: "Importance of average rent prices (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        },
+        {
+            id: "Education",
+            text: "How important is education quality? (0 = not important, 1 = very important)",
+            type: "range",
+            min: 0,
+            max: 1,
+            step: 0.01
+        }
     ];
 
     const auth = useAuth();
@@ -82,58 +123,34 @@ const Questionaire = () => {
     const [showResults, setShowResults] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
-    const [result, setResult] = useState(null);
-    const [userId, setUserId] = useState('');
-
-
-    
-    const cognitoId = auth.user?.profile?.sub; // Cognito ID ("sub" claim)
-            
+    const cognitoId = auth.user?.profile?.sub;
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setAnswers({ ...answers, [name]: value });
     };
 
-    const formatAnswers = (answers, userId) => {
-  // Create an object with userId as the first property
-  const formattedAnswers = {
-    userId: cognitoId || '' // Include userId even if empty for consistent structure
-  };
-  
-  // Map question IDs to their corresponding output fields
-  const questionMapping = {
-    1: 'affordableHousingWeight',
-    2: 'educationWeight',
-    3: 'careerWeight',
-    4: 'crimeWeight',
-    5: 'populationWeight',
-    6: 'weatherWeight',
-    9: 'populationSize',
-    10: 'costOfLiving',
-    11: 'weatherPreference'
-  };
+    const formatAnswers = () => {
+        // Create an object with userId as the first property
+        const formattedAnswers = {
+            userId: cognitoId || ''
+        };
 
-  // Add all other answers after userId
-  Object.keys(answers).forEach(key => {
-    const questionId = parseInt(key.replace('question_', ''));
-    const fieldName = questionMapping[questionId];
-    
-    if (fieldName) {
-      formattedAnswers[fieldName] = answers[key];
-    }
-  });
+        // Add all answers directly using their IDs as keys
+        Object.keys(answers).forEach(key => {
+            const questionId = key.replace('question_', '');
+            formattedAnswers[questionId] = answers[key];
+        });
 
-  return formattedAnswers;
-};
+        return formattedAnswers;
+    };
+
     const saveToLambda = async () => {
         setIsSubmitting(true);
         setSubmitMessage('Submitting your answers...');
         
         try {
-
-            const formattedAnswers = formatAnswers(answers);
-            // Submit using your existing callSubmitAPI function
+            const formattedAnswers = formatAnswers();
             const response = await callSubmitAPI(formattedAnswers);
 
             if (response.error) {
@@ -150,29 +167,8 @@ const Questionaire = () => {
         }
     };
 
-    const testApi = async (jsondata) => {
-      try {
-        const response = await fetch(
-          'https://v09lb8rp98.execute-api.us-east-1.amazonaws.com/default/questionnaire',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(jsondata),
-          }
-        );
-        const data = await response.json();
-        setResult(data);
-      } catch (err) {
-        setResult({ error: err.message });
-      }
-    };
-
     const handleSubmit = () => {
-        if (isCurrentSetComplete()) {
-            saveToLambda();
-        } else {
-            setSubmitMessage('Please complete all questions before submitting');
-        }
+        saveToLambda();
     };
 
     const handleNext = () => {
@@ -189,19 +185,9 @@ const Questionaire = () => {
         }
     };
 
-    const isCurrentSetComplete = () => {
-        const startIndex = currentSet * 5;
-        const endIndex = startIndex + 5;
-        const currentQuestions = questions.slice(startIndex, endIndex);
-
-        return currentQuestions.every(
-            (question) => answers[`question_${question.id}`] !== undefined
-        );
-    };
-
     const renderQuestions = () => {
         const startIndex = currentSet * 5;
-        const endIndex = startIndex + 5;
+        const endIndex = Math.min(startIndex + 5, questions.length);
         const currentQuestions = questions.slice(startIndex, endIndex);
 
         return currentQuestions.map((question) => (
@@ -220,19 +206,14 @@ const Questionaire = () => {
                         />
                         <span>{answers[`question_${question.id}`] || question.min}</span>
                     </div>
-                ) : question.type === "select" ? (
-                    <select
+                ) : question.type === "text" ? (
+                    <input
+                        type="text"
                         name={`question_${question.id}`}
                         value={answers[`question_${question.id}`] || ""}
                         onChange={handleInputChange}
-                    >
-                        <option value="">Select an option</option>
-                        {question.options.map((option, index) => (
-                            <option key={index} value={option}>
-                                {option}
-                            </option>
-                        ))}
-                    </select>
+                        placeholder={question.placeholder || "Enter your answer"}
+                    />
                 ) : null}
             </div>
         ));
@@ -252,28 +233,10 @@ const Questionaire = () => {
                         {submitMessage}
                     </div>
                 )}
-                <button 
-                    className="download-button" 
-                    onClick={exportToJson}
-                >
-                    Download Answers as JSON
-                </button>
             </div>
         );
     };
 
-    const exportToJson = () => {
-        const jsonData = JSON.stringify(answers, null, 2);
-        const blob = new Blob([jsonData], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "questionnaire_answers.json";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-    };
 
     return (
         <div className="questionnaire-container">
@@ -287,7 +250,6 @@ const Questionaire = () => {
                         </button>
                         <button
                             onClick={handleNext}
-                            disabled={!isCurrentSetComplete()}
                         >
                             {currentSet === Math.ceil(questions.length / 5) - 1
                                 ? "Submit"

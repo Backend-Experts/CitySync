@@ -9,34 +9,33 @@ const MapControls = ({
   activeState,
   setActiveState,
   geoJsonLayerRef,
+  showMatchedCities,
+  setShowMatchedCities
 }) => {
-  const [showBaseMap, setShowBaseMap] = useState(false); // Start with base map OFF
+  const [showBaseMap, setShowBaseMap] = useState(false);
   const [showGeoJson, setShowGeoJson] = useState(true);
   const [activeLayerType, setActiveLayerType] = useState(null);
 
-  // Base layers configuration
   const baseLayers = [
     {
       name: 'OpenStreetMap',
       type: 'osm',
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      activeColor: '#4CAF50', // Green
+      activeColor: '#4CAF50',
     },
     {
       name: 'Satellite',
       type: 'satellite',
       url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics',
-      activeColor: '#2196F3', // Blue
+      activeColor: '#2196F3',
     },
   ];
 
-  // Initialize with no base layer
   useEffect(() => {
     if (!mapRef.current) return;
     
-    // Remove any existing tile layers
     mapRef.current.eachLayer(layer => {
       if (layer instanceof L.TileLayer) {
         mapRef.current.removeLayer(layer);
@@ -44,18 +43,15 @@ const MapControls = ({
     });
   }, [mapRef]);
 
-  // Handle base layer changes
   const handleLayerChange = (layerUrl, attribution, layerType) => {
     if (!mapRef.current) return;
     
-    // Remove existing base layers
     mapRef.current.eachLayer(layer => {
       if (layer instanceof L.TileLayer) {
         mapRef.current.removeLayer(layer);
       }
     });
 
-    // Add new base layer
     const layer = L.tileLayer(layerUrl, {
       attribution,
       updateWhenIdle: false,
@@ -68,18 +64,15 @@ const MapControls = ({
     setShowBaseMap(true);
   };
 
-  // Toggle base map visibility
   const toggleBaseMap = () => {
     const newState = !showBaseMap;
     setShowBaseMap(newState);
     
     if (activeLayerType) {
       if (newState) {
-        // Re-enable the last active layer
         const layer = baseLayers.find(l => l.type === activeLayerType);
         handleLayerChange(layer.url, layer.attribution, layer.type);
       } else {
-        // Remove all tile layers
         mapRef.current.eachLayer(layer => {
           if (layer instanceof L.TileLayer) {
             mapRef.current.removeLayer(layer);
@@ -89,7 +82,6 @@ const MapControls = ({
     }
   };
 
-  // Toggle GeoJSON layer visibility
   const toggleGeoJson = () => {
     setShowGeoJson(!showGeoJson);
     if (geoJsonLayerRef.current) {
@@ -103,13 +95,32 @@ const MapControls = ({
 
   const handleResetView = () => {
     setActiveState(null);
-    setShowCityNames(false);
+    setShowCityNames(true);
     if (geoJsonLayerRef.current && mapRef.current) {
       const contiguousStates = geoJsonLayerRef.current.getLayers()
         .filter(l => !['Alaska', 'Hawaii'].includes(l.feature.properties.name));
       mapRef.current.flyToBounds(L.featureGroup(contiguousStates).getBounds(), {
         padding: [50, 50],
         maxZoom: 6,
+      });
+    }
+  };
+
+  const zoomToMatchedCities = () => {
+    if (!mapRef.current) return;
+    
+    const markers = [];
+    mapRef.current.eachLayer(layer => {
+      if (layer instanceof L.Marker) {
+        markers.push(layer);
+      }
+    });
+    
+    if (markers.length > 0) {
+      const group = L.featureGroup(markers);
+      mapRef.current.fitBounds(group.getBounds(), {
+        padding: [50, 50],
+        maxZoom: 8
       });
     }
   };
@@ -129,7 +140,6 @@ const MapControls = ({
       boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
       minWidth: '220px',
     }}>
-      {/* Base Map Toggle */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontSize: '13px', fontWeight: '500' }}>Base Map:</span>
         <button
@@ -150,7 +160,6 @@ const MapControls = ({
         </button>
       </div>
 
-      {/* Base Layer Switcher */}
       {showBaseMap && (
         <div style={{ display: 'flex', gap: '6px', marginTop: '-4px' }}>
           {baseLayers.map((layer) => (
@@ -176,7 +185,6 @@ const MapControls = ({
         </div>
       )}
 
-      {/* GeoJSON Toggle */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontSize: '13px', fontWeight: '500' }}>State Borders:</span>
         <button
@@ -197,12 +205,11 @@ const MapControls = ({
         </button>
       </div>
 
-      {/* Show All Cities Toggle */}
       <button 
         onClick={() => {
           const newShowAll = !showAllCities;
           setShowAllCities(newShowAll);
-          setShowCityNames(newShowAll);
+          setShowCityNames(true);
         }}
         style={{
           padding: '8px 12px',
@@ -220,7 +227,26 @@ const MapControls = ({
         {showAllCities ? 'Hide All Cities' : 'Show All Cities'}
       </button>
 
-      {/* Reset View Button */}
+      <div style={{ display: 'flex', gap: '6px' }}>
+        <button 
+          onClick={() => setShowMatchedCities(!showMatchedCities)}
+          style={{
+            padding: '8px 12px',
+            backgroundColor: showMatchedCities ? '#9C27B0' : '#fff',
+            color: showMatchedCities ? '#fff' : '#333',
+            border: `1px solid ${showMatchedCities ? '#9C27B0' : '#ddd'}`,
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '13px',
+            fontWeight: '500',
+            transition: 'all 0.2s ease',
+            flex: 1
+          }}
+        >
+          {showMatchedCities ? 'Do Not Show Matched Cities' : 'Show Matched Cities'}
+        </button>
+      </div>
+
       {activeState && (
         <button
           onClick={handleResetView}

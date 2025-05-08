@@ -1,52 +1,97 @@
-import React from "react";
-import "../CSS/ResultsPage.css"; // Import the CSS file
+
+import React, { useEffect, useRef, useCallback, useState } from "react";
+import "../CSS/ResultsPage.css";
+import { json, useNavigate } from 'react-router-dom';
+import { fetchMatchedCities } from "../Components/api";
+import { createKeyValueStorageFromCookieStorageAdapter } from "aws-amplify/adapter-core";
+import { useAuth } from "react-oidc-context";
+
+
 
 const ResultsPage = () => {
-  // Mock data for matched cities
-  const matchedCities = [
-    {
-      name: "City A",
-      topPreferences: ["Access to Nature", "Walkability", "Affordable Housing", "Education"],
-      matchPercentage: 85,
-    },
-    {
-      name: "City B",
-      topPreferences: ["Public Transport", "Racial Diversity", "Restaurant Quality", "Night Life"],
-      matchPercentage: 72,
-    },
-    {
-      name: "City C",
-      topPreferences: ["Career Opportunities", "Crime Rate", "Weather", "Cost of Living"],
-      matchPercentage: 65,
-    },
-  ];
+  const navigate = useNavigate();
+  const auth = useAuth();
+  
+  // Process the data to extract and format cities
+  const formatCategoryName = (category) => {
+    const formatted = category.replace(/_/g, ' ');
+    return formatted.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
+  const handleNavigate = useCallback((city) => {
+    navigate('/cityinfo', { state: { city: city } });
+  }, [navigate]);
+
+  const [matchCities, setMatchedCities] = useState([]);
+  const [error, setError] = useState(null);
+  const userId = auth.user?.profile?.sub;
+
+  console.log('Received userId:', userId);
+
+  useEffect(() => {
+    const getMatchData = async () => {
+      try {
+        console.log("Fetching match data for user:", userId);
+        const result = await fetchMatchedCities(userId);
+        if (result && result.matched_cities) {
+          const formattedCities = result.matched_cities.map(city => ({
+            name: `${city.city}, ${city.state}`,
+            matchPercentage: city.match_percentage ?? 0,
+            topCategories: Object.entries(city.category_match || {})
+              .map(([category, details]) => ({
+                category,
+                similarity: details?.similarity ?? 0
+              }))
+              .sort((a, b) => b.similarity - a.similarity)
+              .slice(0, 4)
+          }));
+
+          console.log('Formatted cities:', formattedCities);
+          setMatchedCities(formattedCities);
+        } else {
+          setMatchedCities([]);
+        }
+      } catch (err) {
+        console.error("Error fetching match results:", err);
+        setError("Failed to load your matched cities.");
+      }
+    };
+
+    if (userId) {
+      getMatchData();
+    }
+  }, [userId]);
 
   return (
     <div className="results-page-container">
       <h1>Your Matched Cities</h1>
       <div className="cities-grid">
-        {matchedCities.map((city, index) => (
+        {matchCities.map((city, index) => (
           <div key={index} className="city-card">
             {/* Column 1: City Name and Button */}
             <div className="city-info">
               <h2>{city.name}</h2>
-              <button className="more-info-button">More Information</button>
+              <button className="more-info-button" onClick={handleNavigate}>More Information</button>
             </div>
 
-            {/* Column 2: Top Preferences */}
+            {/* Column 2: Top Matching Categories */}
             <div className="preferences-box">
-              <h3>Top Preferences</h3>
+              <h3>Top Matching Categories</h3>
               <ul>
-                {city.topPreferences.map((preference, i) => (
-                  <li key={i}>{preference}</li>
+                {city.topCategories.map((category, i) => (
+                  <li key={i}>
+                    {formatCategoryName(category.category)}: {category.similarity.toFixed(1)}%
+                  </li>
                 ))}
               </ul>
             </div>
 
             {/* Column 3: Percentage Match and Slider */}
             <div className="match-percentage">
-              <h3>Match Percentage</h3>
-              <p>{city.matchPercentage}%</p>
+              <h3>Match Score</h3>
+              <p>{city.matchPercentage.toFixed(1)}%</p>
               <input
                 type="range"
                 min="0"
@@ -61,5 +106,6 @@ const ResultsPage = () => {
     </div>
   );
 };
+
 
 export default ResultsPage;

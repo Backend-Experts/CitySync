@@ -8,6 +8,8 @@ import ResultsPage from "./ResultsPage";
 import { useAuth } from "react-oidc-context";
 import Navbar from "./Navbar"; // Import the Navbar component
 
+
+
 function App() {
   const auth = useAuth();
 

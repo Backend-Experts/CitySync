@@ -24,9 +24,9 @@ const Navbar = ({ signOutRedirect }) => {
         <li>
           <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/questionaire">Questionaire</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/cityinfo">City Info</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/resultspage">ResultsPage</NavLink>
         </li>
