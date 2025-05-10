@@ -1,41 +1,53 @@
 import React from "react";
 import "../CSS/App.css"; // Using standard CSS for styling
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import Login from "./Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-import Blank from "./Blank";
 import Questionaire from "./Questionaire";
 import CityInfo from "./CityInfo";
+import ResultsPage from "./ResultsPage";
+import { useAuth } from "react-oidc-context";
+import Navbar from "./Navbar"; // Import the Navbar component
 
-const App = () => {
+
+
+function App() {
+  const auth = useAuth();
+
+  if (auth.isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (auth.error) {
+    return <div>Encountering error... {auth.error.message}</div>;
+  }
+
+  if (auth.isAuthenticated) {
+    return (
+      <Router>
+        <Navbar />
+        <div className="page-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/questionaire" element={<Questionaire />} />
+            <Route path="/cityinfo" element={<CityInfo />} />
+            <Route path="/resultspage" element={<ResultsPage />} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
+
   return (
-    <Router>
-      <div className="navbar">
-        <ul>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/questionaire">Questionaire</NavLink>
-          </li>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/cityinfo">City Info</NavLink>
-          </li>
-        </ul>
+    <div className="sign-in-page">
+      <div className="sign-in-container">
+        <h1>Welcome to CitySync</h1>
+        <p>Your personalized city matching app</p>
+        <button className="sign-in-button" onClick={() => auth.signinRedirect()}>
+          Sign In to Get Started
+        </button>
       </div>
-      <div className="page-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/questionaire" element={<Questionaire />} />
-          <Route path="/cityinfo" element={<CityInfo />} />
-        </Routes>
-      </div>
-    </Router>
+    </div>
   );
-};
+}
 
 export default App;
