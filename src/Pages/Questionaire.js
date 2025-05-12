@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../CSS/Questionaire.css";
 import { callSubmitAPI } from '../Components/api';
 import { useAuth } from "react-oidc-context";
+import { useNavigate } from 'react-router-dom';
+
 
 const Questionaire = () => {
     const questions = [
@@ -118,30 +120,58 @@ const Questionaire = () => {
     ];
 
     const auth = useAuth();
+    const navigate = useNavigate(); // Add useNavigate hook
+
     const [currentSet, setCurrentSet] = useState(0);
-    const [answers, setAnswers] = useState({});
+    
     const [showResults, setShowResults] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
     const cognitoId = auth.user?.profile?.sub;
+    const [answers, setAnswers] = useState(() => {
+        const initialAnswers = {};
+        questions.forEach(question => {
+            if (question.type === "range") {
+                initialAnswers[`question_${question.id}`] = "0"; // Initialize to string "0"
+            }
+        });
+        return initialAnswers;
+    });
+
+    // Check localStorage for existing answers when component mounts
+    useEffect(() => {
+        const savedAnswers = localStorage.getItem(`questionnaireAnswers_${cognitoId}`);
+        if (savedAnswers) {
+            setAnswers(JSON.parse(savedAnswers));
+            setShowResults(true);
+        }
+    }, [cognitoId]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setAnswers({ ...answers, [name]: value });
+        // Ensure we always have a numeric value (even if empty string comes in)
+        const numericValue = value === "" ? "0" : value;
+        setAnswers(prev => ({
+            ...prev,
+            [name]: numericValue
+        }));
     };
 
     const formatAnswers = () => {
-        // Create an object with userId as the first property
         const formattedAnswers = {
             userId: cognitoId || ''
         };
-
-        // Add all answers directly using their IDs as keys
-        Object.keys(answers).forEach(key => {
-            const questionId = key.replace('question_', '');
-            formattedAnswers[questionId] = answers[key];
+    
+        questions.forEach(question => {
+            const answerKey = `question_${question.id}`;
+            // For range questions, ensure we have a number (default to 0)
+            if (question.type === "range") {
+                formattedAnswers[question.id] = parseFloat(answers[answerKey] || "0");
+            } else {
+                formattedAnswers[question.id] = answers[answerKey] || "";
+            }
         });
-
+    
         return formattedAnswers;
     };
 
@@ -157,6 +187,9 @@ const Questionaire = () => {
                 throw new Error(response.error);
             }
 
+            // Save answers to localStorage
+            localStorage.setItem(`questionnaireAnswers_${cognitoId}`, JSON.stringify(answers));
+            
             setSubmitMessage('Your answers have been successfully saved!');
             setShowResults(true);
         } catch (error) {
@@ -185,11 +218,20 @@ const Questionaire = () => {
         }
     };
 
+    const handleRedoQuestionnaire = () => {
+        // Clear saved answers and reset state
+        localStorage.removeItem(`questionnaireAnswers_${cognitoId}`);
+        setAnswers({});
+        setCurrentSet(0);
+        setShowResults(false);
+        setSubmitMessage('');
+    };
+
     const renderQuestions = () => {
         const startIndex = currentSet * 5;
         const endIndex = Math.min(startIndex + 5, questions.length);
         const currentQuestions = questions.slice(startIndex, endIndex);
-
+    
         return currentQuestions.map((question) => (
             <div key={question.id} className="question">
                 <p>{question.text}</p>
@@ -201,10 +243,10 @@ const Questionaire = () => {
                             min={question.min}
                             max={question.max}
                             step={question.step}
-                            value={answers[`question_${question.id}`] || question.min}
+                            value={answers[`question_${question.id}`] || "0"} // Default to "0"
                             onChange={handleInputChange}
                         />
-                        <span>{answers[`question_${question.id}`] || question.min}</span>
+                        <span>{answers[`question_${question.id}`] || "0"}</span> {/* Default to "0" */}
                     </div>
                 ) : question.type === "text" ? (
                     <input
@@ -223,20 +265,43 @@ const Questionaire = () => {
         return (
             <div className="results-container">
                 <h2>Your Answers:</h2>
-                {questions.map((question) => (
-                    <p key={question.id}>
-                        {question.text}: {answers[`question_${question.id}`]}
-                    </p>
-                ))}
+                {questions.map((question) => {
+                    // Get the answer value, using default 0 for range questions if not set
+                    const answerKey = `question_${question.id}`;
+                    let answerValue = answers[answerKey];
+                    
+                    if (question.type === "range") {
+                        answerValue = answerValue !== undefined ? answerValue : "0";
+                    }
+    
+                    return (
+                        <p key={question.id}>
+                            {question.text}: {answerValue}
+                        </p>
+                    );
+                })}
                 {submitMessage && (
                     <div className={`submit-message ${submitMessage.includes('Error') ? 'error' : 'success'}`}>
                         {submitMessage}
                     </div>
                 )}
+                <div className="results-buttons">
+                    <button 
+                        onClick={() => navigate('/resultspage')}
+                        className="view-results-button"
+                    >
+                        View Detailed Results
+                    </button>
+                    <button 
+                        onClick={handleRedoQuestionnaire}
+                        className="redo-button"
+                    >
+                        Redo Questionnaire
+                    </button>
+                </div>
             </div>
         );
     };
-
 
     return (
         <div className="questionnaire-container">
