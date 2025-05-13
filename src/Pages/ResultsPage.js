@@ -30,7 +30,7 @@ const ResultsPage = () => {
   const [matchCities, setMatchedCities] = useState([]);
   const [error, setError] = useState(null);
   const userId = auth.user?.profile?.sub;
-  // const userId = "04b84488-c091-7027-74b3-335aeafecbfa";
+  //const userId = "04b84488-c091-7027-74b3-335aeafecbfa";
   // "04b84488-c091-7027-74b3-335aeafecbfa"
 
   useEffect(() => {
