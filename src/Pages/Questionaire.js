@@ -7,21 +7,20 @@ import minMaxData from "../data/min_max_metadata.json";
 
 const Questionaire = () => {
     const questions = [
-        { id: "name", text: "What's your name?", type: "text", placeholder: "Enter your name" },
-        { id: "population", text: "Do you prefer living in a smaller or larger city?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "density", text: "Do you prefer a more spread-out city or a densely populated one?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "ranking", text: "How highly ranked should the city be for livability?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "cost_of_living_index", text: "What cost of living works best for your budget?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "crime", text: "Do you prefer cities with lower or higher crime rates?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "annual_avg_temp", text: "Do you prefer cooler or warmer climates?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "rent_0_bedroom", text: "What’s a reasonable monthly rent for a studio apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "rent_1_bedroom", text: "What’s a comfortable rent for a 1-bedroom apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "rent_2_bedroom", text: "What’s a comfortable rent for a 2-bedroom apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "rent_3_bedroom", text: "What’s a comfortable rent for a 3-bedroom home?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "rent_4_bedroom", text: "What’s a comfortable rent for a 4-bedroom home?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "avg_rent", text: "What should the city’s average rent cost be?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
-        { id: "Education", text: "How important is strong education quality in a city?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true }
-    ];
+        { id: "population", text: "What city size do you prefer? (0 = smaller cities, 1 = larger cities)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "density", text: "What population density do you prefer? (0 = spread out, 1 = densely packed)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "ranking", text: "How much do you care about city livability rankings? (0 = not at all, 1 = very important)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "cost_of_living_index", text: "What cost of living fits your budget? (0 = low cost, 1 = high cost)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "crime", text: "How tolerant are you of crime? (0 = prefer safer cities, 1 = okay with more crime)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "annual_avg_temp", text: "What climate do you prefer? (0 = colder, 1 = warmer)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "rent_0_bedroom", text: "What’s your preferred rent for a studio apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "rent_1_bedroom", text: "What’s your preferred rent for a 1-bedroom apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "rent_2_bedroom", text: "What’s your preferred rent for a 2-bedroom apartment?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "rent_3_bedroom", text: "What’s your preferred rent for a 3-bedroom home?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "rent_4_bedroom", text: "What’s your preferred rent for a 4-bedroom home?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "avg_rent", text: "What’s your preferred average rent across the city?", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true },
+        { id: "Education", text: "How important is high-quality education in a city? (0 = not important, 1 = very important)", type: "range", min: 0, max: 1, step: 0.01, hasWeight: true }
+      ];
 
     const auth = useAuth();
     const navigate = useNavigate();
