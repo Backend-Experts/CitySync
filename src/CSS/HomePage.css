@@ -71,37 +71,54 @@
 
 /* Features Section */
 .features-section {
-  margin: 60px 0;
-}
-
-.features-section h2 {
+  padding: 3rem 1rem;
   text-align: center;
-  margin-bottom: 40px;
-  color: #2c3e50;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.top-row {
+  /* 3 cards */
+}
+
+.bottom-row {
+  /* 2 cards - will be centered automatically */
 }
 
 .feature-card {
   background: white;
-  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.feature-card:hover {
-  transform: translateY(-10px);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: 350px;
+  }
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
 
 /* About Section */
 .about-section {

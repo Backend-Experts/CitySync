@@ -25,26 +25,43 @@ function HomePage() {
       </section>
 
       {/* Updated Features Section */}
-      <section className="features-section">
-        <h2>Why Choose CitySync?</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">⚡</div>
-            <h3>Improved Algorithm</h3>
-            <p>Our advanced algorithms provide smarter recommendations and routing.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🔄</div>
-            <h3>Updated Data</h3>
-            <p>Real-time data updates ensure you always have the latest information.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📱</div>
-            <h3>Mobile Integration</h3>
-            <p>Sync across all your devices for seamless experience.</p>
-          </div>
-        </div>
-      </section>
+<section className="features-section">
+  <h2>Why Choose CitySync?</h2>
+  <div className="features-grid">
+    {/* Top Row - 3 Cards */}
+    <div className="feature-row top-row">
+      <div className="feature-card">
+        <div className="feature-icon">⚡</div>
+        <h3>Smart Matching</h3>
+        <p>Our algorithm finds cities that perfectly fit your lifestyle.</p>
+      </div>
+      <div className="feature-card">
+        <div className="feature-icon">🔄</div>
+        <h3>Live Data</h3>
+        <p>Always current information on cities and neighborhoods.</p>
+      </div>
+      <div className="feature-card">
+        <div className="feature-icon">✨</div>
+        <h3>Simple Questions</h3>
+        <p>Just a few easy questions to get started.</p>
+      </div>
+    </div>
+    
+    {/* Bottom Row - 2 Cards (centered) */}
+    <div className="feature-row bottom-row">
+      <div className="feature-card">
+        <div className="feature-icon">⚡</div>
+        <h3>Instant Results</h3>
+        <p>Get your city matches in seconds.</p>
+      </div>
+      <div className="feature-card">
+        <div className="feature-icon">👍</div>
+        <h3>Easy Comparisons</h3>
+        <p>Side-by-side views of your best matches.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section className="about-section">
