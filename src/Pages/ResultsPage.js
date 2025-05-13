@@ -30,6 +30,7 @@ const ResultsPage = () => {
   const [matchCities, setMatchedCities] = useState([]);
   const [error, setError] = useState(null);
   const userId = auth.user?.profile?.sub;
+  // const userId = "04b84488-c091-7027-74b3-335aeafecbfa";
   // "04b84488-c091-7027-74b3-335aeafecbfa"
 
   useEffect(() => {
@@ -89,7 +90,7 @@ const ResultsPage = () => {
               <ul>
                 {city.topCategories.map((category, i) => (
                   <li key={i}>
-                    {formatCategoryName(category.category)}: {category.similarity.toFixed(1)}%
+                    {formatCategoryName(category.category)}: {(category.similarity > 1 ? category.similarity / 100 : category.similarity).toFixed(1)}%
                   </li>
                 ))}
               </ul>
@@ -102,8 +103,17 @@ const ResultsPage = () => {
                 type="range"
                 min="0"
                 max="100"
+                step="0.1"
                 value={city.matchPercentage}
                 disabled
+                style={{
+                  width: "100%",
+                  marginTop: "8px",
+                  background: `linear-gradient(to right, green 0%, green ${city.matchPercentage}%, #ddd ${city.matchPercentage}%, #ddd 100%)`,
+                  height: "6px",
+                  borderRadius: "5px",
+                  appearance: "none"
+                }}
               />
             </div>
           </div>

@@ -245,6 +245,16 @@ const Questionaire = () => {
                             step={question.step}
                             value={answers[`question_${question.id}`] || "0"} // Default to "0"
                             onChange={handleInputChange}
+                            style={{
+                                width: "100%",
+                                marginTop: "8px",
+                                background: `linear-gradient(to right, green 0%, green ${
+                                    parseFloat(answers[`question_${question.id}`] || "0") * 100
+                                }%, #ddd ${parseFloat(answers[`question_${question.id}`] || "0") * 100}%, #ddd 100%)`,
+                                height: "6px",
+                                borderRadius: "5px",
+                                appearance: "none"
+                            }}
                         />
                         <span>{answers[`question_${question.id}`] || "0"}</span> {/* Default to "0" */}
                     </div>
