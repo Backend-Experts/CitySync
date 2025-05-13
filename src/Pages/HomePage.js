@@ -26,39 +26,40 @@ function HomePage() {
 
       {/* Updated Features Section */}
 <section className="features-section">
-  <h2>Why Choose CitySync?</h2>
+  <div className="features-header">
+    <h2>Why Choose CitySync?</h2>
+    <p className="subtitle">Discover the perfect city for your lifestyle with our smart matching technology</p>
+  </div>
+  
   <div className="features-grid">
-    {/* Top Row - 3 Cards */}
-    <div className="feature-row top-row">
-      <div className="feature-card">
-        <div className="feature-icon">⚡</div>
-        <h3>Smart Matching</h3>
-        <p>Our algorithm finds cities that perfectly fit your lifestyle.</p>
-      </div>
-      <div className="feature-card">
-        <div className="feature-icon">🔄</div>
-        <h3>Live Data</h3>
-        <p>Always current information on cities and neighborhoods.</p>
-      </div>
-      <div className="feature-card">
-        <div className="feature-icon">✨</div>
-        <h3>Simple Questions</h3>
-        <p>Just a few easy questions to get started.</p>
-      </div>
+    <div className="feature-card">
+      <div className="feature-icon">⚡</div>
+      <h3>Smart Matching</h3>
+      <p>Our algorithm finds cities that perfectly fit your lifestyle preferences.</p>
     </div>
     
-    {/* Bottom Row - 2 Cards (centered) */}
-    <div className="feature-row bottom-row">
-      <div className="feature-card">
-        <div className="feature-icon">⚡</div>
-        <h3>Instant Results</h3>
-        <p>Get your city matches in seconds.</p>
-      </div>
-      <div className="feature-card">
-        <div className="feature-icon">👍</div>
-        <h3>Easy Comparisons</h3>
-        <p>Side-by-side views of your best matches.</p>
-      </div>
+    <div className="feature-card">
+      <div className="feature-icon">🔄</div>
+      <h3>Live Data</h3>
+      <p>Always current information on cities and neighborhoods.</p>
+    </div>
+    
+    <div className="feature-card">
+      <div className="feature-icon">✨</div>
+      <h3>Simple Questions</h3>
+      <p>Just a few easy questions to get started.</p>
+    </div>
+    
+    <div className="feature-card">
+      <div className="feature-icon">🚀</div>
+      <h3>Instant Results</h3>
+      <p>Get your city matches in seconds.</p>
+    </div>
+    
+    <div className="feature-card">
+      <div className="feature-icon">👍</div>
+      <h3>Easy Comparisons</h3>
+      <p>Side-by-side views of your best matches.</p>
     </div>
   </div>
 </section>

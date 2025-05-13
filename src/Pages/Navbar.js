@@ -16,39 +16,42 @@ const Navbar = ({ signOutRedirect }) => {
   };
 
   return (
-    <div className="navbar">
-      <ul>
-        <li>
+    <nav className="navbar">
+      <ul className="nav-list">
+        <li className="nav-item">
           <button 
-            className="nav-button" 
+            className="nav-link"
             onClick={() => navigate("/")}
           >
             Home
           </button>
         </li>
-        <li>
+        <li className="nav-item">
           <button 
-            className="nav-button" 
+            className="nav-link"
             onClick={() => navigate("/questionaire")}
           >
-            Questionaire
+            Questionnaire
           </button>
         </li>
-        <li>
+        <li className="nav-item">
           <button 
-            className="nav-button" 
+            className="nav-link"
             onClick={() => navigate("/resultspage")}
           >
-            ResultsPage
+            Results
           </button>
         </li>
-        <li>
-          <button className="nav-button" onClick={handleSignOut}>
-            Sign out
+        <li className="nav-item">
+          <button 
+            className="nav-link"
+            onClick={handleSignOut}
+          >
+            Sign Out
           </button>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
