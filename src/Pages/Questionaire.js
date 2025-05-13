@@ -199,8 +199,8 @@ const Questionaire = () => {
                     const id = question.id;
                     const value = answers[`question_${id}`];
                     const weight = answers[`weight_${id}`];
-                    const isRaw = rentFields.has(id);
-                    const displayValue = isRaw ? `$${parseFloat(value).toLocaleString()}` : value;
+                    const isDollarField = id.startsWith("rent_") || id === "avg_rent";
+                    const displayValue = isDollarField ? `$${parseFloat(value).toLocaleString()}` : value;
                     return (
                         <div key={id} className="result-entry">
                             <p>
