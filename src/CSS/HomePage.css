@@ -81,6 +81,10 @@
   margin-bottom: 2rem;
 }
 
+.features-grid {
+    grid-template-columns: 1fr;
+  } 
+  
 .features-header h2 {
   font-size: 2.2rem;
   color: #2c3e50;

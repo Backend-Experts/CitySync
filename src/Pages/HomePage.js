@@ -26,6 +26,7 @@ function HomePage() {
 
      {/* Updated Features Section with new layout */}
 <section className="features-section">
+   <div className="features-grid">
   <div className="features-header">
     <h2>Why Choose CitySync?</h2>
     <p className="subtitle">Discover the perfect city for your lifestyle with our smart matching technology</p>
@@ -67,6 +68,7 @@ function HomePage() {
         <p>Side-by-side views of your best matches.</p>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
