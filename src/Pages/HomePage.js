@@ -31,7 +31,7 @@ function HomePage() {
     <p className="subtitle">Discover the perfect city for your lifestyle with our smart matching technology</p>
   </div>
   
-  <div className="features-grid">
+  <div className="features-container">
     <div className="feature-card">
       <div className="feature-icon">⚡</div>
       <h3>Smart Matching</h3>
