@@ -19,19 +19,33 @@ const Navbar = ({ signOutRedirect }) => {
     <div className="navbar">
       <ul>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/">Home</NavLink>
+          <button 
+            className="nav-button" 
+            onClick={() => navigate("/")}
+          >
+            Home
+          </button>
         </li>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/questionaire">Questionaire</NavLink>
+          <button 
+            className="nav-button" 
+            onClick={() => navigate("/questionaire")}
+          >
+            Questionaire
+          </button>
         </li>
-        {/* <li>
-          <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/cityinfo">City Info</NavLink>
-        </li> */}
         <li>
-          <NavLink className={({ isActive }) => isActive ? "active content" : "content"} to="/resultspage">ResultsPage</NavLink>
+          <button 
+            className="nav-button" 
+            onClick={() => navigate("/resultspage")}
+          >
+            ResultsPage
+          </button>
         </li>
         <li>
-          <button onClick={handleSignOut}>Sign out</button>
+          <button className="nav-button" onClick={handleSignOut}>
+            Sign out
+          </button>
         </li>
       </ul>
     </div>

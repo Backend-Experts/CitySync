@@ -79,7 +79,7 @@ function HomePage() {
           <p>Johnathon Brumfield, Eric Chin, Manuel Belaustegui, Sathwik Jupalli, and Bond Leung</p>
         </div>
         <div className="last-updated">
-          <p>Last Updated: March 27, 2025</p>
+          <p>Last Updated: May 12, 2025</p>
         </div>
       </footer>
     </div>
