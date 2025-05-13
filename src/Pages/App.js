@@ -21,7 +21,7 @@ function App() {
     return <div>Encountering error... {auth.error.message}</div>;
   }
 
-  if (!auth.isAuthenticated) {
+  if (auth.isAuthenticated) {
     return (
       <Router>
         <Navbar />

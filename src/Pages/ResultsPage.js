@@ -29,9 +29,7 @@ const ResultsPage = () => {
 
   const [matchCities, setMatchedCities] = useState([]);
   const [error, setError] = useState(null);
-  // const userId = auth.user?.profile?.sub;
-  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
-  // "04b84488-c091-7027-74b3-335aeafecbfa"
+  const userId = auth.user?.profile?.sub;
 
   useEffect(() => {
     const getMatchData = async () => {
