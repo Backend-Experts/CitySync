@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import L from 'leaflet';
 import { useNavigate } from 'react-router-dom';
 
-const CityMarkers = ({ 
-  mapRef, 
-  currentZoom, 
-  cityData, 
-  activeState, 
-  showCityNames, 
-  showAllCities, 
-  matchedCities 
+const CityMarkers = ({
+  mapRef,
+  currentZoom,
+  cityData,
+  activeState,
+  showCityNames,
+  showAllCities,
+  matchedCities
 }) => {
   const markersRef = useRef([]);
   const cityLabelsRef = useRef([]);
@@ -49,14 +49,14 @@ const CityMarkers = ({
 
   const handleNavigate = useCallback((city) => {
     const stateAbbr = getStateAbbreviation(city.state);
-    navigate('/cityinfo', { 
-      state: { 
+    navigate('/cityinfo', {
+      state: {
         city: {
           ...city,
-          name: city.name, 
+          name: city.name,
           state: stateAbbr
-        } 
-      } 
+        }
+      }
     });
   }, [navigate]);
 
@@ -69,7 +69,7 @@ const CityMarkers = ({
     cityLabelsRef.current = [];
 
     let citiesToDisplay = [];
-    
+
     if (matchedCities) {
       const matchedCityKeys = new Set();
       matchedCities.matched_cities.forEach(city => {
@@ -100,8 +100,15 @@ const CityMarkers = ({
         mc => mc.city === city.name && mc.state === stateAbbr
       );
 
+      //  Correctly extract match percentage, handling potential undefined/null
+      const matchPercentage = matchedCity?.match_percentage !== undefined && matchedCity.match_percentage !== null
+        ? parseFloat(matchedCity.match_percentage)
+        : 0;
+
+
       const popupContent = `
         <b>${city.name}, ${stateAbbr}</b>
+        ${matchedCity ? `<div>Match Score: ${matchPercentage.toFixed(1)}%</div>` : ''}
         <div style="margin-top: 8px;">
           <button
             style="
@@ -128,29 +135,29 @@ const CityMarkers = ({
         icon: createMarkerIcon(),
         riseOnHover: true
       })
-      .bindPopup(popupContent)
-      .on('popupopen', () => {
-        const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
-        if (button) {
-          button.addEventListener('click', () => handleNavigate({
-            ...city,
-            state: stateAbbr
-          }));
-        }
-      })
-      .on('popupclose', () => {
-        const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
-        if (button) {
-          button.removeEventListener('click', () => handleNavigate(city));
-        }
-      })
-      .addTo(mapRef.current);
+        .bindPopup(popupContent)
+        .on('popupopen', () => {
+          const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
+          if (button) {
+            button.addEventListener('click', () => handleNavigate({
+              ...city,
+              state: stateAbbr
+            }));
+          }
+        })
+        .on('popupclose', () => {
+          const button = document.getElementById(`city-info-button-${city.name.replace(/\s+/g, '-')}`);
+          if (button) {
+            button.removeEventListener('click', () => handleNavigate(city));
+          }
+        })
+        .addTo(mapRef.current);
 
       markersRef.current.push(marker);
 
       if (showCityNames) {
-        const labelText = matchedCity 
-          ? `${city.name}`
+        const labelText = matchedCity
+          ? `${city.name} (${matchPercentage.toFixed(1)}%)`
           : city.name;
 
         const label = L.marker([city.lat, city.lng], {
@@ -169,6 +176,7 @@ const CityMarkers = ({
   };
 
   useEffect(() => {
+    console.log("Matched cities data:", matchedCities); // Debug log
     updateMarkers();
   }, [currentZoom, cityData, activeState, showAllCities, showCityNames, handleNavigate, matchedCities]);
 

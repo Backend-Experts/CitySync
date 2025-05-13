@@ -3,10 +3,11 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import statesData from '../data/us-states.json';
 import cityData from '../data/marker_coords.json';
-import matchedCitiesData from '../data/matched_cities_data.json';
+import { fetchMatchedCities } from './api';
 import CityMarkers from './CityMarkers';
 import SearchBar from './SearchBar';
 import MapControls from './MapControls';
+import { useAuth } from 'react-oidc-context';
 
 const LeafletMap = () => {
   const mapRef = useRef(null);
@@ -16,7 +17,32 @@ const LeafletMap = () => {
   const [showCityNames, setShowCityNames] = useState(true);
   const [showAllCities, setShowAllCities] = useState(false);
   const [showMatchedCities, setShowMatchedCities] = useState(true);
+  const [matchedCitiesData, setMatchedCitiesData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const activeLayerRef = useRef(null);
+  const auth = useAuth();
+
+  useEffect(() => {
+    const fetchUserMatchedCities = async () => {
+      setIsLoading(true);
+      if (auth.user?.profile?.sub) {
+        try {
+          const result = await fetchMatchedCities(auth.user.profile.sub);
+          if (result?.matched_cities) {
+            setMatchedCitiesData(result);
+          }
+        } catch (error) {
+          console.error("Error fetching matched cities:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUserMatchedCities();
+  }, [auth.user]);
 
   useEffect(() => {
     if (mapRef.current) return;
@@ -215,6 +241,22 @@ const LeafletMap = () => {
 
   return (
     <div style={{ position: 'relative', height: '100%' }}>
+      {isLoading && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255,255,255,0.7)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 1001
+        }}>
+          <div>Loading matched cities...</div>
+        </div>
+      )}
       <div id="map" style={{ 
         height: '500px', 
         width: '100%',
