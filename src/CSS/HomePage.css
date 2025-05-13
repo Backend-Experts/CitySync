@@ -69,19 +69,7 @@
   font-style: italic;
 }
 
-/* Features Section */
-/* Navbar Gradient Fix */
-.navbar {
-  background: linear-gradient(135deg, #6e8efb, #a777e3) !important;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-/* Feature Section Centering */
+/* Updated Features Section Styles */
 .features-section {
   max-width: 1200px;
   margin: 2rem auto;
@@ -107,10 +95,23 @@
 
 .features-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
   margin-top: 2rem;
+}
+
+.features-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.centered-row {
+  justify-content: center;
+  max-width: 800px; /* Adjust this to control the width of the centered row */
 }
 
 .feature-card {
@@ -119,11 +120,25 @@
   padding: 2rem;
   width: 300px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 0.5rem;
 }
 
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .features-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: 350px;
+  }
 }
 
 /* Responsive fixes */
