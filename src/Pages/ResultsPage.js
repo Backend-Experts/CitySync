@@ -29,8 +29,8 @@ const ResultsPage = () => {
 
   const [matchCities, setMatchedCities] = useState([]);
   const [error, setError] = useState(null);
-  const userId = auth.user?.profile?.sub;
-  //const userId = "04b84488-c091-7027-74b3-335aeafecbfa";
+  // const userId = auth.user?.profile?.sub;
+  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
   // "04b84488-c091-7027-74b3-335aeafecbfa"
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const ResultsPage = () => {
               <ul>
                 {city.topCategories.map((category, i) => (
                   <li key={i}>
-                    {formatCategoryName(category.category)}: {(category.similarity > 1 ? category.similarity / 100 : category.similarity).toFixed(1)}%
+                    {formatCategoryName(category.category)}: {(category.similarity).toFixed(1)}%
                   </li>
                 ))}
               </ul>
