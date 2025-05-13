@@ -36,7 +36,6 @@ function CityInfo() {
           model: "gemini-2.0-flash-lite",
           contents: `Give me a two paragraph description of ${city.name}, ${city.state}. Include what the city is known for.`,
         });
-        console.log(response.text)
         setAiDescription(response.text);
       } catch (err) {
         console.error("Failed to fetch city description:", err);
@@ -141,8 +140,20 @@ function CityInfo() {
                     type="range"
                     min="0"
                     max="100"
+                    step="0.1"
                     value={matchData.matchPercentage}
                     disabled
+                    style={{
+                      width: "100%",
+                      margin: "15px 0",
+                      height: "6px",
+                      background: `linear-gradient(to right, #28a745 0%, #28a745 ${matchData.matchPercentage}%, #ddd ${matchData.matchPercentage}%, #ddd 100%)`,
+                      borderRadius: "5px",
+                      WebkitAppearance: "none",
+                      MozAppearance: "none",
+                      appearance: "none",
+                      outline: "none"
+                    }}
                   />
                 </div>
                 <div className="preferences-box">

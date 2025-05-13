@@ -2,30 +2,30 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
 
-  /* Header Styles */
-  .city-header {
+/* Header Styles */
+.city-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-  }
+}
 
-  .city-header h1 {
+.city-header h1 {
     text-align: center;
     flex-grow: 1;
     margin: 0;
     color: #2c3e50;
     font-size: 2rem;
-  }
+}
 
-  .header-spacer {
+.header-spacer {
     width: 100px;
     visibility: hidden;
-  }
+}
 
-  .return-button {
+.return-button {
     padding: 8px 16px;
     background-color: #3498db;
     color: white;
@@ -34,42 +34,42 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
-  }
+}
 
-  .return-button:hover {
+.return-button:hover {
     background-color: #2980b9;
-  }
+}
 
-  /* Main Content Alignment */
-  .main-content-section {
+/* Main Content Alignment */
+.main-content-section {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-  }
+}
 
-  .about-section,
-  .compatibility-section {
+.about-section,
+.compatibility-section {
     flex: 1;
     padding: 25px;
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-top: 0;
-  }
+}
 
-  /* Standardize header spacing */
-  .about-section h2,
-  .more-info-section h2,
-  .feature-column h3 {
+/* Standardize header spacing */
+.about-section h2,
+.more-info-section h2,
+.feature-column h3 {
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 20px;
     color: #2c3e50;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
-  }
+}
 
-  .compatibility-section h2 {
+.compatibility-section h2 {
     text-align: center;
     margin-top: 0;
     padding-top: 0;
@@ -77,151 +77,160 @@
     color: #2c3e50;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
-  }
+}
 
-  /* Match Percentage Styles */
-  .match-percentage {
+/* Match Percentage Styles */
+.match-percentage {
     text-align: center;
-  }
+}
 
-  .match-percentage h3 {
+.match-percentage h3 {
     margin-bottom: 10px;
     color: #2c3e50;
-  }
+}
 
-  .match-percentage p {
+.match-percentage p {
     font-size: 1.5rem;
     font-weight: bold;
     color: #27ae60;
     margin: 10px 0;
-  }
+}
 
-  .match-percentage input[type="range"] {
-    width: 100%;
-    margin-top: 15px;
-    height: 8px;
-    -webkit-appearance: none;
-    background: #e0e0e0;
-    border-radius: 4px;
-    /* Add the following line */
-    background-image: linear-gradient(#27ae60, #27ae60);
-    background-size: 75% 100%; /* Initial fill based on value */
-    background-repeat: no-repeat;
-  }
+/* Range Input Styles to match ResultsPage */
+.match-percentage input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: -6px;
+}
 
-  .match-percentage input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #27ae60;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+.match-percentage input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
-  /* Loading and Error States */
-  .loading-container {
+.match-percentage input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  cursor: pointer;
+}
+
+.match-percentage input[type="range"]::-moz-range-track {
+  height: 6px;
+  cursor: pointer;
+}
+
+/* Loading and Error States */
+.loading-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 150px;
-  }
+}
 
-  .loader {
+.loader {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #3498db;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-  }
+}
 
-  .error-message {
+.error-message {
     color: #e74c3c;
     padding: 15px;
     background-color: #fdecea;
     border-radius: 4px;
-  }
+}
 
-  .description-content {
+.description-content {
     margin: 0;
     line-height: 1.6;
     color: #34495e;
-  }
+}
 
-  /* More Info Section */
-  .more-info-section {
+/* More Info Section */
+.more-info-section {
     margin-top: 30px;
     padding: 25px;
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+}
 
-  .more-info-section h2 {
+.more-info-section h2 {
     margin-top: 0;
     color: #2c3e50;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
-  }
+}
 
-  /* Features Section */
-  .features-section {
+/* Features Section */
+.features-section {
     display: flex;
     gap: 30px;
     margin-top: 30px;
-  }
+}
 
-  .feature-column {
+.feature-column {
     flex: 1;
     padding: 20px;
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+}
 
-  .feature-column h3 {
+.feature-column h3 {
     margin-top: 0;
     color: #2c3e50;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 10px;
-  }
+}
 
-  .feature-column ol {
+.feature-column ol {
     padding-left: 20px;
-  }
+}
 
-  .feature-column li {
+.feature-column li {
     margin-bottom: 8px;
     color: #34495e;
-  }
+}
 
-  /* Error State */
-  .city-not-found {
+/* Error State */
+.city-not-found {
     text-align: center;
     padding: 50px;
     font-size: 1.2rem;
     color: #e74c3c;
-  }
+}
 
-  /* Animations */
-  @keyframes spin {
+/* Animations */
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .main-content-section,
     .features-section {
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .city-header {
-      flex-direction: column;
-      gap: 15px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .header-spacer {
-      display: none;
+        display: none;
     }
-  }
+}
