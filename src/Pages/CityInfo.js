@@ -16,7 +16,7 @@ function CityInfo() {
   const [matchData, setMatchData] = useState(null);
   const [loadingMatch, setLoadingMatch] = useState(false);
   const auth = useAuth();
-  const userId = "c4a84428-c0d1-70a3-92a9-1dfa4fcbfe7b";
+  const userId = auth.user?.profile?.sub;
 
   const ai = new GoogleGenAI({ apiKey: "AIzaSyCQQUQEjxfKWuPqU8uKu_PcaGr7TsMyRZM" });
 
