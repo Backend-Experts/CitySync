@@ -24,27 +24,53 @@ function HomePage() {
         <p className="map-instructions">Click on the map to explore points of interest</p>
       </section>
 
-      {/* Updated Features Section */}
-      <section className="features-section">
-        <h2>Why Choose CitySync?</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">⚡</div>
-            <h3>Improved Algorithm</h3>
-            <p>Our advanced algorithms provide smarter recommendations and routing.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🔄</div>
-            <h3>Updated Data</h3>
-            <p>Real-time data updates ensure you always have the latest information.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📱</div>
-            <h3>Mobile Integration</h3>
-            <p>Sync across all your devices for seamless experience.</p>
-          </div>
-        </div>
-      </section>
+     {/* Updated Features Section with new layout */}
+<section className="features-section">
+   <div className="features-grid">
+  <div className="features-header">
+    <h2>Why Choose CitySync?</h2>
+    <p className="subtitle">Discover the perfect city for your lifestyle with our smart matching technology</p>
+  </div>
+  
+  <div className="features-container">
+    {/* First row with 3 features */}
+    <div className="features-row">
+      <div className="feature-card">
+        <div className="feature-icon">⚡</div>
+        <h3>Smart Matching</h3>
+        <p>Our algorithm finds cities that perfectly fit your lifestyle preferences.</p>
+      </div>
+      
+      <div className="feature-card">
+        <div className="feature-icon">🔄</div>
+        <h3>Live Data</h3>
+        <p>Always current information on cities and neighborhoods.</p>
+      </div>
+      
+      <div className="feature-card">
+        <div className="feature-icon">✨</div>
+        <h3>Simple Questions</h3>
+        <p>Just a few easy questions to get started.</p>
+      </div>
+    </div>
+    
+    {/* Second row with 2 features (centered) */}
+    <div className="features-row centered-row">
+      <div className="feature-card">
+        <div className="feature-icon">🚀</div>
+        <h3>Instant Results</h3>
+        <p>Get your city matches in seconds.</p>
+      </div>
+      
+      <div className="feature-card">
+        <div className="feature-icon">👍</div>
+        <h3>Easy Comparisons</h3>
+        <p>Side-by-side views of your best matches.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section className="about-section">
@@ -79,7 +105,7 @@ function HomePage() {
           <p>Johnathon Brumfield, Eric Chin, Manuel Belaustegui, Sathwik Jupalli, and Bond Leung</p>
         </div>
         <div className="last-updated">
-          <p>Last Updated: March 27, 2025</p>
+          <p>Last Updated: May 12, 2025</p>
         </div>
       </footer>
     </div>

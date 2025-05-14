@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import LoremIpsum from '../Components/LoremIpsum';
 import { GoogleGenAI } from "@google/genai";
 import '../CSS/CityInfo.css';
+import { useAuth } from "react-oidc-context";
+import { fetchMatchedCities } from "../Components/api";
 
 function CityInfo() {
   const { state } = useLocation();
@@ -11,6 +13,10 @@ function CityInfo() {
   const [aiDescription, setAiDescription] = useState('');
   const [loadingDescription, setLoadingDescription] = useState(false);
   const [error, setError] = useState(null);
+  const [matchData, setMatchData] = useState(null);
+  const [loadingMatch, setLoadingMatch] = useState(false);
+  const auth = useAuth();
+  const userId = auth.user?.profile?.sub;
 
   const ai = new GoogleGenAI({ apiKey: "AIzaSyCQQUQEjxfKWuPqU8uKu_PcaGr7TsMyRZM" });
 
@@ -30,7 +36,6 @@ function CityInfo() {
           model: "gemini-2.0-flash-lite",
           contents: `Give me a two paragraph description of ${city.name}, ${city.state}. Include what the city is known for.`,
         });
-        console.log(response.text)
         setAiDescription(response.text);
       } catch (err) {
         console.error("Failed to fetch city description:", err);
@@ -44,9 +49,51 @@ function CityInfo() {
     fetchCityDescription();
   }, [city]); 
 
+  useEffect(() => {
+    if (!userId || !city) return;
+
+    const getMatchData = async () => {
+      setLoadingMatch(true);
+      try {
+        const result = await fetchMatchedCities(userId);
+        if (result?.matched_cities) {
+          const currentCityData = result.matched_cities.find(
+            c => c.city.trim() === city.name && c.state.trim() === city.state
+          );
+          
+          if (currentCityData) {
+            setMatchData({
+              matchPercentage: currentCityData.match_percentage ?? 0,
+              topCategories: Object.entries(currentCityData.category_match || {})
+                .map(([category, details]) => ({
+                  category,
+                  similarity: details?.similarity ?? 0
+                }))
+                .sort((a, b) => b.similarity - a.similarity)
+                .slice(0, 4)
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching match results:", err);
+      } finally {
+        setLoadingMatch(false);
+      }
+    };
+
+    getMatchData();
+  }, [userId, city]);
+
   if (!city) {
     return <div className="city-not-found">City data not found</div>;
   }
+
+  const formatCategoryName = (category) => {
+    const formatted = category.replace(/_/g, ' ');
+    return formatted.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
 
   return (
     <div className="city-info-container">
@@ -80,52 +127,49 @@ function CityInfo() {
 
           <div className="compatibility-section">
             <h2>Compatibility</h2>
-            <div className="match-percentage">
-              <h3>Match Percentage</h3>
-              <p>75%</p>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value="75"
-                disabled
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="more-info-section">
-          <h2>More Information</h2>
-          <LoremIpsum />
-        </div>
-
-        <div className="features-section">
-          <div className="feature-column">
-            <h3>City Features</h3>
-            <ol>
-              <li>Public Transport</li>
-              <li>Liberal</li>
-              <li>Restaurant Quality</li>
-              <li>Career (Software Engineer)</li>
-            </ol>
-          </div>
-          <div className="feature-column">
-            <h3>Preference Match</h3>
-            <ol>
-              <li>90%</li>
-              <li>85%</li>
-              <li>70%</li>
-              <li>80%</li>
-            </ol>
-          </div>
-          <div className="feature-column">
-            <h3>You</h3>
-            <ol>
-              <li>Public Transport</li>
-              <li>Liberal</li>
-              <li>Restaurant Quality</li>
-              <li>Career (Software Engineer)</li>
-            </ol>
+            {loadingMatch ? (
+              <div className="loading-container">
+                <div className="loader"></div>
+              </div>
+            ) : matchData ? (
+              <>
+                <div className="match-percentage">
+                  <h3>Match Percentage</h3>
+                  <p>{matchData.matchPercentage.toFixed(1)}%</p>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value={matchData.matchPercentage}
+                    disabled
+                    style={{
+                      width: "100%",
+                      margin: "15px 0",
+                      height: "6px",
+                      background: `linear-gradient(to right, #28a745 0%, #28a745 ${matchData.matchPercentage}%, #ddd ${matchData.matchPercentage}%, #ddd 100%)`,
+                      borderRadius: "5px",
+                      WebkitAppearance: "none",
+                      MozAppearance: "none",
+                      appearance: "none",
+                      outline: "none"
+                    }}
+                  />
+                </div>
+                <div className="preferences-box">
+                  <h3>Top Matching Categories</h3>
+                  <ul>
+                    {matchData.topCategories.map((category, i) => (
+                      <li key={i}>
+                        {formatCategoryName(category.category)}: {category.similarity.toFixed(1)}%
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <p>No compatibility data available</p>
+            )}
           </div>
         </div>
       </div>
