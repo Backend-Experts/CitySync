@@ -39,10 +39,11 @@ Deployment: AWS Amplify
 🌐 Live Demo
 Link to video
 
-❓ Questions?
-Feel free to reach out to our socials 
-Johnathon Brumfield - https://www.linkedin.com/in/johnathon-brumfield-16a5a5248/ 
-Manuel Sur - https://www.linkedin.com/in/manuel-sur-474308290/
-Eric Chin - https://www.linkedin.com/in/eric-chin01/
-Sathwik Jupalli - https://www.linkedin.com/in/sathwik-jupalli-96aa731a2/
-Bond Leung - https://www.linkedin.com/in/bond-leung/ 
+❓ Questions?   
+Feel free to reach out to our socials   
+Johnathon Brumfield - https://www.linkedin.com/in/johnathon-brumfield-16a5a5248/   
+Manuel Sur - https://www.linkedin.com/in/manuel-sur-474308290/  
+Eric Chin - https://www.linkedin.com/in/eric-chin01/  
+Sathwik Jupalli - https://www.linkedin.com/in/sathwik-jupalli-96aa731a2/  
+Bond Leung - https://www.linkedin.com/in/bond-leung/   
+ 
