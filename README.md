@@ -4,7 +4,7 @@ CitySync is a group project that helps users discover and match with cities base
 🌐 Link to CitySync
 https://main.d2020pxyuhilwo.amplifyapp.com/
 
-Instructions 
+📝 Instructions 
 1. Create an account
 2. Go to questionare tab and fill out the questionare
 3. You can now view your results on results page and see more information
