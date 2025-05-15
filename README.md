@@ -36,8 +36,8 @@ API Handling: AWS API Gateway
 
 Deployment: AWS Amplify 
 
-🌐 Live Demo
-Link to video
+🌐 Live Demo  
+www.Linktovideo.com
 
 ❓ Questions?   
 Feel free to reach out to our socials    
