@@ -10,6 +10,7 @@ https://main.d2020pxyuhilwo.amplifyapp.com/
 3. You can now view your results on results page and see more information
 4. On the home page your matched cities are now on the interactive map
 
+
 🚀 Features
 User Profiles: Create a profile with your email and get started. 
 
@@ -18,6 +19,7 @@ City Matching Algorithm: Get recommendations based on lifestyle, cost of living,
 Interactive Map: Visualize matched cities with key details.
 
 AWS-Powered: Utilizes services like Lambda, API Gateway, S3, and Cognito for backend operations.
+
 
 🔧 Technologies Used
 Frontend: React.js 
