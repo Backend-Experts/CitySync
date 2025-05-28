@@ -1,6 +1,9 @@
 🌆 CitySync
 CitySync is a group project that helps users discover and match with cities based on their preferences. The application leverages AWS services for deployment, scalability, and functionality.
 
+!Urgent Update!
+matching feature disabled due to billing.
+
 🌐 Link to CitySync
 https://main.d2020pxyuhilwo.amplifyapp.com/
 
