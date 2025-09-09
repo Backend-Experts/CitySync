@@ -109,3 +109,34 @@
   .download-button:hover {
     background-color: #218838;
   }
+  .results-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.view-results-button, .redo-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.view-results-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.redo-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.view-results-button:hover {
+    background-color: #45a049;
+}
+
+.redo-button:hover {
+    background-color: #d32f2f;
+}

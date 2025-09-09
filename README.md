@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+🌆 CitySync
+CitySync is a group project that helps users discover and match with cities based on their preferences. The application leverages AWS services for deployment, scalability, and functionality.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+!Urgent Update!
+matching feature disabled due to billing.
 
-## Available Scripts
+🌐 Link to CitySync
+https://main.d2020pxyuhilwo.amplifyapp.com/
 
-In the project directory, you can run:
+📝 Instructions 
+1. Create an account
+2. Go to questionare tab and fill out the questionare
+3. You can now view your results on results page and see more information
+4. On the home page your matched cities are now on the interactive map
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🚀 Features
+User Profiles: Create a profile with your email and get started. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+City Matching Algorithm: Get recommendations based on lifestyle, cost of living, and interests.
 
-### `npm test`
+Interactive Map: Visualize matched cities with key details.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+AWS-Powered: Utilizes services like Lambda, API Gateway, S3, and Cognito for backend operations.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔧 Technologies Used
+Frontend: React.js 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend: Node.js / Python 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Database: MongoDB
 
-### `npm run eject`
+Authentication: AWS Cognito
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Compute: AWS Lambda
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Storage: AWS S3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+API Handling: AWS API Gateway
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Deployment: AWS Amplify 
 
-## Learn More
+🌐 Demo  
+https://youtu.be/G4-dsM45i3o
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+❓ Questions?   
+Feel free to reach out to our socials    
+Johnathon Brumfield - https://www.linkedin.com/in/johnathon-brumfield-16a5a5248/   
+Manuel Sur - https://www.linkedin.com/in/manuel-sur-474308290/  
+Eric Chin - https://www.linkedin.com/in/eric-chin01/  
+Sathwik Jupalli - https://www.linkedin.com/in/sathwik-jupalli-96aa731a2/  
+Bond Leung - https://www.linkedin.com/in/bond-leung/  
+ 

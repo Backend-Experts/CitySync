@@ -54,3 +54,74 @@
 .page-content {
   padding-top: 60px;
 }
+
+/* App.css */
+.sign-in-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.sign-in-container {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.sign-in-container h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.sign-in-container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.sign-in-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.sign-in-button:hover {
+  background-color: #2980b9;
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  margin-top: 0; /* Adjusted since navbar is sticky */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 6rem; /* Give space for sticky navbar */
+}
+
+/* If you want to keep your original HomePage styles */
+.homepage-container {
+  width: 100%;
+}
+
