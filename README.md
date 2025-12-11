@@ -4,7 +4,7 @@ CitySync is a group project that helps users discover and match with cities base
 !Urgent Update!
 matching feature disabled due to billing.
 
-🌐 Link to CitySync
+🌐 Link to CitySync  **Note no longer works due to billing
 https://main.d2020pxyuhilwo.amplifyapp.com/
 
 📝 Instructions 
